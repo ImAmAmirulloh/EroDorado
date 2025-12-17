@@ -1,0 +1,361 @@
+  /* --- CSS STYLING (Sama seperti sebelumnya) --- */
+  :root {
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-main: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --accent: #ff5722;
+    /* Warna Api Default */
+    --border: #333;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 40px;
+    min-height: 100vh;
+    display: flex;
+    /* Menggunakan flexbox untuk layout utama */
+    padding: 0;
+  }
+
+  h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+  #sidebar {
+    width: 150px;
+    background-color: #282828;
+    color: var(--text-main);
+    padding: 0px;
+    height: 100vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    overflow-x: clip;
+  }
+
+  #sidebar a {
+    display: block;
+    color: var(--text-main);
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-left: 5px solid transparent;
+  }
+
+  #sidebar a:hover,
+  #sidebar a.active {
+    background-color: #3e3e3e;
+    border-left: 5px solid var(--accent);
+  }
+
+  #main-content {
+    flex-grow: 1;
+    padding: 10px 10px 20px 10px;
+    height: 100vh;
+    overflow-y: scroll;
+  }
+  .char-card.element-Fire {
+    --header-start: #bf360c; /* Merah Tua */
+    --header-end: #ff5722;   /* Merah Cerah */
+    --card-accent: #ff5722;
+}
+.char-card.element-Wind {
+    --header-start: #4caf50; /* Hijau Tua */
+    --header-end: #8bc34a;   /* Hijau Muda */
+    --card-accent: #8bc34a;
+}
+.char-card.element-Water {
+    --header-start: #2196f3; /* Biru Tua */
+    --header-end: #64b5f6;   /* Biru Cerah */
+    --card-accent: #64b5f6;
+}
+.char-card.element-Light {
+    --header-start: #ffc107; /* Kuning Emas */
+    --header-end: #ffeb3b;   /* Kuning Muda */
+    --card-accent: #ffeb3b;
+}
+.char-card.element-Dark {
+    --header-start: #673ab7; /* Ungu Tua */
+    --header-end: #9c27b0;   /* Ungu Muda */
+    --card-accent: #9c27b0;
+}
+  /* Container utama agar kartu berjejer rapi */
+  #card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  /* Container Kartu */
+  .char-card {
+    background: var(--card-bg);
+    padding: 0px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+
+  .char-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--card-accent);
+  }
+
+  /* Header */
+  .card-header {
+    background: linear-gradient(135deg, var(--header-start), var(--header-end));
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  
+  .char-icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid white;
+    object-fit: contain;
+  }
+  
+  .char-rank.rank-SSRr {
+    --rank-color: gold;
+  }
+  .char-rank.rank-SSR {
+    --rank-color: gold;
+  }
+  .char-rank.rank-SR {
+    --rank-color: purple;
+  }
+  .char-rank.rank-R {
+    --rank-color: cyan;
+  }
+  .char-rank {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--rank-color);
+    text-transform: uppercase;
+    text-shadow: 0px 0px 4px black;
+    align-content: center;
+    font-style: italic;
+  }
+
+  .char-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 4px black;
+  }
+
+  .char-star {
+    background: rgba(0, 0, 0, 0.466);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    color: #ffd700;
+    font-weight: bold;
+    /* text-shadow: 0px 0px 4px white; */
+  }
+
+  /* Body & Grid */
+  .card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+  }
+
+  .row:last-child {
+    border-bottom: none;
+  }
+
+  .col {
+    flex: 1;
+  }
+.label+.value{
+ margin-left: 4px;
+ font-size: 1.4rem;
+}
+  .col.right {
+    text-align: right;
+  }
+  
+  .grid-2 {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    text-align: right;
+  }
+  .grid-2-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+  }
+  
+  .grid-2 .char-name {
+    justify-self: end;
+    width: min-content;
+  }
+
+  .grid-2 .char-star {
+    justify-self: end;
+    width: min-content;
+  }
+  /* Grid 4 Kolom */
+  .grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+    text-align: center;
+    background: #252525;
+    padding: 8px;
+    border-radius: 8px;
+    margin-top: 5px;
+  }
+
+  .grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grid-label {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+  }
+
+  .grid-value {
+    font-weight: bold;
+    color: var(--card-accent);
+    font-size: 1.2rem;
+  }
+  .grid-label>b{
+   font-size: 1.4rem;
+  }
+  /* Typography */
+  .label {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    display: block;
+  }
+
+  .value {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  /* Power Row */
+  .power-row {
+    background: rgba(255, 87, 34, 0.1);
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid var(--card-accent);
+    border-bottom: none;
+  }
+
+  .power-val {
+    color: var(--card-accent);
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  /* Progress Bar */
+  .shard-container {
+    margin-top: 5px;
+  }
+
+  .progress-bg {
+    background-color: #333;
+    height: 6px;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 4px;
+  }
+
+  .progress-fill {
+    background-color: var(--card-accent);
+    height: 6px;
+    transition: width 0.5s ease;
+  }
+
+  #load-error {
+    color: #ff3333;
+    padding: 20px;
+    background: #331010;
+    border: 1px solid #ff3333;
+    border-radius: 8px;
+    text-align: center;
+    display: none;
+    /* Disembunyikan secara default */
+    margin-top: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+  }
+  
+  /* --- Tambahkan di akhir file style.css --- */
+#filter-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #252525;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+#filter-controls label {
+    font-size: 1rem;
+    color: var(--text-main);
+}
+
+#sort-by, #sort-button {
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+}
+
+#sort-by {
+    background-color: #333;
+    color: var(--text-main);
+    border: 1px solid #555;
+    appearance: none; /* Menghilangkan style default di beberapa browser */
+}
+
+#sort-button {
+    background-color: var(--accent);
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+#sort-button:hover {
+    background-color: #e64a19; /* Warna accent yang sedikit lebih gelap */
+}

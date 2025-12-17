@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Karakter Baru</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent: #ff5722; 
+            --border: #333;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        #main-content {
+            flex-grow: 1;
+            padding: 40px;
+        }
+        
+        /* CSS Form */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 800px;
+            margin-top: 20px;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 12px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            grid-column: span 1;
+        }
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background-color: #333;
+            color: var(--text-main);
+            box-sizing: border-box;
+        }
+        input[type="text"]:focus, input[type="number"]:focus, select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 5px rgba(255, 87, 34, 0.5);
+        }
+        .submit-btn {
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #e64a19;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <a href="index.html">📊 Status Karakter</a>
+        <a href="tambah.html" class="active">➕ Buat Karakter Baru</a> 
+        <a href="update_list.html">📝 Update Karakter</a>
+        <a href="backup_recovery.html">💾 Backup/Recovery</a>
+    </div>
+
+    <div id="main-content">
+        <h1>➕ Buat Karakter Baru</h1>
+        <form id="character-form" action="" method="POST">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="name">Nama Karakter</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+    <div class="form-group">
+        <label for="rank">Rank</label>
+        <select id="rank" name="rank">
+         <option value="SSRr">SSR+</option>
+         <option value="SSR">SSR</option>
+         <option value="SR">SR</option>
+         <option value="R">R</option>
+        </select>
+       </div>
+                <div class="form-group"><label for="level">Level</label><input type="number" id="level" name="level" value="1" required></div>
+                <div class="form-group"><label for="intimacy">Intimacy</label><input type="number" id="intimacy" name="intimacy" value="1" required></div>
+                <div class="form-group"><label for="star">Star</label><input type="number" id="star" name="star" value="1" min="1" max="6" required></div>
+                <div class="form-group">
+                    <label for="element">Element</label>
+                    <select id="element" name="element">
+                        <option value="Fire">Fire</option>
+                        <option value="Water">Water</option>
+                        <option value="Wind">Wind</option>
+                        <option value="Light">Light</option>
+                        <option value="Dark">Dark</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select id="role" name="role">
+                        <option value="Fighter">Fighter</option>
+                        <option value="Assassin">Assassin</option>
+                        <option value="Defender">Defender</option>
+                        <option value="Healer">Healer</option>
+                        <option value="Support">Support</option>
+                    </select>
+                </div>
+                
+                <div class="form-group full-width"><hr style="border-top: 1px dashed #444;"></div>
+
+                <div class="form-group"><label for="bracelet">Bracelet</label><input type="text" id="bracelet" name="bracelet" value="T1"></div>
+                <div class="form-group"><label for="bikini">Bikini</label><input type="text" id="bikini" name="bikini" value="T1"></div>
+                <div class="form-group"><label for="hat">Hat</label><input type="text" id="hat" name="hat" value="T1"></div>
+                <div class="form-group"><label for="sandals">Sandals</label><input type="text" id="sandals" name="sandals" value="T1"></div>
+
+                <div class="form-group"><label for="skillOneLevel">Skill 1 Lv</label><input type="number" id="skillOneLevel" name="skillOneLevel" value="1" min="0"></div>
+                <div class="form-group"><label for="skillTwoLevel">Skill 2 Lv</label><input type="number" id="skillTwoLevel" name="skillTwoLevel" value="1" min="0"></div>
+                <div class="form-group"><label for="skillThreeLevel">Skill 3 Lv</label><input type="number" id="skillThreeLevel" name="skillThreeLevel" value="1" min="0"></div>
+                <div class="form-group"><label for="skillFourLevel">Skill 4 Lv</label><input type="number" id="skillFourLevel" name="skillFourLevel" value="1" min="0"></div>
+                
+                <div class="form-group"><label for="cardLevel">Card Level</label><input type="number" id="cardLevel" name="cardLevel" value="1" min="0"></div>
+                <div class="form-group"><label for="cardStar">Card Star</label><input type="number" id="cardStar" name="cardStar" value="1" min="0" max="6"></div>
+
+                <div class="form-group"><label for="power">Power (Ex: 10K)</label><input type="text" id="power" name="power" value="0K" required></div>
+                <div class="form-group"><label for="shards">Shards Saat Ini</label><input type="number" id="shards" name="shards" value="0" min="0" required></div>
+                <div class="form-group"><label for="shardMax">Shards Max</label><input type="number" id="shardMax" name="shardMax" value="20" min="1" required></div>
+
+                <div class="form-group full-width" style="text-align: center; margin-top: 20px;">
+                    <button type="submit" class="submit-btn">Simpan Karakter Baru</button>
+                </div>
+                <p id="status-message" style="margin-top: 15px; text-align: center; font-weight: bold;"></p>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+    // Konstanta kunci penyimpanan (Wajib sama dengan di index.html)
+    const STORAGE_KEY = 'CHARACTER_DATA_V1';
+
+    // --- UTILITY FUNGSI LOCAL STORAGE ---
+    function loadCharacters() {
+        const storedData = localStorage.getItem(STORAGE_KEY);
+        try {
+            // Mengembalikan array kosong jika tidak ada data atau parsing gagal
+            return storedData ? JSON.parse(storedData) : []; 
+        } catch (e) {
+            console.error("Gagal memparsing data dari Local Storage:", e);
+            return [];
+        }
+    }
+
+    function saveCharacters(data) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    }
+
+    // --- LOGIKA UTAMA TAMBAH KARAKTER ---
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('character-form');
+        const statusMsg = document.getElementById('status-message');
+
+        // Pengecekan keamanan: Pastikan form dan statusMsg ditemukan
+        if (!form) {
+            console.error("Error FATAL: Elemen 'character-form' tidak ditemukan.");
+            return;
+        }
+        if (!statusMsg) {
+             console.warn("Warning: Elemen 'status-message' tidak ditemukan. Pesan status tidak akan ditampilkan.");
+        }
+
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const newCharacter = {};
+            const formData = new FormData(event.target);
+
+            // 1. Kumpulkan data dari form dan lakukan konversi tipe data
+            for (const [key, value] of formData.entries()) {
+                // Konversi nilai yang harusnya angka 
+                if (['intimacy', 'level', 'star', 'cardLevel', 'cardStar', 'skillOneLevel', 'skillTwoLevel', 'skillThreeLevel', 'skillFourLevel', 'shards', 'shardMax'].includes(key)) {
+                    // Pastikan nilai dikonversi ke integer (atau 0 jika kosong/invalid)
+                    newCharacter[key] = parseInt(value) || 0; 
+                } else {
+                    newCharacter[key] = value;
+                }
+            }
+
+            // 2. Muat data yang sudah ada
+            let characters = loadCharacters();
+            
+            // 3. Tambahkan karakter baru ke array
+            characters.push(newCharacter);
+            
+            // 4. Simpan kembali array yang diperbarui ke Local Storage
+            saveCharacters(characters);
+            
+            // 5. Beri Feedback dan Reset
+            if (statusMsg) {
+                statusMsg.innerText = `✅ Karakter '${newCharacter.name}' berhasil disimpan ke Local Storage!`;
+                statusMsg.style.color = '#5cb85c';
+            }
+            form.reset(); 
+
+            // Arahkan ke halaman utama setelah beberapa detik
+            setTimeout(() => {
+                window.location.href = 'index.html'; 
+            }, 1500);
+        });
+    });
+</script>
+</body>
+</html>

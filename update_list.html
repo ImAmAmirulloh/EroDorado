@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilih Karakter untuk Update</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent: #ff5722; 
+            --border: #333;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+        }
+        
+        #main-content {
+            flex-grow: 1;
+            padding: 40px;
+        }
+
+        /* Styling Daftar Karakter */
+        .character-list {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+        }
+        .character-list li {
+            background-color: var(--card-bg);
+            margin-bottom: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+            border: 1px solid var(--border);
+        }
+        .character-list li:hover {
+            box-shadow: 0 0 10px rgba(255, 87, 34, 0.4);
+            border-color: var(--accent);
+        }
+        .character-list a {
+            display: block;
+            padding: 15px 20px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .character-list span {
+            float: right;
+            color: var(--text-muted);
+            font-weight: normal;
+            font-size: 0.9rem;
+        }
+        /* Tambahan indikator level tinggi */
+        .high-level {
+            color: gold !important;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="sidebar">
+        <a href="index.html">📊 Status Karakter</a>
+        <a href="tambah.html">➕ Buat Karakter Baru</a>
+        <a href="update_list.html" class="active">📝 Update Karakter</a>
+        <a href="backup_recovery.html">💾 Backup/Recovery</a>
+    </div>
+
+    <div id="main-content">
+        <h1>📝 Pilih Karakter untuk Diperbarui</h1>
+        <p style="color: #aaa; font-size: 0.9rem; margin-bottom: 20px;">*Daftar diurutkan otomatis berdasarkan Level Tertinggi.</p>
+        
+        <ul id="character-list-container" class="character-list">
+        </ul>
+        
+        <div id="loading" style="color: var(--text-muted);">Memuat data...</div>
+    </div>
+
+    <script>
+    // Konstanta kunci penyimpanan
+    const STORAGE_KEY = 'CHARACTER_DATA_V1';
+
+    // --- UTILITY FUNGSI LOCAL STORAGE ---
+    function loadCharacters() {
+        const storedData = localStorage.getItem(STORAGE_KEY);
+        try {
+            return storedData ? JSON.parse(storedData) : []; 
+        } catch (e) {
+            console.error("Gagal memparsing data dari Local Storage:", e);
+            return [];
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const listContainer = document.getElementById('character-list-container');
+        const loading = document.getElementById('loading');
+
+        if (!listContainer) return;
+
+        // 1. Ambil data mentah dari Local Storage
+        const characters = loadCharacters();
+
+        if (loading) loading.style.display = 'none';
+
+        // 2. Cek jika data kosong
+        if (characters.length === 0) {
+            listContainer.innerHTML = '<li style="padding:15px; text-align:center;">Belum ada karakter yang tersimpan. <a href="tambah.html" style="display:inline; color:#ff5722;">Tambah Baru?</a></li>';
+            return;
+        }
+
+        // 3. LOGIKA SORTING AMAN (PENTING!)
+        // Kita tidak boleh mengurutkan array 'characters' langsung karena akan merusak index ID.
+        // Solusi: Buat array sementara yang menyimpan { indexAsli, dataKarakter }
+        
+        const mappedCharacters = characters.map((char, index) => {
+            return {
+                originalIndex: index, // Simpan ID asli agar link update.html?id=... tetap benar
+                data: char
+            };
+        });
+
+        // Urutkan array sementara berdasarkan Level (Descending / Besar ke Kecil)
+        mappedCharacters.sort((a, b) => {
+            return b.data.level - a.data.level;
+        });
+
+        // 4. Tampilkan daftar berdasarkan hasil sortiran
+        mappedCharacters.forEach((item) => {
+            const character = item.data;
+            const originalId = item.originalIndex; // Gunakan ID asli untuk link
+
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+
+            // Link tetap menggunakan originalId agar membuka data yang benar
+            link.href = `update.html?id=${originalId}`; 
+            
+            // Tambahkan class khusus jika level tinggi (misal > 20) opsional
+            const levelClass = character.level >= 20 ? 'high-level' : '';
+
+            link.innerHTML = `
+                ${character.name} 
+                <span class="${levelClass}">Lv. ${character.level} | ${character.element} | ${character.rank}</span>
+            `;
+
+            listItem.appendChild(link);
+            listContainer.appendChild(listItem);
+        });
+    });
+</script>
+</body>
+</html>

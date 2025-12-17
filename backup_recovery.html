@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backup & Recovery Data</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .submit-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <a href="index.html">📊 Status Karakter</a>
+        <a href="tambah.html">➕ Buat Karakter Baru</a>
+        <a href="update_list.html">📝 Update Karakter</a>
+        <a href="backup_recovery.html" class="active">💾 Backup/Recovery</a>
+    </div>
+
+    <div id="main-content">
+        <h1>Backup & Recovery Data Karakter</h1>
+        <div class="card" style="margin-bottom: 30px;">
+            <h2>Backup Data (Download JSON)</h2>
+            <p>Pilih metode backup data dari Local Storage browser Anda:</p>
+            
+            <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                <button id="backup-btn" class="submit-btn" style="background-color: #5cb85c;">⬇️ Download File JSON</button>
+                
+                <button id="generate-json-btn" class="submit-btn" style="background-color: #007bff;">📋 Generate Teks JSON</button>
+            </div>
+            
+            <div id="json-output-container" style="display: none; margin-top: 20px;">
+                <label for="json-output" style="display: block; margin-bottom: 5px; font-weight: bold;">Salin Konten JSON di Bawah:</label>
+                <textarea id="json-output" rows="15" readonly style="width: 100%; padding: 10px; background: #333; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; resize: vertical;"></textarea>
+                <button id="copy-json-btn" class="submit-btn" style="background-color: #333; margin-top: 10px;">Salin ke Clipboard</button>
+            </div>
+            
+            <p id="backup-status" style="margin-top: 10px; color: #5cb85c;"></p>
+        </div>
+        <div class="card">
+            <h2>Recovery Data (Upload JSON)</h2>
+            <p>Pilih file JSON cadangan Anda dan klik "Simpan ke Browser" untuk **menimpa** data di Local Storage browser Anda.</p>
+            <input type="file" id="recovery-file-input" accept=".json" style="margin-bottom: 15px;">
+            <button id="recovery-btn" class="submit-btn" style="background-color: #f0ad4e;">⬆️ Simpan ke Browser</button>
+            <p id="recovery-status" style="margin-top: 10px; color: #f0ad4e;"></p>
+        </div>
+    </div>
+
+    
+    <script>
+    // Konstanta kunci penyimpanan (Wajib sama di semua file)
+    const STORAGE_KEY = 'CHARACTER_DATA_V1';
+
+    // --- UTILITY FUNGSI LOCAL STORAGE ---
+    function loadCharacters() {
+        const storedData = localStorage.getItem(STORAGE_KEY);
+        try {
+            return storedData ? JSON.parse(storedData) : []; 
+        } catch (e) {
+            console.error("Gagal memparsing data dari Local Storage:", e);
+            return [];
+        }
+    }
+
+    function saveCharacters(data) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    }
+
+    // --- LOGIKA UTAMA BACKUP & RECOVERY ---
+    document.addEventListener('DOMContentLoaded', () => {
+        const backupBtn = document.getElementById('backup-btn');
+        const generateJsonBtn = document.getElementById('generate-json-btn'); // Tombol Baru
+        const jsonOutputContainer = document.getElementById('json-output-container'); // Container Baru
+        const jsonOutput = document.getElementById('json-output'); // Textarea Baru
+        const copyJsonBtn = document.getElementById('copy-json-btn'); // Tombol Salin Baru
+        
+        const recoveryBtn = document.getElementById('recovery-btn'); 
+        const fileInput = document.getElementById('recovery-file-input'); 
+        const recoveryStatusMsg = document.getElementById('recovery-status');
+        const backupStatusMsg = document.getElementById('backup-status'); // Status untuk backup
+
+        // Fungsi utama untuk mendapatkan string JSON
+        function getJsonString() {
+            const data = loadCharacters();
+            if (data.length === 0) {
+                alert("Local Storage kosong, tidak ada data.");
+                return null;
+            }
+            return JSON.stringify(data, null, 2); 
+        }
+
+        // ==========================================================
+        // A1. LOGIKA BACKUP (DOWNLOAD FILE)
+        // ==========================================================
+        if (backupBtn) {
+            backupBtn.addEventListener('click', function() {
+                const jsonString = getJsonString();
+                if (!jsonString) return;
+
+                const blob = new Blob([jsonString], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'characters_backup_' + new Date().toISOString().slice(0, 10) + '.json'; 
+                
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                
+                URL.revokeObjectURL(url);
+                backupStatusMsg.innerText = `✅ Data ${loadCharacters().length} karakter berhasil diunduh!`;
+            });
+        }
+
+        // ==========================================================
+        // A2. LOGIKA GENERATE JSON CONTENT (TEKS)
+        // ==========================================================
+        if (generateJsonBtn) {
+            generateJsonBtn.addEventListener('click', function() {
+                const jsonString = getJsonString();
+                if (!jsonString) {
+                    jsonOutputContainer.style.display = 'none';
+                    return;
+                }
+                
+                jsonOutput.value = jsonString;
+                jsonOutputContainer.style.display = 'block';
+                jsonOutput.select(); // Langsung select agar mudah disalin
+                backupStatusMsg.innerText = `📋 Konten JSON siap disalin.`;
+            });
+        }
+        
+        // ==========================================================
+        // A3. LOGIKA COPY KE CLIPBOARD
+        // ==========================================================
+        if (copyJsonBtn && jsonOutput) {
+            copyJsonBtn.addEventListener('click', function() {
+                jsonOutput.select();
+                jsonOutput.setSelectionRange(0, 99999); // Untuk mobile
+                
+                try {
+                    document.execCommand('copy');
+                    copyJsonBtn.innerText = '✅ Berhasil Disalin!';
+                } catch (err) {
+                    copyJsonBtn.innerText = '❌ Gagal Salin (Gunakan Ctrl+C / Cmd+C)';
+                }
+
+                setTimeout(() => {
+                    copyJsonBtn.innerText = 'Salin ke Clipboard';
+                }, 1500);
+            });
+        }
+
+
+        // ==========================================================
+        // B. LOGIKA RECOVERY (UPLOAD DATA) - Tidak Berubah
+        // ==========================================================
+        if (recoveryBtn && fileInput) {
+            recoveryBtn.addEventListener('click', function() {
+                // ... (Logika Recovery yang sudah benar sebelumnya) ...
+                const file = fileInput.files[0];
+
+                if (!file) {
+                    recoveryStatusMsg.innerText = 'Pilih file JSON terlebih dahulu.';
+                    recoveryStatusMsg.style.color = '#ff5722';
+                    return;
+                }
+                
+                if (!file.name.toLowerCase().endsWith('.json')) {
+                     recoveryStatusMsg.innerText = 'Gagal: File harus berekstensi .json.';
+                     recoveryStatusMsg.style.color = '#ff5722';
+                     return;
+                }
+
+                const reader = new FileReader();
+                
+                reader.onload = function(event) {
+                    try {
+                        const importedData = JSON.parse(event.target.result);
+                        
+                        if (Array.isArray(importedData)) {
+                            if (importedData.length > 0 && !importedData[0].name) {
+                                throw new Error('Format data tidak dikenali. Pastikan ini adalah file backup karakter.');
+                            }
+
+                            const confirmation = confirm(`Anda yakin ingin memulihkan data? Ini akan MENIMPA ${loadCharacters().length} data karakter yang sudah ada dengan ${importedData.length} data baru.`);
+                            
+                            if (confirmation) {
+                                saveCharacters(importedData);
+                                
+                                recoveryStatusMsg.innerText = `✅ Pemulihan berhasil! ${importedData.length} karakter telah disimpan.`;
+                                recoveryStatusMsg.style.color = '#5cb85c';
+                                fileInput.value = '';
+
+                                setTimeout(() => { window.location.href = 'index.html'; }, 1500);
+                            } else {
+                                recoveryStatusMsg.innerText = 'Pemulihan dibatalkan oleh pengguna.';
+                                recoveryStatusMsg.style.color = '#ff5722';
+                            }
+                        } else {
+                            recoveryStatusMsg.innerText = 'Gagal: Isi file JSON tidak memiliki format array yang diharapkan.';
+                            recoveryStatusMsg.style.color = '#ff5722';
+                        }
+                    } catch (e) {
+                        console.error('Recovery Error:', e);
+                        recoveryStatusMsg.innerText = 'Gagal: Terjadi kesalahan saat memproses file JSON. ' + e.message;
+                        recoveryStatusMsg.style.color = '#ff5722';
+                    }
+                };
+                
+                reader.readAsText(file);
+            });
+        }
+    });
+</script>
+</body>
+</html>

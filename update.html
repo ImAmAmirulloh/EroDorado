@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Edit Karakter</title>
+ <link rel="stylesheet" href="style.css">
+ <style>
+  /* CSS Tambahan khusus halaman ini */
+  :root {
+   --bg-color: #121212;
+   --card-bg: #1e1e1e;
+   --text-main: #e0e0e0;
+   --text-muted: #a0a0a0;
+   --accent: #ff5722;
+   --border: #333;
+  }
+
+  body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background-color: var(--bg-color);
+   color: var(--text-main);
+   margin: 0;
+   padding: 0;
+   min-height: 100vh;
+   display: flex;
+  }
+
+  #main-content {
+   flex-grow: 1;
+   padding: 40px;
+  }
+
+  .form-grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 20px;
+   max-width: 800px;
+   margin-top: 20px;
+   padding: 20px;
+   background: var(--card-bg);
+   border-radius: 12px;
+  }
+  .form-group {
+   margin-bottom: 15px;
+   grid-column: span 1;
+  }
+  .form-group.full-width {
+   grid-column: span 2;
+  }
+  label {
+   display: block;
+   margin-bottom: 5px;
+   font-weight: 600;
+   color: var(--text-muted);
+   font-size: 0.9rem;
+  }
+  input[type="text"], input[type="number"], select {
+   width: 100%;
+   padding: 10px;
+   border: 1px solid var(--border);
+   border-radius: 6px;
+   background-color: #333;
+   color: var(--text-main);
+   box-sizing: border-box;
+  }
+  
+  /* Styling Tombol */
+  .btn-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+  }
+  .submit-btn {
+   padding: 12px 25px;
+   border: none;
+   border-radius: 6px;
+   cursor: pointer;
+   font-weight: bold;
+   color: white;
+   transition: background-color 0.3s;
+  }
+  .update-btn { background-color: #4CAF50; }
+  .update-btn:hover { background-color: #45a049; }
+  
+  .delete-btn { background-color: #f44336; }
+  .delete-btn:hover { background-color: #d32f2f; }
+ </style>
+</head>
+<body>
+
+ <div id="sidebar">
+  <a href="index.html">📊 Status Karakter</a>
+  <a href="tambah.html">➕ Buat Karakter Baru</a>
+  <a href="update_list.html" class="active">📝 Update Karakter</a>
+  <a href="backup_recovery.html">💾 Backup/Recovery</a>
+ </div>
+
+ <div id="main-content">
+  <h1 id="page-title">📝 Edit Karakter</h1>
+
+  <form id="edit-form">
+   <div class="form-grid">
+    <div class="form-group">
+     <label for="name">Nama Karakter</label>
+     <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+     <label for="rank">Rank</label>
+     <select id="rank" name="rank">
+      <option value="SSRr">SSR+</option>
+      <option value="SSR">SSR</option>
+      <option value="SR">SR</option>
+      <option value="R">R</option>
+     </select>
+    </div>
+    <div class="form-group">
+     <label for="level">Level</label><input type="number" id="level" name="level" required>
+    </div>
+    <div class="form-group">
+     <label for="intimacy">Intimacy</label><input type="number" id="intimacy" name="intimacy" required>
+    </div>
+    <div class="form-group">
+     <label for="star">Star</label><input type="number" id="star" name="star" min="1" max="6" required>
+    </div>
+    <div class="form-group">
+     <label for="element">Element</label>
+     <select id="element" name="element">
+      <option value="Fire">Fire</option>
+      <option value="Water">Water</option>
+      <option value="Wind">Wind</option>
+      <option value="Light">Light</option>
+      <option value="Dark">Dark</option>
+     </select>
+    </div>
+    <div class="form-group">
+     <label for="role">Role</label>
+     <select id="role" name="role">
+      <option value="Fighter">Fighter</option>
+      <option value="Assassin">Assassin</option>
+      <option value="Defender">Defender</option>
+      <option value="Healer">Healer</option>
+      <option value="Support">Support</option>
+     </select>
+    </div>
+
+    <div class="form-group full-width">
+     <hr style="border-top: 1px dashed #444;">
+    </div>
+
+    <div class="form-group">
+     <label for="bracelet">Bracelet</label><input type="text" id="bracelet" name="bracelet">
+    </div>
+    <div class="form-group">
+     <label for="bikini">Bikini</label><input type="text" id="bikini" name="bikini">
+    </div>
+    <div class="form-group">
+     <label for="hat">Hat</label><input type="text" id="hat" name="hat">
+    </div>
+    <div class="form-group">
+     <label for="sandals">Sandals</label><input type="text" id="sandals" name="sandals">
+    </div>
+
+    <div class="form-group">
+     <label for="skillOneLevel">Skill 1 Lv</label><input type="number" id="skillOneLevel" name="skillOneLevel" min="0">
+    </div>
+    <div class="form-group">
+     <label for="skillTwoLevel">Skill 2 Lv</label><input type="number" id="skillTwoLevel" name="skillTwoLevel" min="0">
+    </div>
+    <div class="form-group">
+     <label for="skillThreeLevel">Skill 3 Lv</label><input type="number" id="skillThreeLevel" name="skillThreeLevel" min="0">
+    </div>
+    <div class="form-group">
+     <label for="skillFourLevel">Skill 4 Lv</label><input type="number" id="skillFourLevel" name="skillFourLevel" min="0">
+    </div>
+
+    <div class="form-group">
+     <label for="cardLevel">Card Level</label><input type="number" id="cardLevel" name="cardLevel" min="0">
+    </div>
+    <div class="form-group">
+     <label for="cardStar">Card Star</label><input type="number" id="cardStar" name="cardStar" min="0" max="6">
+    </div>
+
+    <div class="form-group">
+     <label for="power">Power (Ex: 10K)</label><input type="text" id="power" name="power" required>
+    </div>
+    <div class="form-group">
+     <label for="shards">Shards Saat Ini</label><input type="number" id="shards" name="shards" min="0" required>
+    </div>
+    <div class="form-group">
+     <label for="shardMax">Shards Max</label><input type="number" id="shardMax" name="shardMax" min="1" required>
+    </div>
+
+    <div class="form-group full-width btn-container">
+     <button type="submit" class="submit-btn update-btn">💾 Simpan Perubahan</button>
+     <button type="button" id="delete-btn" class="submit-btn delete-btn">🗑️ Hapus Karakter</button>
+    </div>
+   </div>
+   
+   <p id="status-message" style="margin-top: 15px; text-align: center; font-weight: bold;"></p>
+  </form>
+ </div>
+
+ <script>
+  const STORAGE_KEY = 'CHARACTER_DATA_V1';
+
+  // --- Utility Local Storage ---
+  function loadCharacters() {
+   const storedData = localStorage.getItem(STORAGE_KEY);
+   return storedData ? JSON.parse(storedData) : [];
+  }
+
+  function saveCharacters(data) {
+   localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+   const form = document.getElementById('edit-form');
+   const deleteBtn = document.getElementById('delete-btn');
+   const statusMsg = document.getElementById('status-message');
+   const pageTitle = document.getElementById('page-title');
+
+   // 1. Ambil ID dari URL (contoh: update.html?id=2)
+   const urlParams = new URLSearchParams(window.location.search);
+   const charId = urlParams.get('id');
+   const charIndex = parseInt(charId, 10);
+   
+   // Load data
+   let characters = loadCharacters();
+   
+   // Validasi ID
+   if (charId === null || isNaN(charIndex) || charIndex < 0 || charIndex >= characters.length) {
+    if(statusMsg) statusMsg.innerText = "❌ Error: Karakter tidak ditemukan!";
+    document.querySelector('.form-grid').style.display = 'none'; // Sembunyikan form
+    setTimeout(() => { window.location.href = 'update_list.html'; }, 2000);
+    return;
+   }
+
+   const character = characters[charIndex];
+
+   // 2. ISI FORM (Populasi Data)
+   pageTitle.innerText = `📝 Edit Karakter: ${character.name}`;
+   
+   // Loop otomatis mengisi input berdasarkan 'name' di HTML yg sama dengan key JSON
+   for (const key in character) {
+    const inputField = document.querySelector(`[name="${key}"]`);
+    if (inputField) {
+     inputField.value = character[key];
+    }
+   }
+
+   // 3. LOGIKA SIMPAN (UPDATE)
+   form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const updatedCharacter = {};
+    const formData = new FormData(event.target);
+
+    for (const [key, value] of formData.entries()) {
+     // Konversi angka
+     if (['intimacy', 'level', 'star', 'cardLevel', 'cardStar', 'skillOneLevel', 'skillTwoLevel', 'skillThreeLevel', 'skillFourLevel', 'shards', 'shardMax'].includes(key)) {
+      updatedCharacter[key] = parseInt(value) || 0;
+     } else {
+      updatedCharacter[key] = value;
+     }
+    }
+
+    // Timpa data di index yang sesuai
+    characters[charIndex] = updatedCharacter;
+    saveCharacters(characters);
+
+    statusMsg.innerText = "✅ Perubahan berhasil disimpan!";
+    statusMsg.style.color = "#4CAF50";
+    
+    // Kembali ke index setelah 1 detik
+    setTimeout(() => { window.location.href = 'index.html'; }, 1000);
+   });
+
+   // 4. LOGIKA HAPUS (DELETE)
+   deleteBtn.addEventListener('click', function() {
+    if (confirm(`Yakin ingin MENGHAPUS karakter ${character.name} selamanya?`)) {
+     characters.splice(charIndex, 1); // Hapus 1 item dari array
+     saveCharacters(characters);
+     
+     alert('Karakter telah dihapus.');
+     window.location.href = 'index.html';
+    }
+   });
+  });
+ </script>
+</body>
+</html>

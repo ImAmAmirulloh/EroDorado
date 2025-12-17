@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koleksi Karakter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="sidebar">
+        <a href="index.html" class="active">📊 Status Karakter</a>
+        <a href="tambah.html">➕ Buat Karakter Baru</a>
+        <a href="update_list.html">📝 Update Karakter</a>
+        <a href="backup_recovery.html">💾 Backup/Recovery</a>
+    </div>
+
+    <div id="main-content">
+        <h1>Status Karakter Saat Ini</h1>
+        
+        <div id="filter-controls">
+            <label for="sort-by">Urutkan Menurut:</label>
+            <select id="sort-by">
+                <option value="power" selected>Power (Tertinggi)</option>
+                <option value="default">Default (Element)</option>
+                <option value="level">Level</option>
+                <option value="star">Star</option>
+                <option value="cardLevel">Card Level</option>
+                <option value="cardStar">Card Star</option>
+                <option value="shards">Shards</option>
+            </select>
+            <button id="sort-button">Urutkan</button>
+        </div>
+
+        <div id="card-container"></div>
+        
+        <div id="load-error"></div>
+    </div>
+
+    <script>
+    // Konstanta kunci penyimpanan (Wajib sama di semua file)
+    const STORAGE_KEY = 'CHARACTER_DATA_V1';
+    let charactersData = []; 
+
+    // --- FUNGSI IKON BINTANG ---
+    function generateStarIcons(currentStar) {
+        const maxStar = 6;
+        let starsHtml = '';
+        const goldStar = '★'; 
+        const emptyStar = '☆'; 
+
+        for (let i = 0; i < currentStar; i++) {
+            starsHtml += `<span style="color: gold;">${goldStar}</span>`;
+        }
+        for (let i = currentStar; i < maxStar; i++) {
+            starsHtml += `<span style="color: #666;">${emptyStar}</span>`;
+        }
+        return starsHtml;
+    }
+
+    // --- FUNGSI GENERATE KARTU (Tampilan Asli) ---
+    function createCardHTML(data) {
+        const percentage = (parseInt(data.shards) / parseInt(data.shardMax)) * 100;
+        const elementClass = `element-${data.element}`;
+        const starIcons = generateStarIcons(data.star); 
+        const cardStarIcons = generateStarIcons(data.cardStar);
+
+        return `
+            <div class="char-card ${elementClass}"> 
+                <div class="card-header">
+                    <div class="grid-2-row">
+                        <span class="char-icon"><img src="img/${data.name}.png" alt="${data.name}" onerror="this.src='img/default.png'"></span>
+                        <span class="char-rank rank-${data.rank}">${data.rank}</span>
+                    </div>
+                    <div class="grid-2">
+                        <span class="grid-item char-name">${data.name}</span>
+                        <span class="char-star">${starIcons}</span>
+                    </div>
+                </div>
+
+                <div class="grid-5">
+                    <div class="grid-item"><span class="grid-label">Level</span><span class="grid-value">${data.level}</span></div>
+                    <div class="grid-item"><span class="grid-label">Intimacy</span><span class="grid-value">${data.intimacy}</span></div>
+                    <div class="grid-item"><span class="grid-label">Element</span><span class="grid-value">${data.element}</span></div>
+                    <div class="grid-item"><span class="grid-label">Role</span><span class="grid-value">${data.role}</span></div>
+                    <div class="grid-item"><span class="grid-label">⚔️ Power</span><span class="grid-value">${data.power}</span></div>
+                </div>
+
+                <div class="grid-5">
+                    <div class="label grid-item" style="margin-top: 5px;">Skills</div>
+                    <div class="grid-item"><span class="grid-label">S1</span><span class="grid-value">${data.skillOneLevel}</span></div>
+                    <div class="grid-item"><span class="grid-label">S2</span><span class="grid-value">${data.skillTwoLevel}</span></div>
+                    <div class="grid-item"><span class="grid-label">S3</span><span class="grid-value">${data.skillThreeLevel}</span></div>
+                    <div class="grid-item"><span class="grid-label">S4</span><span class="grid-value">${data.skillFourLevel}</span></div>
+                </div>
+
+                <div class="grid-5">
+                    <div class="label grid-item" style="margin-top: 5px;">Equipment</div>
+                    <div class="grid-item"><span class="grid-label">Brac.</span><span class="grid-value">${data.bracelet}</span></div>
+                    <div class="grid-item"><span class="grid-label">Bikini</span><span class="grid-value">${data.bikini}</span></div>
+                    <div class="grid-item"><span class="grid-label">Hat</span><span class="grid-value">${data.hat}</span></div>
+                    <div class="grid-item"><span class="grid-label">Sandals</span><span class="grid-value">${data.sandals}</span></div>
+                </div>
+
+                <div class="grid-2-row">
+                    <div class="grid-item" style="border:none; padding:0;">
+                        <span class="grid-label">Shards <b>${data.shards} / ${data.shardMax}</b></span>
+                        <div class="grid-value progress-bg">
+                            <div class="progress-fill" style="width: ${percentage}%"></div>
+                        </div>
+                    </div>
+                    <div class="grid-item" style="border:none;">
+                        <span class="grid-label">Card Lv <b>${data.cardLevel}</b></span>
+                        <span class="grid-value" style="color: gold;">${cardStarIcons}</span>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    function displayCharacters(data) {
+        const container = document.getElementById('card-container');
+        container.innerHTML = '';
+        if (data.length === 0) {
+            container.innerHTML = '<p style="text-align:center; width:100%;">Belum ada data karakter.</p>';
+            return;
+        }
+        data.forEach(character => {
+            container.innerHTML += createCardHTML(character);
+        });
+    }
+
+    function sortCharacters(data, criteria) {
+        // Sort Default (Element)
+        if (criteria === 'default') {
+            const elementOrder = { "Fire": 1, "Wind": 2, "Water": 3, "Light": 4, "Dark": 5 };
+            return [...data].sort((a, b) => elementOrder[a.element] - elementOrder[b.element]);
+        }
+        
+        // MODIFIKASI 2: Penanganan khusus untuk Power agar "127K" dan "88.000" terurut benar
+        if (criteria === 'power') {
+            return [...data].sort((a, b) => {
+                // Fungsi membersihkan string power jadi angka
+                const cleanPower = (p) => {
+                    let str = String(p).toUpperCase().replace(/,/g, '').replace(/\s/g, '');
+                    if (str.includes('K')) return parseFloat(str.replace('K', '')) * 1000;
+                    if (str.includes('M')) return parseFloat(str.replace('M', '')) * 1000000;
+                    return parseFloat(str) || 0;
+                };
+                return cleanPower(b.power) - cleanPower(a.power); // Besar ke kecil
+            });
+        }
+
+        // Sort Angka Biasa
+        if (['level', 'star', 'cardLevel', 'cardStar', 'shards'].includes(criteria)) {
+            return [...data].sort((a, b) => {
+                let valA = parseInt(a[criteria]) || 0;
+                let valB = parseInt(b[criteria]) || 0;
+                return valB - valA; 
+            });
+        }
+        return data;
+    }
+
+    function loadData() {
+        const storedData = localStorage.getItem(STORAGE_KEY);
+        
+        if (storedData) {
+            charactersData = JSON.parse(storedData);
+            // MODIFIKASI 3: Panggil 'power' sebagai parameter sorting awal
+            displayCharacters(sortCharacters(charactersData, 'power'));
+        } else {
+            fetch('Data.json')
+                .then(response => {
+                    if (!response.ok) return []; 
+                    return response.json();
+                })
+                .then(data => {
+                    charactersData = data;
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+                    // MODIFIKASI 3: Panggil 'power' sebagai parameter sorting awal
+                    displayCharacters(sortCharacters(charactersData, 'power'));
+                })
+                .catch(error => {
+                    console.error("Gagal:", error);
+                    displayCharacters([]); 
+                });
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadData();
+
+        document.getElementById('sort-button').addEventListener('click', () => {
+            const sortBy = document.getElementById('sort-by').value;
+            const sortedData = sortCharacters(charactersData, sortBy);
+            displayCharacters(sortedData);
+        });
+    });
+    </script>
+</body>
+</html>
