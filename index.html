@@ -36,8 +36,8 @@
         <div id="load-error"></div>
     </div>
 
-    <script>
-    // Konstanta kunci penyimpanan (Wajib sama di semua file)
+  <script>
+    // Konstanta kunci penyimpanan
     const STORAGE_KEY = 'CHARACTER_DATA_V1';
     let charactersData = []; 
 
@@ -45,32 +45,26 @@
     function generateStarIcons(currentStar) {
         const maxStar = 6;
         let starsHtml = '';
-        const goldStar = '★'; 
-        const emptyStar = '☆'; 
-
-        for (let i = 0; i < currentStar; i++) {
-            starsHtml += `<span style="color: gold;">${goldStar}</span>`;
-        }
-        for (let i = currentStar; i < maxStar; i++) {
-            starsHtml += `<span style="color: #666;">${emptyStar}</span>`;
+        for (let i = 0; i < maxStar; i++) {
+            starsHtml += `<span style="color: ${i < currentStar ? 'gold' : '#444'};">${i < currentStar ? '★' : '☆'}</span>`;
         }
         return starsHtml;
     }
 
-    // --- FUNGSI GENERATE KARTU (Tampilan Asli) ---
-    function createCardHTML(data) {
-        const percentage = (parseInt(data.shards) / parseInt(data.shardMax)) * 100;
+    // --- GENERATE HTML MODE BACA (READ-ONLY) ---
+    function createCardHTML(data, index) {
+        const percentage = Math.min((parseInt(data.shards) / parseInt(data.shardMax)) * 100, 100);
         const elementClass = `element-${data.element}`;
         const starIcons = generateStarIcons(data.star); 
         const cardStarIcons = generateStarIcons(data.cardStar);
 
+        // Perhatikan: Kita menambahkan atribut data-index dan onclick handler
         return `
-            <div class="char-card ${elementClass}"> 
+            <div class="char-card ${elementClass}" id="card-${index}" onclick="handleCardClick(this, event)"> 
+                <button class="edit-btn" onclick="activateEditMode(${index}, event)">✏️</button>
+
                 <div class="card-header">
-                    <div class="grid-2-row">
-                        <span class="char-icon"><img src="img/${data.name}.png" alt="${data.name}" onerror="this.src='img/default.png'"></span>
-                        <span class="char-rank rank-${data.rank}">${data.rank}</span>
-                    </div>
+                    <span class="char-icon"><img src="img/${data.name}.png" alt="${data.name}" onerror="this.src='img/default.png'"></span>
                     <div class="grid-2">
                         <span class="grid-item char-name">${data.name}</span>
                         <span class="char-star">${starIcons}</span>
@@ -117,6 +111,79 @@
         `;
     }
 
+    // --- GENERATE HTML MODE EDIT (FORM INPUT) ---
+    // Struktur grid dipertahankan SAMA PERSIS, hanya mengganti span value dengan input
+    function createEditFormHTML(data, index) {
+        const elementClass = `element-${data.element}`;
+
+        return `
+            <div class="char-card ${elementClass}" style="border: 2px solid var(--accent); cursor: default;" onclick="event.stopPropagation()"> 
+                <div class="card-header">
+                     <span class="char-icon"><img src="img/${data.name}.png" onerror="this.src='img/default.png'"></span>
+                    <div class="grid-2">
+                        <span class="grid-item char-name">${data.name}</span>
+                        <input type="number" class="edit-input" id="edit-star-${index}" value="${data.star}" min="1" max="6" placeholder="Star">
+                    </div>
+                </div>
+
+                <div class="grid-5">
+                    <div class="grid-item"><span class="grid-label">Level</span><input type="number" class="edit-input" id="edit-level-${index}" value="${data.level}"></div>
+                    <div class="grid-item"><span class="grid-label">Intimacy</span><input type="number" class="edit-input" id="edit-intimacy-${index}" value="${data.intimacy}"></div>
+                    <div class="grid-item"><span class="grid-label">Element</span>
+                        <select class="edit-input" id="edit-element-${index}">
+                            <option value="Fire" ${data.element === 'Fire' ? 'selected' : ''}>Fire</option>
+                            <option value="Water" ${data.element === 'Water' ? 'selected' : ''}>Water</option>
+                            <option value="Wind" ${data.element === 'Wind' ? 'selected' : ''}>Wind</option>
+                            <option value="Light" ${data.element === 'Light' ? 'selected' : ''}>Light</option>
+                            <option value="Dark" ${data.element === 'Dark' ? 'selected' : ''}>Dark</option>
+                        </select>
+                    </div>
+                    <div class="grid-item"><span class="grid-label">Role</span><input type="text" class="edit-input" id="edit-role-${index}" value="${data.role}"></div>
+                    <div class="grid-item"><span class="grid-label">⚔️ Power</span><input type="text" class="edit-input" id="edit-power-${index}" value="${data.power}"></div>
+                </div>
+
+                <div class="grid-5">
+                    <div class="label grid-item" style="margin-top: 5px;">Skills</div>
+                    <div class="grid-item"><span class="grid-label">S1</span><input type="number" class="edit-input" id="edit-s1-${index}" value="${data.skillOneLevel}"></div>
+                    <div class="grid-item"><span class="grid-label">S2</span><input type="number" class="edit-input" id="edit-s2-${index}" value="${data.skillTwoLevel}"></div>
+                    <div class="grid-item"><span class="grid-label">S3</span><input type="number" class="edit-input" id="edit-s3-${index}" value="${data.skillThreeLevel}"></div>
+                    <div class="grid-item"><span class="grid-label">S4</span><input type="number" class="edit-input" id="edit-s4-${index}" value="${data.skillFourLevel}"></div>
+                </div>
+
+                 <div class="grid-5">
+                    <div class="label grid-item" style="margin-top: 5px;">Equip</div>
+                    <div class="grid-item"><span class="grid-label">Brac.</span><input type="text" class="edit-input" id="edit-brac-${index}" value="${data.bracelet}"></div>
+                    <div class="grid-item"><span class="grid-label">Bikini</span><input type="text" class="edit-input" id="edit-bikini-${index}" value="${data.bikini}"></div>
+                    <div class="grid-item"><span class="grid-label">Hat</span><input type="text" class="edit-input" id="edit-hat-${index}" value="${data.hat}"></div>
+                    <div class="grid-item"><span class="grid-label">Sandals</span><input type="text" class="edit-input" id="edit-sandals-${index}" value="${data.sandals}"></div>
+                </div>
+
+                <div class="grid-2-row">
+                    <div class="grid-item" style="border:none;">
+                         <span class="grid-label">Shards (Cur/Max)</span>
+                         <div style="display:flex; gap:2px;">
+                            <input type="number" class="edit-input" id="edit-shards-${index}" value="${data.shards}">
+                            <input type="number" class="edit-input" id="edit-shardMax-${index}" value="${data.shardMax}">
+                         </div>
+                    </div>
+                    <div class="grid-item" style="border:none;">
+                        <span class="grid-label">Card Lv/Star</span>
+                        <div style="display:flex; gap:2px;">
+                            <input type="number" class="edit-input" id="edit-cardLevel-${index}" value="${data.cardLevel}">
+                            <input type="number" class="edit-input" id="edit-cardStar-${index}" value="${data.cardStar}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn-cancel" onclick="cancelEdit(${index})">Batal</button>
+                    <button class="btn-save" onclick="saveEdit(${index})">Simpan</button>
+                </div>
+            </div>
+        `;
+    }
+
+    // --- LOGIKA UTAMA (RENDER) ---
     function displayCharacters(data) {
         const container = document.getElementById('card-container');
         container.innerHTML = '';
@@ -124,76 +191,141 @@
             container.innerHTML = '<p style="text-align:center; width:100%;">Belum ada data karakter.</p>';
             return;
         }
-        data.forEach(character => {
-            container.innerHTML += createCardHTML(character);
+        // Kita gunakan index asli dari array global 'charactersData' untuk referensi ID
+        data.forEach((character) => {
+             // Cari index asli di array utama (penting jika sedang disortir)
+            const originalIndex = charactersData.indexOf(character); 
+            container.innerHTML += createCardHTML(character, originalIndex);
         });
     }
 
+    // --- EVENT HANDLERS ---
+    
+    // 1. Handle Klik Kartu (Toggle Active State)
+    function handleCardClick(cardElement, event) {
+        // Hapus class active dari semua kartu lain
+        document.querySelectorAll('.char-card').forEach(c => {
+            if (c !== cardElement) c.classList.remove('active-card');
+        });
+        
+        // Toggle class active pada kartu yang diklik
+        cardElement.classList.toggle('active-card');
+    }
+
+    // 2. Masuk ke Mode Edit (Mengganti HTML Kartu)
+    function activateEditMode(index, event) {
+        event.stopPropagation(); // Mencegah trigger handleCardClick
+        const cardContainer = document.getElementById(`card-${index}`);
+        const currentData = charactersData[index];
+        
+        // Ganti HTML kartu ini dengan form
+        // Kita menggunakan outerHTML untuk mengganti seluruh div kartu
+        cardContainer.outerHTML = createEditFormHTML(currentData, index);
+    }
+
+    // 3. Batalkan Edit (Render Ulang Kartu Biasa)
+    function cancelEdit(index) {
+        const currentData = charactersData[index];
+        // Karena kita tidak punya referensi elemen parent langsung (karena outerHTML diganti),
+        // kita cari berdasarkan urutan atau render ulang semua (opsi teraman: render ulang tampilan saat ini)
+        // Namun untuk performa UX, kita cari elemen form yang aktif
+        
+        // Cara termudah: Render ulang seluruh list sesuai sortiran terakhir
+        const sortBy = document.getElementById('sort-by').value;
+        displayCharacters(sortCharacters(charactersData, sortBy));
+    }
+
+    // 4. Simpan Data
+    function saveEdit(index) {
+        // Ambil value dari input
+        const updatedChar = { ...charactersData[index] }; // Copy object lama
+        
+        updatedChar.star = parseInt(document.getElementById(`edit-star-${index}`).value) || 1;
+        updatedChar.level = parseInt(document.getElementById(`edit-level-${index}`).value) || 1;
+        updatedChar.intimacy = parseInt(document.getElementById(`edit-intimacy-${index}`).value) || 0;
+        updatedChar.element = document.getElementById(`edit-element-${index}`).value;
+        updatedChar.role = document.getElementById(`edit-role-${index}`).value;
+        updatedChar.power = document.getElementById(`edit-power-${index}`).value; // String (10K)
+        
+        updatedChar.skillOneLevel = parseInt(document.getElementById(`edit-s1-${index}`).value) || 1;
+        updatedChar.skillTwoLevel = parseInt(document.getElementById(`edit-s2-${index}`).value) || 1;
+        updatedChar.skillThreeLevel = parseInt(document.getElementById(`edit-s3-${index}`).value) || 1;
+        updatedChar.skillFourLevel = parseInt(document.getElementById(`edit-s4-${index}`).value) || 1;
+
+        updatedChar.bracelet = document.getElementById(`edit-brac-${index}`).value;
+        updatedChar.bikini = document.getElementById(`edit-bikini-${index}`).value;
+        updatedChar.hat = document.getElementById(`edit-hat-${index}`).value;
+        updatedChar.sandals = document.getElementById(`edit-sandals-${index}`).value;
+
+        updatedChar.shards = document.getElementById(`edit-shards-${index}`).value;
+        updatedChar.shardMax = document.getElementById(`edit-shardMax-${index}`).value;
+        updatedChar.cardLevel = parseInt(document.getElementById(`edit-cardLevel-${index}`).value) || 1;
+        updatedChar.cardStar = parseInt(document.getElementById(`edit-cardStar-${index}`).value) || 1;
+
+        // Update Array Utama
+        charactersData[index] = updatedChar;
+        
+        // Simpan ke Local Storage
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(charactersData));
+
+        // Render Ulang (agar posisi sort diperbarui jika Power/Level berubah)
+        const sortBy = document.getElementById('sort-by').value;
+        displayCharacters(sortCharacters(charactersData, sortBy));
+    }
+
+    // --- FUNGSI SORTING & LOAD DATA (Sama seperti sebelumnya) ---
     function sortCharacters(data, criteria) {
-        // Sort Default (Element)
         if (criteria === 'default') {
             const elementOrder = { "Fire": 1, "Wind": 2, "Water": 3, "Light": 4, "Dark": 5 };
             return [...data].sort((a, b) => elementOrder[a.element] - elementOrder[b.element]);
         }
-        
-        // MODIFIKASI 2: Penanganan khusus untuk Power agar "127K" dan "88.000" terurut benar
         if (criteria === 'power') {
             return [...data].sort((a, b) => {
-                // Fungsi membersihkan string power jadi angka
                 const cleanPower = (p) => {
                     let str = String(p).toUpperCase().replace(/,/g, '').replace(/\s/g, '');
                     if (str.includes('K')) return parseFloat(str.replace('K', '')) * 1000;
                     if (str.includes('M')) return parseFloat(str.replace('M', '')) * 1000000;
                     return parseFloat(str) || 0;
                 };
-                return cleanPower(b.power) - cleanPower(a.power); // Besar ke kecil
+                return cleanPower(b.power) - cleanPower(a.power);
             });
         }
-
-        // Sort Angka Biasa
         if (['level', 'star', 'cardLevel', 'cardStar', 'shards'].includes(criteria)) {
-            return [...data].sort((a, b) => {
-                let valA = parseInt(a[criteria]) || 0;
-                let valB = parseInt(b[criteria]) || 0;
-                return valB - valA; 
-            });
+            return [...data].sort((a, b) => (parseInt(b[criteria]) || 0) - (parseInt(a[criteria]) || 0));
         }
         return data;
     }
 
     function loadData() {
         const storedData = localStorage.getItem(STORAGE_KEY);
-        
         if (storedData) {
             charactersData = JSON.parse(storedData);
-            // MODIFIKASI 3: Panggil 'power' sebagai parameter sorting awal
             displayCharacters(sortCharacters(charactersData, 'power'));
         } else {
             fetch('Data.json')
-                .then(response => {
-                    if (!response.ok) return []; 
-                    return response.json();
-                })
+                .then(res => res.ok ? res.json() : [])
                 .then(data => {
                     charactersData = data;
                     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-                    // MODIFIKASI 3: Panggil 'power' sebagai parameter sorting awal
                     displayCharacters(sortCharacters(charactersData, 'power'));
                 })
-                .catch(error => {
-                    console.error("Gagal:", error);
-                    displayCharacters([]); 
-                });
+                .catch(e => console.error(e));
         }
     }
 
     document.addEventListener('DOMContentLoaded', () => {
         loadData();
+        
+        // Klik di luar kartu akan menghilangkan seleksi
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.char-card')) {
+                document.querySelectorAll('.char-card').forEach(c => c.classList.remove('active-card'));
+            }
+        });
 
         document.getElementById('sort-button').addEventListener('click', () => {
             const sortBy = document.getElementById('sort-by').value;
-            const sortedData = sortCharacters(charactersData, sortBy);
-            displayCharacters(sortedData);
+            displayCharacters(sortCharacters(charactersData, sortBy));
         });
     });
     </script>
