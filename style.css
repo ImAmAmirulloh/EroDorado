@@ -132,7 +132,6 @@
   height: 100%;
 }
 .char-icon img {
-    width: 100%;
     height: 100%;
     border-radius: 50%;
     border: 2px solid white;
@@ -447,4 +446,5 @@
 
 .btn-save { background-color: #28a745; }
 .btn-cancel { background-color: #dc3545; }
+
 
