@@ -127,7 +127,11 @@
   }
 
   
-  .char-icon img {
+.char-icon {
+  width: 100%;
+  height: 100%;
+}
+.char-icon img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -443,3 +447,4 @@
 
 .btn-save { background-color: #28a745; }
 .btn-cancel { background-color: #dc3545; }
+
