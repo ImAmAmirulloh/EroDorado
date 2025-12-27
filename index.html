@@ -8,6 +8,7 @@
 </head>
 <body>
     <div id="sidebar">
+        <input type="checkbox" id="checkmn" value="checked"/>
         <a href="index.html" class="active">📊 Status Karakter</a>
         <a href="tambah.html">➕ Buat Karakter Baru</a>
         <a href="update_list.html">📝 Update Karakter</a>
@@ -243,17 +244,17 @@
         // Ambil value dari input
         const updatedChar = { ...charactersData[index] }; // Copy object lama
         
-        updatedChar.star = parseInt(document.getElementById(`edit-star-${index}`).value) || 1;
-        updatedChar.level = parseInt(document.getElementById(`edit-level-${index}`).value) || 1;
+        updatedChar.star = parseInt(document.getElementById(`edit-star-${index}`).value) || 0;
+        updatedChar.level = parseInt(document.getElementById(`edit-level-${index}`).value) || 0;
         updatedChar.intimacy = parseInt(document.getElementById(`edit-intimacy-${index}`).value) || 0;
         updatedChar.element = document.getElementById(`edit-element-${index}`).value;
         updatedChar.role = document.getElementById(`edit-role-${index}`).value;
         updatedChar.power = document.getElementById(`edit-power-${index}`).value; // String (10K)
         
-        updatedChar.skillOneLevel = parseInt(document.getElementById(`edit-s1-${index}`).value) || 1;
-        updatedChar.skillTwoLevel = parseInt(document.getElementById(`edit-s2-${index}`).value) || 1;
-        updatedChar.skillThreeLevel = parseInt(document.getElementById(`edit-s3-${index}`).value) || 1;
-        updatedChar.skillFourLevel = parseInt(document.getElementById(`edit-s4-${index}`).value) || 1;
+        updatedChar.skillOneLevel = parseInt(document.getElementById(`edit-s1-${index}`).value) || 0;
+        updatedChar.skillTwoLevel = parseInt(document.getElementById(`edit-s2-${index}`).value) || 0;
+        updatedChar.skillThreeLevel = parseInt(document.getElementById(`edit-s3-${index}`).value) || 0;
+        updatedChar.skillFourLevel = parseInt(document.getElementById(`edit-s4-${index}`).value) || 0;
 
         updatedChar.bracelet = document.getElementById(`edit-brac-${index}`).value;
         updatedChar.bikini = document.getElementById(`edit-bikini-${index}`).value;
@@ -262,8 +263,8 @@
 
         updatedChar.shards = document.getElementById(`edit-shards-${index}`).value;
         updatedChar.shardMax = document.getElementById(`edit-shardMax-${index}`).value;
-        updatedChar.cardLevel = parseInt(document.getElementById(`edit-cardLevel-${index}`).value) || 1;
-        updatedChar.cardStar = parseInt(document.getElementById(`edit-cardStar-${index}`).value) || 1;
+        updatedChar.cardLevel = parseInt(document.getElementById(`edit-cardLevel-${index}`).value) || 0;
+        updatedChar.cardStar = parseInt(document.getElementById(`edit-cardStar-${index}`).value) || 0;
 
         // Update Array Utama
         charactersData[index] = updatedChar;
