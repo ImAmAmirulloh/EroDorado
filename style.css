@@ -33,7 +33,7 @@
 }
 
   #sidebar {
-    width: 150px;
+    width: min-content;
     background-color: #282828;
     color: var(--text-main);
     padding: 0px;
@@ -42,7 +42,7 @@
     overflow-x: clip;
   }
 
-  #checkmn:checked~sidebar {
+  #checkmn:checked~a {
     width:50px;
   }
 #sidebar a {
@@ -449,6 +449,7 @@
 
 .btn-save { background-color: #28a745; }
 .btn-cancel { background-color: #dc3545; }
+
 
 
 
