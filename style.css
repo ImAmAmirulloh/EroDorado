@@ -34,7 +34,7 @@
 
 #sidebar {
     /* Lebar default saat TERBUKA (saat checkbox TIDAK dicentang) */
-    width: 250px; 
+    width: min-content; 
     background-color: #282828;
     color: var(--text-main);
     min-height: 100vh;
@@ -43,7 +43,7 @@
     display: flex;
     flex-direction: column;
     /* PENTING: Sembunyikan apapun yang keluar dari lebar sidebar */
-    overflow: hidden; 
+    
 }
 
 /* --- LOGIKA DEFAULT AKTIF (MENGECIL) --- */
@@ -79,6 +79,7 @@
 /* Sembunyikan teks sepenuhnya saat checkbox dicentang */
 #checkmn:checked ~ a span {
     opacity: 0;
+  display: none;
 }
 
 #sidebar a:hover,
@@ -490,6 +491,7 @@
 
 .btn-save { background-color: #28a745; }
 .btn-cancel { background-color: #dc3545; }
+
 
 
 
