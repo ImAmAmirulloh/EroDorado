@@ -32,71 +32,53 @@
     unicode-bidi: isolate;
 }
 
-  #sidebar {
-    width: min-content;
-    background-color: #282828;
-    color: var(--text-main);
-    padding: 0px;
-    height: 100vh;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    overflow-x: clip;
-  }
-
-  /* Styling Container Sidebar */
 #sidebar {
+    /* Lebar default saat TERBUKA (saat checkbox TIDAK dicentang) */
+    width: 250px; 
     background-color: #282828;
     color: var(--text-main);
-    padding: 0;
     min-height: 100vh;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    /* Flexbox biar rapi */
+    transition: width 0.3s ease;
     display: flex;
     flex-direction: column;
-    /* Transisi lebar sidebar */
-    width: 250px; /* Lebar default */
-    transition: width 0.3s ease;
-    overflow-x: hidden; /* PENTING: Sembunyikan apapun yang lewat batas */
+    /* PENTING: Sembunyikan apapun yang keluar dari lebar sidebar */
+    overflow: hidden; 
 }
 
-/* Sembunyikan Checkbox Asli */
-#checkmn {
-    display: none;
+/* --- LOGIKA DEFAULT AKTIF (MENGECIL) --- */
+/* Jika checkbox dicentang, lebar sidebar hanya sebatas icon (sekitar 60px) */
+#checkmn:checked ~ a, 
+#sidebar:has(#checkmn:checked) {
+    width: 60px;
 }
 
-/* Tombol Hamburger (Label) */
-#toggle-btn {
-    display: block;
-    padding: 15px 20px; /* Posisi agar pas di tengah saat mengecil */
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #fff;
-    background: #222;
-    text-align: left;
-    width: 100%;
-    box-sizing: border-box;
-    white-space: nowrap;
-}
-#toggle-btn:hover {
-    color: var(--accent);
-}
-
-/* Styling Link */
 #sidebar a {
-    display: flex; /* Pakai Flex biar icon dan teks sejajar */
+    display: flex;
     align-items: center;
-    gap: 15px; /* Jarak antara Icon dan Teks */
-    color: var(--text-main);
-    padding: 15px 20px; /* Padding konsisten */
+    padding: 15px 20px;
     text-decoration: none;
+    color: var(--text-main);
     font-size: 1.1rem;
     border-left: 5px solid transparent;
+    transition: all 0.3s ease;
     
-    /* PENTING AGAR RAPI SAAT MENGECIL */
-    white-space: nowrap; /* Teks dilarang turun baris */
-    overflow: hidden;    /* Teks yang kepotong akan hilang */
-    width: 100%;         /* Penuhi lebar container */
+    /* PENTING: Mencegah teks turun ke bawah saat lebar menyempit */
+    white-space: nowrap; 
+    width: 100%;
     box-sizing: border-box;
-    transition: background 0.2s;
+}
+
+/* Jarak antara Emoji dan Teks */
+#sidebar a span {
+    margin-left: 15px;
+    /* Opsional: buat teks transparan saat mengecil agar transisi lebih halus */
+    transition: opacity 0.2s;
+}
+
+/* Sembunyikan teks sepenuhnya saat checkbox dicentang */
+#checkmn:checked ~ a span {
+    opacity: 0;
 }
 
 #sidebar a:hover,
@@ -105,19 +87,18 @@
     border-left: 5px solid var(--accent);
 }
 
-/* --- LOGIKA COLLAPSE (MENGECIL) --- */
-
-/* Saat checkbox dicentang, ubah lebar SIDEBAR-nya, bukan link-nya */
-#sidebar:has(#checkmn:checked) {
-    width: 60px; /* Lebar saat mengecil (cukup untuk icon/emoji) */
+/* Sembunyikan input checkbox asli */
+#checkmn {
+    display: none;
 }
 
-/* Fallback untuk browser lama yang tidak support :has (Opsional) 
-   Kalau pakai logika kamu sebelumnya: */
-#checkmn:checked ~ a {
-    /* Tidak perlu ubah width a, karena sidebar-nya yang kita kecilkan di atas.
-       Tapi jika mau manual: */
-    /* width: 60px; */ 
+/* Tombol hamburger tetap terlihat */
+#toggle-btn {
+    padding: 15px 22px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    background: #222;
+    display: block;
 }
 
   #main-content {
@@ -509,6 +490,7 @@
 
 .btn-save { background-color: #28a745; }
 .btn-cancel { background-color: #dc3545; }
+
 
 
 
