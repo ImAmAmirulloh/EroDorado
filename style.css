@@ -42,23 +42,83 @@
     overflow-x: clip;
   }
 
-  #checkmn:checked~a {
-    width:50px;
-  }
-#sidebar a {
-    display: block;
+  /* Styling Container Sidebar */
+#sidebar {
+    background-color: #282828;
     color: var(--text-main);
-    padding: 10px 20px;
+    padding: 0;
+    min-height: 100vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    /* Flexbox biar rapi */
+    display: flex;
+    flex-direction: column;
+    /* Transisi lebar sidebar */
+    width: 250px; /* Lebar default */
+    transition: width 0.3s ease;
+    overflow-x: hidden; /* PENTING: Sembunyikan apapun yang lewat batas */
+}
+
+/* Sembunyikan Checkbox Asli */
+#checkmn {
+    display: none;
+}
+
+/* Tombol Hamburger (Label) */
+#toggle-btn {
+    display: block;
+    padding: 15px 20px; /* Posisi agar pas di tengah saat mengecil */
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+    background: #222;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+#toggle-btn:hover {
+    color: var(--accent);
+}
+
+/* Styling Link */
+#sidebar a {
+    display: flex; /* Pakai Flex biar icon dan teks sejajar */
+    align-items: center;
+    gap: 15px; /* Jarak antara Icon dan Teks */
+    color: var(--text-main);
+    padding: 15px 20px; /* Padding konsisten */
     text-decoration: none;
     font-size: 1.1rem;
     border-left: 5px solid transparent;
-  }
+    
+    /* PENTING AGAR RAPI SAAT MENGECIL */
+    white-space: nowrap; /* Teks dilarang turun baris */
+    overflow: hidden;    /* Teks yang kepotong akan hilang */
+    width: 100%;         /* Penuhi lebar container */
+    box-sizing: border-box;
+    transition: background 0.2s;
+}
 
-  #sidebar a:hover,
-  #sidebar a.active {
+#sidebar a:hover,
+#sidebar a.active {
     background-color: #3e3e3e;
     border-left: 5px solid var(--accent);
-  }
+}
+
+/* --- LOGIKA COLLAPSE (MENGECIL) --- */
+
+/* Saat checkbox dicentang, ubah lebar SIDEBAR-nya, bukan link-nya */
+#sidebar:has(#checkmn:checked) {
+    width: 60px; /* Lebar saat mengecil (cukup untuk icon/emoji) */
+}
+
+/* Fallback untuk browser lama yang tidak support :has (Opsional) 
+   Kalau pakai logika kamu sebelumnya: */
+#checkmn:checked ~ a {
+    /* Tidak perlu ubah width a, karena sidebar-nya yang kita kecilkan di atas.
+       Tapi jika mau manual: */
+    /* width: 60px; */ 
+}
 
   #main-content {
     flex-grow: 1;
@@ -449,6 +509,7 @@
 
 .btn-save { background-color: #28a745; }
 .btn-cancel { background-color: #dc3545; }
+
 
 
 
