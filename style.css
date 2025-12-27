@@ -42,7 +42,10 @@
     overflow-x: clip;
   }
 
-  #sidebar a {
+  #checkmn:checked~sidebar {
+    width:50px;
+  }
+#sidebar a {
     display: block;
     color: var(--text-main);
     padding: 10px 20px;
@@ -446,5 +449,6 @@
 
 .btn-save { background-color: #28a745; }
 .btn-cancel { background-color: #dc3545; }
+
 
 
