@@ -459,7 +459,7 @@
     background: #111;
     border: 1px solid #444;
     color: #ffae42; /* Warna teks input */
-    font-size: 0.9em;
+    font-size: 1em;
     padding: 2px 4px;
     border-radius: 4px;
     box-sizing: border-box; /* Agar padding tidak melebarkan elemen */
@@ -491,6 +491,7 @@
 
 .btn-save { background-color: #28a745; }
 .btn-cancel { background-color: #dc3545; }
+
 
 
 
