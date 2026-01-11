@@ -306,13 +306,13 @@
         }
         if (criteria === 'shards') {
             return [...data].sort((a, b) => {
-                // Hitung persentase kelengkapan (Current / Max)
-                // Jika shardMax 0 atau tidak ada, dianggap 1 untuk menghindari error pembagian
-                const ratioA = (parseFloat(a.shards) || 0) / (parseFloat(a.shardMax) || 1);
-                const ratioB = (parseFloat(b.shards) || 0) / (parseFloat(b.shardMax) || 1);
+                // Hitung sisa yang dibutuhkan (Max - Current)
+                const restA = (parseFloat(a.shardMax) || 0) - (parseFloat(a.shards) || 0);
+                const restB = (parseFloat(b.shardMax) || 0) - (parseFloat(b.shards) || 0);
                 
-                // Urutkan dari rasio terbesar (paling penuh) ke terkecil
-                return ratioB - ratioA; 
+                // Urutkan secara ASCENDING (Kecil ke Besar)
+                // Artinya yang butuh 8 shard akan muncul sebelum yang butuh 20 shard
+                return restA - restB; 
             });
         }
         if (['level', 'star', 'cardLevel', 'cardStar'].includes(criteria)) {
