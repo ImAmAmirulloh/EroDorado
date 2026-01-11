@@ -57,6 +57,13 @@
 
     // --- GENERATE HTML MODE BACA (READ-ONLY) ---
     function createCardHTML(data, index) {
+        const currentShards = parseInt(data.shards) || 0;
+        const maxShards = parseInt(data.shardMax) || 0;
+        
+        // Hitung Sisa (Rest)
+        // Jika shards sudah melebihi max, sisa adalah 0 (tidak minus)
+        const restShards = Math.max(0, maxShards - currentShards);
+        
         const percentage = Math.min((parseInt(data.shards) / parseInt(data.shardMax)) * 100, 100);
         const elementClass = `element-${data.element}`;
         const starIcons = generateStarIcons(data.star); 
@@ -104,7 +111,7 @@
 
                 <div class="grid-2-row">
                     <div class="grid-item" style="border:none; padding:0;">
-                        <span class="grid-label">Shards <b>${data.shards} / ${data.shardMax}</b></span>
+                        <span class="grid-label">Shards <b>${data.shards} / ${data.shardMax}/ <span style="color:#ff7043;">${restShards}</span></b></span>
                         <div class="grid-value progress-bg">
                             <div class="progress-fill" style="width: ${percentage}%"></div>
                         </div>
