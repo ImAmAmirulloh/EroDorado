@@ -43,7 +43,7 @@
             min-height: 80px;
             padding: 8px;
             display: flex;
-            flex-direction: column;
+            /* flex-direction: column; */
             gap: 8px;
             align-items: center;
         }
@@ -69,6 +69,10 @@
             color: #ccc;
             writing-mode: horizontal-tb;
             font-size: 0.75rem;
+        }
+
+        .role-label img {
+            width: 90%;
         }
 
         /* Element Colors for Headers */
@@ -262,7 +266,7 @@
             // --- DATA ROWS (Roles) ---
             roles.forEach(role => {
                 // Kolom 1: Nama Role
-                grid.innerHTML += `<div class="cell role-label">${role}</div>`;
+                grid.innerHTML += `<div class="cell role-label"><img src="icon/${role}.png"/></div>`;
 
                 // Kolom 2-6: Isi Karakter per Element
                 elements.forEach(el => {
