@@ -118,7 +118,7 @@
             text-align: center;
         }
         .tc-name {
-            font-size: 0.85rem;
+            font-size: 150%;
             font-weight: bold;
             color: #e0e0e0;
             display: block;
@@ -127,7 +127,7 @@
             text-overflow: ellipsis;
         }
         .tc-role {
-            font-size: 0.7rem;
+            font-size: 100%;
             color: #aaa;
             display: block;
         }
@@ -186,47 +186,86 @@
     // Saya sudah mengisi berdasarkan file JSON backup Anda.
     const masterRoster = [
         // SSR+ (SSRr)
+        { name: "Kagura (Summer)", rank: "SSRr", element: "Fire", role: "Fighter" },
         { name: "Lina", rank: "SSRr", element: "Fire", role: "Fighter" },
-        { name: "Reina", rank: "SSRr", element: "Fire", role: "Fighter" }, // Dicatat Fire di JSON lama, Water di JSON baru? Saya pakai data terakhir
-        { name: "Miko", rank: "SSRr", element: "Fire", role: "Support" },
-        { name: "Tomoe", rank: "SSRr", element: "Fire", role: "Healer" },
         { name: "Miyuki", rank: "SSRr", element: "Fire", role: "Fighter" },
-        { name: "Haruna", rank: "SSRr", element: "Wind", role: "Defender" },
-        { name: "Ayame", rank: "SSRr", element: "Wind", role: "Support" },
-        { name: "Reina", rank: "SSRr", element: "Water", role: "Fighter" }, // Duplicate name check based on backup?
-        { name: "Aoi", rank: "SSRr", element: "Light", role: "Assassin" },
+        { name: "Coco", rank: "SSRr", element: "Fire", role: "Defender" },
+        { name: "Nova", rank: "SSRr", element: "Fire", role: "Defender" },
+        { name: "Kazura", rank: "SSRr", element: "Fire", role: "Defender" },
+        { name: "Tomoe", rank: "SSRr", element: "Fire", role: "Healer" },
+        { name: "Miko", rank: "SSRr", element: "Fire", role: "Support" },
 
+        { name: "Shion", rank: "SSRr", element: "Water", role: "Fighter" },
+        { name: "Reina", rank: "SSRr", element: "Water", role: "Fighter" },
+        { name: "Parin", rank: "SSRr", element: "Water", role: "Assassin" },
+        { name: "Hiyori (Summer)", rank: "SSRr", element: "Water", role: "Healer" },
+        { name: "Hina", rank: "SSRr", element: "Water", role: "Healer" },
+        { name: "Kaori", rank: "SSRr", element: "Water", role: "Support" },
+
+        { name: "Kuro (Summer)", rank: "SSRr", element: "Wind", role: "Fighter" },
+        { name: "Haruna", rank: "SSRr", element: "Wind", role: "Defender" },
+        { name: "Emiko (Summer)", rank: "SSRr", element: "Wind", role: "Support" },
+        { name: "Aria", rank: "SSRr", element: "Wind", role: "Support" },
+        { name: "Ayame", rank: "SSRr", element: "Wind", role: "Support" },
+        { name: "Chihiro", rank: "SSRr", element: "Wind", role: "Support" },
+
+        { name: "Asuka", rank: "SSRr", element: "Light", role: "Fighter" },
+        { name: "Lezbianca", rank: "SSRr", element: "Light", role: "Fighter" },
+        { name: "Lexi", rank: "SSRr", element: "Light", role: "Assassin" },
+        { name: "Hinata (Summer)", rank: "SSRr", element: "Light", role: "Defender" },
+        { name: "Dana", rank: "SSRr", element: "Light", role: "Defender" },
+        { name: "Yuzuki", rank: "SSRr", element: "Light", role: "Defender" },
+        { name: "Sayo", rank: "SSRr", element: "Light", role: "Healer" },
+
+        { name: "Sayuri", rank: "SSRr", element: "Dark", role: "Fighter" },
+        { name: "Kirie (Summer)", rank: "SSRr", element: "Dark", role: "Assassin" },
+        { name: "Sayaka", rank: "SSRr", element: "Dark", role: "Assassin" },
+        { name: "Jass", rank: "SSRr", element: "Dark", role: "Assassin" },
+        { name: "Garin", rank: "SSRr", element: "Dark", role: "Support" },
+        
         // SSR
-        { name: "Savannah", rank: "SSR", element: "Fire", role: "Assassin" },
         { name: "Ayaka", rank: "SSR", element: "Fire", role: "Fighter" },
+        { name: "Savannah", rank: "SSR", element: "Fire", role: "Assassin" },
         { name: "Kana", rank: "SSR", element: "Fire", role: "Defender" },
-        { name: "Yui", rank: "SSR", element: "Wind", role: "Healer" },
+        
+        { name: "Maiko", rank: "SSR", element: "Water", role: "Fighter" },
+        { name: "Naomi", rank: "SSR", element: "Water", role: "Assassin" },
+        { name: "Misaki", rank: "SSR", element: "Water", role: "Healer" },
+        { name: "Misato", rank: "SSR", element: "Water", role: "Support" },
+
         { name: "Tsubasa", rank: "SSR", element: "Wind", role: "Fighter" },
         { name: "Nanami", rank: "SSR", element: "Wind", role: "Defender" },
-        { name: "Maiko", rank: "SSR", element: "Water", role: "Fighter" },
-        { name: "Misato", rank: "SSR", element: "Water", role: "Support" },
-        { name: "Misaki", rank: "SSR", element: "Water", role: "Healer" },
-        { name: "Naomi", rank: "SSR", element: "Water", role: "Assassin" },
+        { name: "Yui", rank: "SSR", element: "Wind", role: "Healer" },
+
+        { name: "Aoi", rank: "SSR", element: "Light", role: "Assassin" },
+
+        { name: "Kuro", rank: "SSR", element: "Dark", role: "Fighter" },
 
         // SR
         { name: "Nanako", rank: "SR", element: "Fire", role: "Fighter" },
         { name: "Azusa", rank: "SR", element: "Fire", role: "Fighter" },
+
+        { name: "Marina", rank: "SR", element: "Water", role: "Defender" },
+        { name: "Yukino", rank: "SR", element: "Water", role: "Healer" },
+
         { name: "Hiyori", rank: "SR", element: "Wind", role: "Fighter" },
         { name: "Kiyomi", rank: "SR", element: "Wind", role: "Healer" },
-        { name: "Yukino", rank: "SR", element: "Water", role: "Healer" },
-        { name: "Marina", rank: "SR", element: "Water", role: "Defender" },
+
         { name: "Akane", rank: "SR", element: "Light", role: "Assassin" },
+
         { name: "Kirie", rank: "SR", element: "Dark", role: "Assassin" },
 
         // R
-        { name: "Kagura", rank: "R", element: "Fire", role: "Support" },
         { name: "Hinata", rank: "R", element: "Fire", role: "Defender" },
+        { name: "Kagura", rank: "R", element: "Fire", role: "Support" },
+
+        { name: "Ayumi", rank: "R", element: "Water", role: "Defender" },
+        { name: "Sae", rank: "R", element: "Water", role: "Healer" },
+        { name: "Chika", rank: "R", element: "Water", role: "Support" },
+
         { name: "Kanade", rank: "R", element: "Wind", role: "Fighter" },
         { name: "Lisa", rank: "R", element: "Wind", role: "Assassin" },
-        { name: "Emiko", rank: "R", element: "Wind", role: "Support" },
-        { name: "Ayumi", rank: "R", element: "Water", role: "Defender" },
-        { name: "Chika", rank: "R", element: "Water", role: "Support" },
-        { name: "Sae", rank: "R", element: "Water", role: "Healer" }
+        { name: "Emiko", rank: "R", element: "Wind", role: "Support" }
     ];
 
     // Helper: Generate Bintang
@@ -303,17 +342,17 @@
                     if(el === 'Light') card.style.borderLeft = '3px solid #f57f17';
                     if(el === 'Dark') card.style.borderLeft = '3px solid #311b92';
 
+                    //<span class="tc-rank" style="color: ${rank === 'SSRr' ? 'gold' : 'white'}">${rankTitles[rank]}</span>
                     card.innerHTML = `
                         <div class="tc-top">
                             <img src="img/${hero.name}.png" class="tc-img" onerror="this.src='img/default.png'">
-                            <span class="tc-rank" style="color: ${rank === 'SSRr' ? 'gold' : 'white'}">${rankTitles[rank]}</span>
+                            <span class="tc-name">${hero.name}</span>
                         </div>
                         <div class="tc-mid">
-                            <span class="tc-name">${hero.name}</span>
                             <span class="tc-role">${role}</span>
                         </div>
                         <div class="tc-bot">
-                            ${generateStarIcons(starCount)}
+                         ${generateStarIcons(starCount)}
                         </div>
                     `;
                     listDiv.appendChild(card);
