@@ -1,310 +1,638 @@
+<!--
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tier List Matrix</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Compact Tier Matrix</title>
     <style>
-        /* --- STYLE KHUSUS MATRIKS TIER LIST --- */
-        
-        .tier-section {
-            margin-bottom: 50px;
-            background: #1a1a1a;
-            border-radius: 12px;
-            border: 1px solid #444;
-            overflow: hidden;
+     /* --- STYLE UNTUK COMPACT TIER LIST --- */
+     body {
+        background-color: #121212;
+        color: white;
+        font-family: sans-serif;
+        margin: 0;
+     }
+
+    #main-content {
+        padding: 20px;
+        margin-left: 60px; /* Asumsi sidebar collapsed */
+    }
+
+    h1 { margin-bottom: 20px; }
+
+    .compact-grid-container {
+        overflow-x: auto;
+        background: #1a1a1a;
+        border-radius: 8px;
+        border: 1px solid #aaa7a7;
+        padding-bottom: 10px;
+    }
+
+    /* Definisi Grid Utama */
+    .compact-tier-grid {
+        display: grid;
+        /* Kolom 1: Label Element, Kolom 2-21: 5 Role x 4 Rank */
+        grid-template-columns: 80px repeat(20, minmax(60px, 1fr));
+        grid-gap: 1px;
+        background: #333;
+        border: 1px solid #a5a1a1;
+        min-width: 1280px; /* Mencegah grid terlalu gepeng */
+    }
+
+    /* Styling Header */
+    .grid-header {
+        background: #222;
+        color: #eee;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .role-header {
+        padding: 8px;
+        font-size: 0.9rem;
+        background: #2a2a2a;
+        border-bottom: 2px solid #a5a2a2;
+    }
+
+    .rank-header {
+        padding: 4px;
+        font-size: 0.7rem;
+        background: #1f1f1f;
+    }
+
+    /* Warna Header Rank */
+    .rank-ssrr { color: #e8f04a; } /* SSR+ */
+    .rank-ssr { color: #ffb74d; }
+    .rank-sr { color: #ba68c8; }
+    .rank-r { color: #64b5f6; }
+
+    .element-header {
+        font-size: 0.8rem;
+        background: #252525;
+        position: sticky;
+        left: 0;
+        z-index: 2;
+        font-weight: 800;
+    }
+    
+    /* Warna Element Label */
+    .elem-fire { color: #ff5722; border-right: 4px solid #ff5722; }
+    .elem-water { color: #03a9f4; border-right: 4px solid #03a9f4; }
+    .elem-wind { color: #4caf50; border-right: 4px solid #4caf50; }
+    .elem-light { color: #ffeb3b; border-right: 4px solid #ffeb3b; }
+    .elem-dark { color: #9c27b0; border-right: 4px solid #9c27b0; }
+
+    #matrix-grid>.role-header:nth-of-type(6)~.element-header:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n),
+    #matrix-grid>.role-header:nth-of-type(6)~.element-header:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n),
+    #matrix-grid>.role-header:nth-of-type(6)~.element-header:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n),
+    #matrix-grid>.role-header:nth-of-type(6)~.element-header:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n)+.grid-cell:nth-of-type(1n) {
+        /* background: #111; */
+        border-left: 1px solid #555454;
+        /* border-bottom: 2px solid #a5a2a2; */
+    }
+
+    /* Styling Sel Data */
+    .grid-cell {
+        background: #1a1a1a;
+        /* padding: 18px; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        /* gap: 5px; */
+        min-height: 70px;
+        border: 1px solid #222; /* Separator halus antar sel */
+    }
+
+    /* --- STYLING KARTU KARAKTER KOMPAK --- */
+    .compact-card {
+        width: 50px;
+        height: 60px;
+        padding: 2px;
+        margin: 12px;
+        text-align: center;
+        position: relative;
+        transition: transform 0.2s;
+        cursor: pointer;
+    }
+    .compact-card:hover {
+        transform: scale(1.2);
+        z-index: 10;
+    }
+
+    .cc-img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid #555;
+        margin: 0 auto;
+        background: #000;
+        position: relative;
+        z-index: 1;
+    }
+    .cc-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Status Visual (Default Owned untuk list ini) */
+    .compact-card.owned .cc-img { border-color: grey; }
+    
+    /* Nama Melengkung (SVG) */
+    .cc-name-svg {
+        width: 160%;
+        position: absolute;
+        bottom: -10%; 
+        left: -30%;
+        pointer-events: none;
+        z-index: 2;
+    }
+    .cc-name-svg text {
+        font-size: 10px;
+        letter-spacing: 1.8px;
+        font-weight: bold;
+        fill: #fff;
+        text-shadow: 
+            -1px -1px 0 #000,  
+             1px -1px 0 #000,
+            -1px  1px 0 #000,
+             1px  1px 0 #000; 
+        font-family: sans-serif;
+    }
+    </style>
+</head>
+<body>
+
+<div id="sidebar" style="position:fixed; left:0; top:0; bottom:0; width:50px; background:#111; border-right:1px solid #333; z-index:100; display:flex; flex-direction:column; align-items:center; padding-top:10px;">
+    <span style="font-size:24px;">☰</span>
+</div>
+
+<div id="main-content">
+  <h1>♟️ Compact Tier Matrix</h1>
+  
+  <div class="compact-grid-container">
+      <div class="compact-tier-grid" id="matrix-grid">
+          </div>
+  </div>
+
+</div>
+
+<script>
+// --- DATABASE KARAKTER ---
+// Data persis seperti yang Anda minta
+const charData = [
+    { name: "Kagura (Summer)", rank: "SSRr", element: "Fire", role: "Fighter" },
+    { name: "Lina", rank: "SSRr", element: "Fire", role: "Fighter" },
+    { name: "Miyuki", rank: "SSRr", element: "Fire", role: "Fighter" },
+    { name: "Coco", rank: "SSRr", element: "Fire", role: "Defender" },
+    { name: "Nova", rank: "SSRr", element: "Fire", role: "Defender" },
+    { name: "Kazura", rank: "SSRr", element: "Fire", role: "Defender" },
+    { name: "Tomoe", rank: "SSRr", element: "Fire", role: "Healer" },
+    { name: "Miko", rank: "SSRr", element: "Fire", role: "Support" },
+    { name: "Shion", rank: "SSRr", element: "Water", role: "Fighter" },
+    { name: "Reina", rank: "SSRr", element: "Water", role: "Fighter" },
+    { name: "Parin", rank: "SSRr", element: "Water", role: "Assassin" },
+    { name: "Hiyori (Summer)", rank: "SSRr", element: "Water", role: "Healer" },
+    { name: "Hina", rank: "SSRr", element: "Water", role: "Healer" },
+    { name: "Kaori", rank: "SSRr", element: "Water", role: "Support" },
+    { name: "Kuro (Summer)", rank: "SSRr", element: "Wind", role: "Fighter" },
+    { name: "Haruna", rank: "SSRr", element: "Wind", role: "Defender" },
+    { name: "Emiko (Summer)", rank: "SSRr", element: "Wind", role: "Support" },
+    { name: "Aria", rank: "SSRr", element: "Wind", role: "Support" },
+    { name: "Ayame", rank: "SSRr", element: "Wind", role: "Support" },
+    { name: "Chihiro", rank: "SSRr", element: "Wind", role: "Support" },
+    { name: "Asuka", rank: "SSRr", element: "Light", role: "Fighter" },
+    { name: "Lezbianca", rank: "SSRr", element: "Light", role: "Fighter" },
+    { name: "Lexi", rank: "SSRr", element: "Light", role: "Assassin" },
+    { name: "Hinata (Summer)", rank: "SSRr", element: "Light", role: "Defender" },
+    { name: "Dana", rank: "SSRr", element: "Light", role: "Defender" },
+    { name: "Yuzuki", rank: "SSRr", element: "Light", role: "Defender" },
+    { name: "Sayo", rank: "SSRr", element: "Light", role: "Healer" },
+    { name: "Sayuri", rank: "SSRr", element: "Dark", role: "Fighter" },
+    { name: "Kirie (Summer)", rank: "SSRr", element: "Dark", role: "Assassin" },
+    { name: "Sayaka", rank: "SSRr", element: "Dark", role: "Assassin" },
+    { name: "Jass", rank: "SSRr", element: "Dark", role: "Assassin" },
+    { name: "Garin", rank: "SSRr", element: "Dark", role: "Support" },
+    { name: "Ayaka", rank: "SSR", element: "Fire", role: "Fighter" },
+    { name: "Savannah", rank: "SSR", element: "Fire", role: "Assassin" },
+    { name: "Kana", rank: "SSR", element: "Fire", role: "Defender" },
+    { name: "Maiko", rank: "SSR", element: "Water", role: "Fighter" },
+    { name: "Naomi", rank: "SSR", element: "Water", role: "Assassin" },
+    { name: "Misaki", rank: "SSR", element: "Water", role: "Healer" },
+    { name: "Misato", rank: "SSR", element: "Water", role: "Support" },
+    { name: "Tsubasa", rank: "SSR", element: "Wind", role: "Fighter" },
+    { name: "Nanami", rank: "SSR", element: "Wind", role: "Defender" },
+    { name: "Yui", rank: "SSR", element: "Wind", role: "Healer" },
+    { name: "Aoi", rank: "SSR", element: "Light", role: "Assassin" },
+    { name: "Kuro", rank: "SSR", element: "Dark", role: "Fighter" },
+    { name: "Nanako", rank: "SR", element: "Fire", role: "Fighter" },
+    { name: "Azusa", rank: "SR", element: "Fire", role: "Fighter" },
+    { name: "Marina", rank: "SR", element: "Water", role: "Defender" },
+    { name: "Yukino", rank: "SR", element: "Water", role: "Healer" },
+    { name: "Hiyori", rank: "SR", element: "Wind", role: "Fighter" },
+    { name: "Kiyomi", rank: "SR", element: "Wind", role: "Healer" },
+    { name: "Akane", rank: "SR", element: "Light", role: "Assassin" },
+    { name: "Kirie", rank: "SR", element: "Dark", role: "Assassin" },
+    { name: "Hinata", rank: "R", element: "Fire", role: "Defender" },
+    { name: "Kagura", rank: "R", element: "Fire", role: "Support" },
+    { name: "Ayumi", rank: "R", element: "Water", role: "Defender" },
+    { name: "Sae", rank: "R", element: "Water", role: "Healer" },
+    { name: "Chika", rank: "R", element: "Water", role: "Support" },
+    { name: "Kanade", rank: "R", element: "Wind", role: "Fighter" },
+    { name: "Lisa", rank: "R", element: "Wind", role: "Assassin" },
+    { name: "Emiko", rank: "R", element: "Wind", role: "Support" }
+];
+
+// --- KONFIGURASI MATRIX ---
+const elements = ["Fire", "Water", "Wind", "Light", "Dark"];
+const roles = ["Fighter", "Assassin", "Defender", "Healer", "Support"];
+// Mapping Rank Data ke Class CSS dan Display Name
+const ranks = [
+    { key: "SSRr", label: "SSR+", class: "rank-ssrr" },
+    { key: "SSR", label: "SSR", class: "rank-ssr" },
+    { key: "SR", label: "SR", class: "rank-sr" },
+    { key: "R", label: "R", class: "rank-r" }
+];
+
+const gridContainer = document.getElementById('matrix-grid');
+
+// 1. RENDER HEADER ATAS (ROLE)
+// Corner kosong kiri atas
+gridContainer.innerHTML += `<div class="grid-header corner"></div>`;
+
+// Header Role (Span 4 kolom untuk tiap Role karena ada 4 rank)
+roles.forEach(role => {
+    gridContainer.innerHTML += `<div class="grid-header role-header" style="grid-column: span 4;">${role}</div>`;
+});
+
+// 2. RENDER HEADER ATAS (RANK SUB-HEADER)
+// Baris kedua header untuk label rank kecil
+gridContainer.innerHTML += `<div class="grid-header element-header"></div>`; // Spacer di bawah corner
+for (let i = 0; i < roles.length; i++) {
+    ranks.forEach(rank => {
+        gridContainer.innerHTML += `<div class="grid-header rank-header ${rank.class}">${rank.label}</div>`;
+    });
+}
+
+// 3. RENDER ISI TABEL (DATA)
+elements.forEach(elem => {
+    // A. Render Label Element di Kiri (Sticky)
+    const elemClass = `elem-${elem.toLowerCase()}`;
+    gridContainer.innerHTML += `<div class="grid-header element-header ${elemClass}">${elem}</div>`;
+
+    // B. Loop setiap Role dan setiap Rank untuk membuat Sel
+    roles.forEach(role => {
+        ranks.forEach(rank => {
+            // Filter Data yang cocok dengan Element, Role, dan Rank saat ini
+            const filteredChars = charData.filter(c => 
+                c.element === elem && 
+                c.role === role && 
+                c.rank === rank.key
+            );
+
+            // Buat HTML untuk Sel
+            let cellContent = "";
+            filteredChars.forEach(char => {
+                // Generate ID unik untuk SVG path text agar tidak bentrok
+                const uniqueId = `curve-${char.name.replace(/\s+/g, '').replace(/[^a-zA-Z0-9]/g, '')}`;
+                
+                // Pastikan nama file gambar sesuai (misal spasi atau tanda kurung)
+                // Default fallback ke default.png jika error
+                cellContent += `
+                    <div class="compact-card owned" title="${char.name}">
+                        <div class="cc-img">
+                            <img src="img/${char.name}.png" onerror="this.src='img/default.png'" alt="${char.name}">
+                        </div>
+                        <svg viewBox="0 0 100 100" class="cc-name-svg">
+                            <path id="${uniqueId}" d="M 50,12 a 38,38 0 1,0 0,76 a 38,38 0 1,0 0,-76" fill="transparent"/>
+                            <text>
+                                <textPath href="#${uniqueId}" startOffset="50%" text-anchor="middle">${char.name}</textPath>
+                            </text>
+                        </svg>
+                    </div>
+                `;
+            });
+
+            // Masukkan ke dalam grid cell
+            gridContainer.innerHTML += `<div class="grid-cell">${cellContent}</div>`;
+        });
+    });
+});
+
+</script>
+
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compact Tier Matrix - Vertical Mode</title>
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --cell-bg: #1a1a1a;
+            --border-color: #333;
+            --text-light: #eee;
+            --rank-ssrr: #ebff52;
+            --rank-ssr: #ffb74d;
+            --rank-sr: #ba68c8;
+            --rank-r: #64b5f6;
         }
 
-        .tier-header {
-            padding: 15px;
-            font-size: 2rem;
-            font-weight: 900;
-            text-align: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
         }
 
-        /* Rank Colors */
-        .header-SSRr { background: linear-gradient(90deg, #d32f2f, #ff5252, #d32f2f); }
-        .header-SSR { background: linear-gradient(90deg, #f57c00, #ffb74d, #f57c00); }
-        .header-SR { background: linear-gradient(90deg, #7b1fa2, #ba68c8, #7b1fa2); }
-        .header-R { background: linear-gradient(90deg, #1976d2, #64b5f6, #1976d2); }
+        h1 { text-align: center; margin-bottom: 30px; }
 
-        /* Grid Matrix: 1 (Role) + 5 (Elements) = 6 Columns */
-        .matrix-grid {
+        /* --- GRID SYSTEM --- */
+        .matrix-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            border: 1px solid var(--border-color);
+            background: var(--border-color);
             display: grid;
-            grid-template-columns: 100px repeat(5, 1fr);
+            /* Kolom: Element (80px), Role (60px), SSR+, SSR, SR, R */
+            grid-template-columns: 80px 60px repeat(4, minmax(120px, 1fr));
+            grid-gap: 1px;
+        }
+
+        /* --- HEADERS --- */
+        .grid-header {
             background: #222;
-        }
-
-        .cell {
-            border: 0.5px solid #333;
-            min-height: 80px;
-            padding: 8px;
-            display: flex;
-            /* flex-direction: column; */
-            flex-wrap: wrap;
-            gap: 8px;
-            align-items: center;
-        }
-
-        /* Header Row Styles */
-        .header-cell {
-            background: #282828;
-            font-weight: bold;
-            text-align: center;
             padding: 10px 5px;
-            color: #fff;
-            text-transform: uppercase;
-            font-size: 0.8rem;
+            text-align: center;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+        }
+
+        .rank-header { text-transform: uppercase; }
+        .rank-ssrr { color: var(--rank-ssrr); }
+        .rank-ssr { color: var(--rank-ssr); }
+        .rank-sr { color: var(--rank-sr); }
+        .rank-r { color: var(--rank-r); }
+
+        /* --- CELLS --- */
+        .element-label {
+            background: #1f1f1f;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            border-left: 5px solid transparent;
+        }
+
+        /* Warna border per elemen */
+        .elem-fire { border-left-color: #ff5722; color: #ff5722; }
+        .elem-water { border-left-color: #03a9f4; color: #03a9f4; }
+        .elem-wind { border-left-color: #4caf50; color: #4caf50; }
+        .elem-light { border-left-color: #ffeb3b; color: #ffeb3b; }
+        .elem-dark { border-left-color: #9c27b0; color: #9c27b0; }
+
+        .role-cell {
+            background: #252525;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        /* Role Column Labels */
-        .role-label {
-            background: #2d2d2d;
-            font-weight: bold;
-            color: #ccc;
-            writing-mode: horizontal-tb;
-            font-size: 0.75rem;
+        .role-icon {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
         }
 
-        .role-label img {
-            width: 90%;
+        .data-cell {
+            background: var(--cell-bg);
+            padding: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            align-content: flex-start;
+            min-height: min-content;
         }
 
-        /* Element Colors for Headers */
-        .bg-Fire { color: #ff5722; border-bottom: 3px solid #ff5722; }
-        .bg-Water { color: #03a9f4; border-bottom: 3px solid #03a9f4; }
-        .bg-Wind { color: #4caf50; border-bottom: 3px solid #4caf50; }
-        .bg-Light { color: #ffeb3b; border-bottom: 3px solid #ffeb3b; }
-        .bg-Dark { color: #9c27b0; border-bottom: 3px solid #9c27b0; }
-
-        /* --- CHAR CARD MINI LAYOUT --- */
-        .tc-card {
-            width: 100%;
-            max-width: 120px;
-            background: #111;
-            border-radius: 4px;
-            border: 1px solid #444;
-            overflow: hidden;
-            transition: 0.2s;
+        /* --- CHARACTER CARD --- */
+        .char-card {
+            width: 45px;
             position: relative;
+            transition: transform 0.2s;
         }
+        .char-card:hover { transform: scale(1.15); z-index: 5; }
 
-        /* | img | Name | */
-        .tc-main {
-            display: flex;
-            align-items: center;
-            padding: 4px;
-            gap: 6px;
-            min-height: 45px;
+        /* Border Default
+        .img-wrapper {
+         width: 45px;
+         height: 45px;
+         border-radius: 50%;
+         overflow: hidden;
+         border: 2px solid gold;
+         background: #000;
         }
+        */
+.img-wrapper {
+ /* 
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #000;
+    border: 2px solid #555; 
+    Default jika rank tidak terbaca */
+    width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid #555;
+        margin: 0 auto;
+        background: #000;
+        position: relative;
+        z-index: 1;
+}
 
-        .tc-img {
-            width: 32px;
-            height: 32px;
-            border-radius: 4px;
-            object-fit: cover;
-            border: 1px solid #555;
-            flex-shrink: 0;
+/* Border Berdasarkan Rank */
+.char-card.ssrr .img-wrapper { border-color: var(--rank-ssrr); box-shadow: 0 0 5px #ff5252; }
+.char-card.ssr .img-wrapper  { border-color: var(--rank-ssr); box-shadow: 0 0 5px #ffb74d; }
+.char-card.sr .img-wrapper   { border-color: var(--rank-sr); }
+.char-card.r .img-wrapper    { border-color: var(--rank-r); }
+
+        .img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+
+        .char-name-svg {
+         width: 145%;
+        position: absolute;
+        bottom: -10%; 
+        left: -15%;
+        pointer-events: none;
+        z-index: 2;
         }
-
-        .tc-name {
-            font-size: 0.65rem;
-            font-weight: bold;
-            line-height: 1.1;
-            color: #eee;
-            word-wrap: break-word; /* Wrap text optimal */
-            overflow: hidden;
+        .char-name-svg text {
+         font-size: 14px;
+        letter-spacing: 1.8px;
+        font-weight: bold;
+        fill: #fff;
+        text-shadow: 
+            -1px -1px 1px #000,  
+             1px -1px 1px #000,
+            -1px  1px 1px #000,
+             1px  1px 1px #000; 
+        font-family: sans-serif;
         }
-
-        /* | Status | Star | */
-        .tc-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2px 6px;
-            background: #000;
-            border-top: 1px solid #333;
-        }
-
-        .tc-status { font-size: 0.7rem; }
-        .tc-stars { font-size: 0.6rem; color: gold; letter-spacing: -1px; }
-
-        /* States */
-        .not-owned { opacity: 0.4; filter: grayscale(1); }
-        .not-owned:hover { opacity: 1; filter: grayscale(0); border-color: #777; }
 
         /* Responsive */
-        @media (max-width: 900px) {
-            .matrix-grid { overflow-x: auto; display: block; white-space: nowrap; }
-            .cell { display: inline-flex; width: 140px; vertical-align: top; white-space: normal; }
-            .role-label { position: sticky; left: 0; z-index: 10; width: 80px; }
+        @media (max-width: 768px) {
+            .matrix-container {
+                grid-template-columns: 40px 40px repeat(4, 1fr);
+            }
+            .element-label { font-size: 0.8rem; }
+            .data-cell { min-width: 80px; }
         }
     </style>
 </head>
 <body>
 
-<div id="sidebar">
-    <input type="checkbox" id="checkmn" checked />
-    <label for="checkmn" id="toggle-btn">☰</label>
-    <a href="index.html">📊 <span>Status Karakter</span></a>
-    <a href="tambah.html">➕ <span>Buat Karakter Baru</span></a>
-    <a href="tier_list.html" class="active">🏆 <span>Tier List</span></a>
-    <a href="update_list.html">📝 <span>Update Karakter</span></a>
-    <a href="backup_recovery.html">💾 <span>Backup/Recovery</span></a>
-</div>
+<h1>♟️ Compact Tier Matrix</h1>
 
-<div id="main-content">
-    <h1>🏆 Global Tier List Matrix</h1>
-    <div id="matrix-container"></div>
-</div>
+<div class="matrix-container" id="tierGrid">
+    <div class="grid-header">Elem</div>
+    <div class="grid-header">Role</div>
+    <div class="grid-header rank-header rank-ssrr">SSR+</div>
+    <div class="grid-header rank-header rank-ssr">SSR</div>
+    <div class="grid-header rank-header rank-sr">SR</div>
+    <div class="grid-header rank-header rank-r">R</div>
+
+    </div>
 
 <script>
-    const STORAGE_KEY = 'CHARACTER_DATA_V1';
+const characters = [
+    { name: "Kagura (Summer)", rank: "SSRr", element: "Fire", role: "Fighter" },
+    { name: "Lina", rank: "SSRr", element: "Fire", role: "Fighter" },
+    { name: "Miyuki", rank: "SSRr", element: "Fire", role: "Fighter" },
+    { name: "Coco", rank: "SSRr", element: "Fire", role: "Defender" },
+    { name: "Nova", rank: "SSRr", element: "Fire", role: "Defender" },
+    { name: "Kazura", rank: "SSRr", element: "Fire", role: "Defender" },
+    { name: "Tomoe", rank: "SSRr", element: "Fire", role: "Healer" },
+    { name: "Miko", rank: "SSRr", element: "Fire", role: "Support" },
+    { name: "Shion", rank: "SSRr", element: "Water", role: "Fighter" },
+    { name: "Reina", rank: "SSRr", element: "Water", role: "Fighter" },
+    { name: "Parin", rank: "SSRr", element: "Water", role: "Assassin" },
+    { name: "Hiyori (Summer)", rank: "SSRr", element: "Water", role: "Healer" },
+    { name: "Hina", rank: "SSRr", element: "Water", role: "Healer" },
+    { name: "Kaori", rank: "SSRr", element: "Water", role: "Support" },
+    { name: "Kuro (Summer)", rank: "SSRr", element: "Wind", role: "Fighter" },
+    { name: "Haruna", rank: "SSRr", element: "Wind", role: "Defender" },
+    { name: "Emiko (Summer)", rank: "SSRr", element: "Wind", role: "Support" },
+    { name: "Aria", rank: "SSRr", element: "Wind", role: "Support" },
+    { name: "Ayame", rank: "SSRr", element: "Wind", role: "Support" },
+    { name: "Chihiro", rank: "SSRr", element: "Wind", role: "Support" },
+    { name: "Asuka", rank: "SSRr", element: "Light", role: "Fighter" },
+    { name: "Lezbianca", rank: "SSRr", element: "Light", role: "Fighter" },
+    { name: "Lexi", rank: "SSRr", element: "Light", role: "Assassin" },
+    { name: "Hinata (Summer)", rank: "SSRr", element: "Light", role: "Defender" },
+    { name: "Dana", rank: "SSRr", element: "Light", role: "Defender" },
+    { name: "Yuzuki", rank: "SSRr", element: "Light", role: "Defender" },
+    { name: "Sayo", rank: "SSRr", element: "Light", role: "Healer" },
+    { name: "Sayuri", rank: "SSRr", element: "Dark", role: "Fighter" },
+    { name: "Kirie (Summer)", rank: "SSRr", element: "Dark", role: "Assassin" },
+    { name: "Sayaka", rank: "SSRr", element: "Dark", role: "Assassin" },
+    { name: "Jass", rank: "SSRr", element: "Dark", role: "Assassin" },
+    { name: "Garin", rank: "SSRr", element: "Dark", role: "Support" },
+    { name: "Ayaka", rank: "SSR", element: "Fire", role: "Fighter" },
+    { name: "Savannah", rank: "SSR", element: "Fire", role: "Assassin" },
+    { name: "Kana", rank: "SSR", element: "Fire", role: "Defender" },
+    { name: "Maiko", rank: "SSR", element: "Water", role: "Fighter" },
+    { name: "Naomi", rank: "SSR", element: "Water", role: "Assassin" },
+    { name: "Misaki", rank: "SSR", element: "Water", role: "Healer" },
+    { name: "Misato", rank: "SSR", element: "Water", role: "Support" },
+    { name: "Tsubasa", rank: "SSR", element: "Wind", role: "Fighter" },
+    { name: "Nanami", rank: "SSR", element: "Wind", role: "Defender" },
+    { name: "Yui", rank: "SSR", element: "Wind", role: "Healer" },
+    { name: "Aoi", rank: "SSR", element: "Light", role: "Assassin" },
+    { name: "Kuro", rank: "SSR", element: "Dark", role: "Fighter" },
+    { name: "Nanako", rank: "SR", element: "Fire", role: "Fighter" },
+    { name: "Azusa", rank: "SR", element: "Fire", role: "Fighter" },
+    { name: "Marina", rank: "SR", element: "Water", role: "Defender" },
+    { name: "Yukino", rank: "SR", element: "Water", role: "Healer" },
+    { name: "Hiyori", rank: "SR", element: "Wind", role: "Fighter" },
+    { name: "Kiyomi", rank: "SR", element: "Wind", role: "Healer" },
+    { name: "Akane", rank: "SR", element: "Light", role: "Assassin" },
+    { name: "Kirie", rank: "SR", element: "Dark", role: "Assassin" },
+    { name: "Hinata", rank: "R", element: "Fire", role: "Defender" },
+    { name: "Kagura", rank: "R", element: "Fire", role: "Support" },
+    { name: "Ayumi", rank: "R", element: "Water", role: "Defender" },
+    { name: "Sae", rank: "R", element: "Water", role: "Healer" },
+    { name: "Chika", rank: "R", element: "Water", role: "Support" },
+    { name: "Kanade", rank: "R", element: "Wind", role: "Fighter" },
+    { name: "Lisa", rank: "R", element: "Wind", role: "Assassin" },
+    { name: "Emiko", rank: "R", element: "Wind", role: "Support" }
+];
 
-    // Data Master (Disesuaikan dengan list Anda)
-    const masterRoster = [
-        { name: "Kagura (Summer)", rank: "SSRr", element: "Fire", role: "Fighter" },
-        { name: "Lina", rank: "SSRr", element: "Fire", role: "Fighter" },
-        { name: "Miyuki", rank: "SSRr", element: "Fire", role: "Fighter" },
-        { name: "Coco", rank: "SSRr", element: "Fire", role: "Defender" },
-        { name: "Nova", rank: "SSRr", element: "Fire", role: "Defender" },
-        { name: "Kazura", rank: "SSRr", element: "Fire", role: "Defender" },
-        { name: "Tomoe", rank: "SSRr", element: "Fire", role: "Healer" },
-        { name: "Miko", rank: "SSRr", element: "Fire", role: "Support" },
-        { name: "Shion", rank: "SSRr", element: "Water", role: "Fighter" },
-        { name: "Reina", rank: "SSRr", element: "Water", role: "Fighter" },
-        { name: "Parin", rank: "SSRr", element: "Water", role: "Assassin" },
-        { name: "Hiyori (Summer)", rank: "SSRr", element: "Water", role: "Healer" },
-        { name: "Hina", rank: "SSRr", element: "Water", role: "Healer" },
-        { name: "Kaori", rank: "SSRr", element: "Water", role: "Support" },
-        { name: "Kuro (Summer)", rank: "SSRr", element: "Wind", role: "Fighter" },
-        { name: "Haruna", rank: "SSRr", element: "Wind", role: "Defender" },
-        { name: "Emiko (Summer)", rank: "SSRr", element: "Wind", role: "Support" },
-        { name: "Aria", rank: "SSRr", element: "Wind", role: "Support" },
-        { name: "Ayame", rank: "SSRr", element: "Wind", role: "Support" },
-        { name: "Chihiro", rank: "SSRr", element: "Wind", role: "Support" },
-        { name: "Asuka", rank: "SSRr", element: "Light", role: "Fighter" },
-        { name: "Lezbianca", rank: "SSRr", element: "Light", role: "Fighter" },
-        { name: "Lexi", rank: "SSRr", element: "Light", role: "Assassin" },
-        { name: "Hinata (Summer)", rank: "SSRr", element: "Light", role: "Defender" },
-        { name: "Dana", rank: "SSRr", element: "Light", role: "Defender" },
-        { name: "Yuzuki", rank: "SSRr", element: "Light", role: "Defender" },
-        { name: "Sayo", rank: "SSRr", element: "Light", role: "Healer" },
-        { name: "Sayuri", rank: "SSRr", element: "Dark", role: "Fighter" },
-        { name: "Kirie (Summer)", rank: "SSRr", element: "Dark", role: "Assassin" },
-        { name: "Sayaka", rank: "SSRr", element: "Dark", role: "Assassin" },
-        { name: "Jass", rank: "SSRr", element: "Dark", role: "Assassin" },
-        { name: "Garin", rank: "SSRr", element: "Dark", role: "Support" },
-        { name: "Ayaka", rank: "SSR", element: "Fire", role: "Fighter" },
-        { name: "Savannah", rank: "SSR", element: "Fire", role: "Assassin" },
-        { name: "Kana", rank: "SSR", element: "Fire", role: "Defender" },
-        { name: "Maiko", rank: "SSR", element: "Water", role: "Fighter" },
-        { name: "Naomi", rank: "SSR", element: "Water", role: "Assassin" },
-        { name: "Misaki", rank: "SSR", element: "Water", role: "Healer" },
-        { name: "Misato", rank: "SSR", element: "Water", role: "Support" },
-        { name: "Tsubasa", rank: "SSR", element: "Wind", role: "Fighter" },
-        { name: "Nanami", rank: "SSR", element: "Wind", role: "Defender" },
-        { name: "Yui", rank: "SSR", element: "Wind", role: "Healer" },
-        { name: "Aoi", rank: "SSR", element: "Light", role: "Assassin" },
-        { name: "Kuro", rank: "SSR", element: "Dark", role: "Fighter" },
-        { name: "Nanako", rank: "SR", element: "Fire", role: "Fighter" },
-        { name: "Azusa", rank: "SR", element: "Fire", role: "Fighter" },
-        { name: "Marina", rank: "SR", element: "Water", role: "Defender" },
-        { name: "Yukino", rank: "SR", element: "Water", role: "Healer" },
-        { name: "Hiyori", rank: "SR", element: "Wind", role: "Fighter" },
-        { name: "Kiyomi", rank: "SR", element: "Wind", role: "Healer" },
-        { name: "Akane", rank: "SR", element: "Light", role: "Assassin" },
-        { name: "Kirie", rank: "SR", element: "Dark", role: "Assassin" },
-        { name: "Hinata", rank: "R", element: "Fire", role: "Defender" },
-        { name: "Kagura", rank: "R", element: "Fire", role: "Support" },
-        { name: "Ayumi", rank: "R", element: "Water", role: "Defender" },
-        { name: "Sae", rank: "R", element: "Water", role: "Healer" },
-        { name: "Chika", rank: "R", element: "Water", role: "Support" },
-        { name: "Kanade", rank: "R", element: "Wind", role: "Fighter" },
-        { name: "Lisa", rank: "R", element: "Wind", role: "Assassin" },
-        { name: "Emiko", rank: "R", element: "Wind", role: "Support" }
-    ];
+const elements = ["Fire", "Water", "Wind", "Light", "Dark"];
+const roles = ["Fighter", "Assassin", "Defender", "Support", "Healer"];
+const ranks = ["SSRr", "SSR", "SR", "R"];
 
-    function renderMatrix() {
-        const container = document.getElementById('matrix-container');
-        let localData = [];
-        try {
-            localData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-        } catch(e) {}
+const grid = document.getElementById('tierGrid');
 
-        const ranks = ['SSRr', 'SSR', 'SR', 'R'];
-        const elements = ['Fire', 'Water', 'Wind', 'Light', 'Dark'];
-        const roles = ['Fighter', 'Assassin', 'Defender', 'Healer', 'Support'];
-        const rankLabels = {'SSRr': 'SSR+', 'SSR': 'SSR', 'SR': 'SR', 'R': 'R'};
+elements.forEach(elem => {
+    // 1. Buat Label Element (Span 5 baris untuk 5 role)
+    const elemDiv = document.createElement('div');
+    elemDiv.className = `grid-header element-label elem-${elem.toLowerCase()}`;
+    elemDiv.style.gridRow = `span 5`;
+    elemDiv.innerText = elem;
+    grid.appendChild(elemDiv);
 
+    roles.forEach(role => {
+        // 2. Buat Label Role (Icon)
+        const roleDiv = document.createElement('div');
+        roleDiv.className = `role-cell`;
+        roleDiv.innerHTML = `<img src="icon/${role}.png" class="role-icon" title="${role}" onerror="this.src='icon/default.png'">`;
+        grid.appendChild(roleDiv);
+
+        // 3. Buat Data Cells untuk tiap Rank
         ranks.forEach(rank => {
-            // Section
-            const section = document.createElement('div');
-            section.className = 'tier-section';
+            const cell = document.createElement('div');
+            cell.className = `data-cell`;
             
-            // Header
-            const header = document.createElement('div');
-            header.className = `tier-header header-${rank}`;
-            header.innerText = rankLabels[rank];
-            section.appendChild(header);
-
-            // Grid Matrix
-            const grid = document.createElement('div');
-            grid.className = 'matrix-grid';
-
-            // --- HEADER ROW (Label Element) ---
-            grid.innerHTML += `<div class="header-cell role-label">ROLE</div>`;
-            elements.forEach(el => {
-                grid.innerHTML += `<div class="header-cell bg-${el}">${el}</div>`;
+            const filtered = characters.filter(c => c.element === elem && c.role === role && c.rank === rank);
+            
+            filtered.forEach(char => {
+                const charId = `path-${char.name.replace(/\s+/g, '')}`;
+                // Perhatikan penambahan ${char.rank.toLowerCase()} di class char-card
+cell.innerHTML += `
+    <div class="char-card ${char.rank.toLowerCase()}" title="${char.name}">
+        <div class="img-wrapper">
+            <img src="img/${char.name}.png" onerror="this.src='img/default.png'">
+        </div>
+        <svg viewBox="0 0 100 100" class="char-name-svg">
+            <defs><path id="${charId}" d="M 50,12 a 38,38 0 1,0 0,76 a 38,38 0 1,0 0,-76" fill="transparent"/></defs>
+            <text><textPath href="#${charId}" startOffset="50%" text-anchor="middle">${char.name}</textPath></text>
+        </svg>
+    </div>
+`;
             });
-
-            // --- DATA ROWS (Roles) ---
-            roles.forEach(role => {
-                // Kolom 1: Nama Role
-                grid.innerHTML += `<div class="cell role-label"><img src="icon/${role}.png"/></div>`;
-
-                // Kolom 2-6: Isi Karakter per Element
-                elements.forEach(el => {
-                    const cell = document.createElement('div');
-                    cell.className = 'cell';
-
-                    const matches = masterRoster.filter(h => h.rank === rank && h.role === role && h.element === el);
-                    
-                    matches.forEach(hero => {
-                        const userData = localData.find(u => u.name === hero.name);
-                        const isOwned = !!userData;
-                        const stars = isOwned ? '★'.repeat(userData.star) : '';
-                        const statusIcon = isOwned ? '✅' : '⚪';
-
-                        cell.innerHTML += `
-                            <div class="tc-card ${isOwned ? '' : 'not-owned'}">
-                                <div class="tc-main">
-                                    <img src="img/${hero.name}.png" class="tc-img" onerror="this.src='img/default.png'">
-                                    <div class="tc-name">${hero.name}</div>
-                                </div>
-                                <div class="tc-footer">
-                                    <span class="tc-status">${statusIcon}</span>
-                                    <span class="tc-stars">${stars}</span>
-                                </div>
-                            </div>
-                        `;
-                    });
-                    grid.appendChild(cell);
-                });
-            });
-
-            section.appendChild(grid);
-            container.appendChild(section);
+            grid.appendChild(cell);
         });
-    }
-
-    document.addEventListener('DOMContentLoaded', renderMatrix);
+    });
+});
 </script>
 
 </body>
