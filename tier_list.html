@@ -3,189 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tier List Karakter</title>
+    <title>Tier List Matrix</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* --- STYLE KHUSUS HALAMAN INI --- */
+        /* --- STYLE KHUSUS MATRIKS TIER LIST --- */
         
-        /* Container per Rank (SSR+, SSR, dst) */
         .tier-section {
-            margin-bottom: 40px;
-            background: #252525;
-            border-radius: 8px;
-            overflow: hidden;
+            margin-bottom: 50px;
+            background: #1a1a1a;
+            border-radius: 12px;
             border: 1px solid #444;
+            overflow: hidden;
         }
 
         .tier-header {
             padding: 15px;
-            font-size: 1.8rem;
-            font-weight: bold;
+            font-size: 2rem;
+            font-weight: 900;
             text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 2px;
             color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
-        /* Warna Header Rank */
-        .header-SSRr { background: linear-gradient(90deg, #b71c1c, #ff5252, #b71c1c); border-bottom: 3px solid #ff1744; }
-        .header-SSR { background: linear-gradient(90deg, #ff6f00, #ffca28, #ff6f00); border-bottom: 3px solid #ffd700; }
-        .header-SR { background: linear-gradient(90deg, #4a148c, #7b1fa2, #4a148c); border-bottom: 3px solid #e040fb; }
-        .header-R { background: linear-gradient(90deg, #0d47a1, #2196f3, #0d47a1); border-bottom: 3px solid #40c4ff; }
+        /* Rank Colors */
+        .header-SSRr { background: linear-gradient(90deg, #d32f2f, #ff5252, #d32f2f); }
+        .header-SSR { background: linear-gradient(90deg, #f57c00, #ffb74d, #f57c00); }
+        .header-SR { background: linear-gradient(90deg, #7b1fa2, #ba68c8, #7b1fa2); }
+        .header-R { background: linear-gradient(90deg, #1976d2, #64b5f6, #1976d2); }
 
-        /* Grid 5 Kolom untuk Element */
-        .element-grid {
+        /* Grid Matrix: 1 (Role) + 5 (Elements) = 6 Columns */
+        .matrix-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            border-top: 1px solid #444;
+            grid-template-columns: 100px repeat(5, 1fr);
+            background: #222;
         }
 
-        /* Kolom per Element */
-        .element-col {
-            border-right: 1px solid #444;
-            min-height: 200px;
-        }
-        .element-col:last-child { border-right: none; }
-
-        /* Header Element (Fire, Water, dll) */
-        .col-header {
+        .cell {
+            border: 0.5px solid #333;
+            min-height: 80px;
             padding: 8px;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
+        }
+
+        /* Header Row Styles */
+        .header-cell {
+            background: #282828;
             font-weight: bold;
-            font-size: 0.9rem;
+            text-align: center;
+            padding: 10px 5px;
             color: #fff;
             text-transform: uppercase;
-        }
-
-        /* Warna Header Element */
-        .bg-Fire { background: #bf360c; border-bottom: 2px solid #ff5722; }
-        .bg-Water { background: #01579b; border-bottom: 2px solid #03a9f4; }
-        .bg-Wind { background: #1b5e20; border-bottom: 2px solid #4caf50; }
-        .bg-Light { background: #f57f17; border-bottom: 2px solid #ffeb3b; color: #000 !important; }
-        .bg-Dark { background: #311b92; border-bottom: 2px solid #7c4dff; }
-
-        /* Container Kartu Mini */
-        .char-list {
-            padding: 10px;
+            font-size: 0.8rem;
             display: flex;
-            flex-direction: column;
-            gap: 10px;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* Kartu Mini (Tier Card) */
-        .tier-card {
-            background: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 6px;
+        /* Role Column Labels */
+        .role-label {
+            background: #2d2d2d;
+            font-weight: bold;
+            color: #ccc;
+            writing-mode: horizontal-tb;
+            font-size: 0.75rem;
+        }
+
+        /* Element Colors for Headers */
+        .bg-Fire { color: #ff5722; border-bottom: 3px solid #ff5722; }
+        .bg-Water { color: #03a9f4; border-bottom: 3px solid #03a9f4; }
+        .bg-Wind { color: #4caf50; border-bottom: 3px solid #4caf50; }
+        .bg-Light { color: #ffeb3b; border-bottom: 3px solid #ffeb3b; }
+        .bg-Dark { color: #9c27b0; border-bottom: 3px solid #9c27b0; }
+
+        /* --- CHAR CARD MINI LAYOUT --- */
+        .tc-card {
+            width: 100%;
+            max-width: 120px;
+            background: #111;
+            border-radius: 4px;
+            border: 1px solid #444;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
+            transition: 0.2s;
             position: relative;
-            transition: transform 0.2s;
         }
-        .tier-card:hover { transform: scale(1.03); z-index: 5; border-color: white;}
 
-        /* Layout Grid di dalam Kartu */
-        /* | img | rank | */
-        .tc-top {
+        /* | img | Name | */
+        .tc-main {
+            display: flex;
+            align-items: center;
+            padding: 4px;
+            gap: 6px;
+            min-height: 45px;
+        }
+
+        .tc-img {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            object-fit: cover;
+            border: 1px solid #555;
+            flex-shrink: 0;
+        }
+
+        .tc-name {
+            font-size: 0.65rem;
+            font-weight: bold;
+            line-height: 1.1;
+            color: #eee;
+            word-wrap: break-word; /* Wrap text optimal */
+            overflow: hidden;
+        }
+
+        /* | Status | Star | */
+        .tc-footer {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            padding: 5px;
-            /* background: rgba(0,0,0,0.2); */
-        }
-        .tc-img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 2px solid #555;
-            object-fit: cover;
+            align-items: center;
+            padding: 2px 6px;
             background: #000;
-        }
-        .tc-rank {
-            font-size: 0.7rem;
-            font-weight: bold;
-            padding: 2px 5px;
-            border-radius: 4px;
-            background: #333;
-            color: #fff;
+            border-top: 1px solid #333;
         }
 
-        /* | name | role | */
-        .tc-mid {
-            padding: 2px 5px;
-            text-align: center;
-        }
-        .tc-name {
-            font-size: 150%;
-            font-weight: bold;
-            color: #e0e0e0;
-            display: block;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        .tc-role {
-            font-size: 100%;
-            color: #aaa;
-            display: block;
-        }
+        .tc-status { font-size: 0.7rem; }
+        .tc-stars { font-size: 0.6rem; color: gold; letter-spacing: -1px; }
 
-        /* | star | */
-        .tc-bot {
-            background: #111;
-            text-align: center;
-            padding: 3px;
-            font-size: 0.8rem;
-        }
-        
-        /* Not Owned Style */
-        .not-owned {
-            filter: grayscale(100%);
-            opacity: 0.6;
-        }
-        .not-owned:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
+        /* States */
+        .not-owned { opacity: 0.4; filter: grayscale(1); }
+        .not-owned:hover { opacity: 1; filter: grayscale(0); border-color: #777; }
 
-        /* Responsif untuk layar kecil */
-        @media (max-width: 768px) {
-            .element-grid {
-                grid-template-columns: 1fr; /* Jadi 1 kolom memanjang ke bawah */
-            }
-            .element-col {
-                border-right: none;
-                border-bottom: 1px solid #444;
-            }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .matrix-grid { overflow-x: auto; display: block; white-space: nowrap; }
+            .cell { display: inline-flex; width: 140px; vertical-align: top; white-space: normal; }
+            .role-label { position: sticky; left: 0; z-index: 10; width: 80px; }
         }
     </style>
 </head>
 <body>
-    <div id="sidebar">
-        <input type="checkbox" id="checkmn" checked />
-        <label for="checkmn" id="toggle-btn">☰</label>
-        <a href="index.html">📊 <span>Status Karakter</span></a>
-        <a href="tambah.html">➕ <span>Buat Karakter Baru</span></a>
-        <a href="tier_list.html" class="active">🏆 <span>Tier List</span></a>
-        <a href="update_list.html">📝 <span>Update Karakter</span></a>
-        <a href="backup_recovery.html">💾 <span>Backup/Recovery</span></a>
-    </div>
 
-    <div id="main-content">
-        <h1>🏆 Tier List & Koleksi</h1>
-        <div id="tier-container"></div>
-    </div>
+<div id="sidebar">
+    <input type="checkbox" id="checkmn" checked />
+    <label for="checkmn" id="toggle-btn">☰</label>
+    <a href="index.html">📊 <span>Status Karakter</span></a>
+    <a href="tambah.html">➕ <span>Buat Karakter Baru</span></a>
+    <a href="tier_list.html" class="active">🏆 <span>Tier List</span></a>
+    <a href="update_list.html">📝 <span>Update Karakter</span></a>
+    <a href="backup_recovery.html">💾 <span>Backup/Recovery</span></a>
+</div>
 
-    <script>
+<div id="main-content">
+    <h1>🏆 Global Tier List Matrix</h1>
+    <div id="matrix-container"></div>
+</div>
+
+<script>
     const STORAGE_KEY = 'CHARACTER_DATA_V1';
 
-    // 1. DATA MASTER (DAFTAR SEMUA HERO DI GAME)
-    // Anda harus menambahkan manual di sini jika ada hero baru rilis.
-    // Saya sudah mengisi berdasarkan file JSON backup Anda.
+    // Data Master (Disesuaikan dengan list Anda)
     const masterRoster = [
-        // SSR+ (SSRr)
         { name: "Kagura (Summer)", rank: "SSRr", element: "Fire", role: "Fighter" },
         { name: "Lina", rank: "SSRr", element: "Fire", role: "Fighter" },
         { name: "Miyuki", rank: "SSRr", element: "Fire", role: "Fighter" },
@@ -194,21 +172,18 @@
         { name: "Kazura", rank: "SSRr", element: "Fire", role: "Defender" },
         { name: "Tomoe", rank: "SSRr", element: "Fire", role: "Healer" },
         { name: "Miko", rank: "SSRr", element: "Fire", role: "Support" },
-
         { name: "Shion", rank: "SSRr", element: "Water", role: "Fighter" },
         { name: "Reina", rank: "SSRr", element: "Water", role: "Fighter" },
         { name: "Parin", rank: "SSRr", element: "Water", role: "Assassin" },
         { name: "Hiyori (Summer)", rank: "SSRr", element: "Water", role: "Healer" },
         { name: "Hina", rank: "SSRr", element: "Water", role: "Healer" },
         { name: "Kaori", rank: "SSRr", element: "Water", role: "Support" },
-
         { name: "Kuro (Summer)", rank: "SSRr", element: "Wind", role: "Fighter" },
         { name: "Haruna", rank: "SSRr", element: "Wind", role: "Defender" },
         { name: "Emiko (Summer)", rank: "SSRr", element: "Wind", role: "Support" },
         { name: "Aria", rank: "SSRr", element: "Wind", role: "Support" },
         { name: "Ayame", rank: "SSRr", element: "Wind", role: "Support" },
         { name: "Chihiro", rank: "SSRr", element: "Wind", role: "Support" },
-
         { name: "Asuka", rank: "SSRr", element: "Light", role: "Fighter" },
         { name: "Lezbianca", rank: "SSRr", element: "Light", role: "Fighter" },
         { name: "Lexi", rank: "SSRr", element: "Light", role: "Assassin" },
@@ -216,156 +191,116 @@
         { name: "Dana", rank: "SSRr", element: "Light", role: "Defender" },
         { name: "Yuzuki", rank: "SSRr", element: "Light", role: "Defender" },
         { name: "Sayo", rank: "SSRr", element: "Light", role: "Healer" },
-
         { name: "Sayuri", rank: "SSRr", element: "Dark", role: "Fighter" },
         { name: "Kirie (Summer)", rank: "SSRr", element: "Dark", role: "Assassin" },
         { name: "Sayaka", rank: "SSRr", element: "Dark", role: "Assassin" },
         { name: "Jass", rank: "SSRr", element: "Dark", role: "Assassin" },
         { name: "Garin", rank: "SSRr", element: "Dark", role: "Support" },
-        
-        // SSR
         { name: "Ayaka", rank: "SSR", element: "Fire", role: "Fighter" },
         { name: "Savannah", rank: "SSR", element: "Fire", role: "Assassin" },
         { name: "Kana", rank: "SSR", element: "Fire", role: "Defender" },
-        
         { name: "Maiko", rank: "SSR", element: "Water", role: "Fighter" },
         { name: "Naomi", rank: "SSR", element: "Water", role: "Assassin" },
         { name: "Misaki", rank: "SSR", element: "Water", role: "Healer" },
         { name: "Misato", rank: "SSR", element: "Water", role: "Support" },
-
         { name: "Tsubasa", rank: "SSR", element: "Wind", role: "Fighter" },
         { name: "Nanami", rank: "SSR", element: "Wind", role: "Defender" },
         { name: "Yui", rank: "SSR", element: "Wind", role: "Healer" },
-
         { name: "Aoi", rank: "SSR", element: "Light", role: "Assassin" },
-
         { name: "Kuro", rank: "SSR", element: "Dark", role: "Fighter" },
-
-        // SR
         { name: "Nanako", rank: "SR", element: "Fire", role: "Fighter" },
         { name: "Azusa", rank: "SR", element: "Fire", role: "Fighter" },
-
         { name: "Marina", rank: "SR", element: "Water", role: "Defender" },
         { name: "Yukino", rank: "SR", element: "Water", role: "Healer" },
-
         { name: "Hiyori", rank: "SR", element: "Wind", role: "Fighter" },
         { name: "Kiyomi", rank: "SR", element: "Wind", role: "Healer" },
-
         { name: "Akane", rank: "SR", element: "Light", role: "Assassin" },
-
         { name: "Kirie", rank: "SR", element: "Dark", role: "Assassin" },
-
-        // R
         { name: "Hinata", rank: "R", element: "Fire", role: "Defender" },
         { name: "Kagura", rank: "R", element: "Fire", role: "Support" },
-
         { name: "Ayumi", rank: "R", element: "Water", role: "Defender" },
         { name: "Sae", rank: "R", element: "Water", role: "Healer" },
         { name: "Chika", rank: "R", element: "Water", role: "Support" },
-
         { name: "Kanade", rank: "R", element: "Wind", role: "Fighter" },
         { name: "Lisa", rank: "R", element: "Wind", role: "Assassin" },
         { name: "Emiko", rank: "R", element: "Wind", role: "Support" }
     ];
 
-    // Helper: Generate Bintang
-    function generateStarIcons(starCount) {
-        if (!starCount) return '<span style="color:#444;">-</span>';
-        let stars = '';
-        for(let i=0; i<starCount; i++) stars += '★';
-        return `<span style="color:gold;">${stars}</span>`;
-    }
-
-    // Main Function
-    document.addEventListener('DOMContentLoaded', () => {
-        const container = document.getElementById('tier-container');
-        
-        // 1. Ambil Data User dari Local Storage
+    function renderMatrix() {
+        const container = document.getElementById('matrix-container');
         let localData = [];
         try {
             localData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-        } catch(e) { console.error(e); }
+        } catch(e) {}
 
-        // 2. Struktur Ranking & Element
         const ranks = ['SSRr', 'SSR', 'SR', 'R'];
         const elements = ['Fire', 'Water', 'Wind', 'Light', 'Dark'];
-        const rankTitles = {'SSRr': 'SSR+', 'SSR': 'SSR', 'SR': 'SR', 'R': 'R'}; // Label Display
+        const roles = ['Fighter', 'Assassin', 'Defender', 'Healer', 'Support'];
+        const rankLabels = {'SSRr': 'SSR+', 'SSR': 'SSR', 'SR': 'SR', 'R': 'R'};
 
-        // 3. Loop Render Rank
         ranks.forEach(rank => {
-            const rankSection = document.createElement('div');
-            rankSection.className = 'tier-section';
+            // Section
+            const section = document.createElement('div');
+            section.className = 'tier-section';
             
-            // Header Rank
+            // Header
             const header = document.createElement('div');
             header.className = `tier-header header-${rank}`;
-            header.innerText = rankTitles[rank];
-            rankSection.appendChild(header);
+            header.innerText = rankLabels[rank];
+            section.appendChild(header);
 
-            // Grid Element
+            // Grid Matrix
             const grid = document.createElement('div');
-            grid.className = 'element-grid';
+            grid.className = 'matrix-grid';
 
-            // Loop Render Element Columns
+            // --- HEADER ROW (Label Element) ---
+            grid.innerHTML += `<div class="header-cell role-label">ROLE</div>`;
             elements.forEach(el => {
-                const col = document.createElement('div');
-                col.className = 'element-col';
-
-                // Header Element
-                const colHead = document.createElement('div');
-                colHead.className = `col-header bg-${el}`;
-                colHead.innerText = el;
-                col.appendChild(colHead);
-
-                // List Container
-                const listDiv = document.createElement('div');
-                listDiv.className = 'char-list';
-
-                // FILTER MASTER DATA: Ambil hero yang sesuai Rank & Element ini
-                const heroes = masterRoster.filter(h => h.rank === rank && h.element === el);
-
-                heroes.forEach(hero => {
-                    // Cek sinkronisasi data dari Local Storage
-                    const userHero = localData.find(u => u.name === hero.name);
-                    
-                    const isOwned = !!userHero;
-                    const starCount = isOwned ? userHero.star : 0;
-                    const role = isOwned ? userHero.role : hero.role; // Pakai data user jika ada, atau default master
-
-                    const card = document.createElement('div');
-                    card.className = `tier-card ${isOwned ? '' : 'not-owned'}`;
-                    
-                    // Style elemen (border kecil agar identitas elemen jelas di kartu)
-                    if(el === 'Fire') card.style.borderLeft = '3px solid #bf360c';
-                    if(el === 'Water') card.style.borderLeft = '3px solid #01579b';
-                    if(el === 'Wind') card.style.borderLeft = '3px solid #1b5e20';
-                    if(el === 'Light') card.style.borderLeft = '3px solid #f57f17';
-                    if(el === 'Dark') card.style.borderLeft = '3px solid #311b92';
-
-                    //<span class="tc-rank" style="color: ${rank === 'SSRr' ? 'gold' : 'white'}">${rankTitles[rank]}</span>
-                    card.innerHTML = `
-                        <div class="tc-top">
-                            <img src="img/${hero.name}.png" class="tc-img" onerror="this.src='img/default.png'">
-                            <span class="tc-name">${hero.name}</span>
-                        </div>
-                        <div class="tc-mid">
-                            <span class="tc-role">${role}</span>
-                        </div>
-                        <div class="tc-bot">
-                         ${generateStarIcons(starCount)}
-                        </div>
-                    `;
-                    listDiv.appendChild(card);
-                });
-
-                col.appendChild(listDiv);
-                grid.appendChild(col);
+                grid.innerHTML += `<div class="header-cell bg-${el}">${el}</div>`;
             });
 
-            rankSection.appendChild(grid);
-            container.appendChild(rankSection);
+            // --- DATA ROWS (Roles) ---
+            roles.forEach(role => {
+                // Kolom 1: Nama Role
+                grid.innerHTML += `<div class="cell role-label">${role}</div>`;
+
+                // Kolom 2-6: Isi Karakter per Element
+                elements.forEach(el => {
+                    const cell = document.createElement('div');
+                    cell.className = 'cell';
+
+                    const matches = masterRoster.filter(h => h.rank === rank && h.role === role && h.element === el);
+                    
+                    matches.forEach(hero => {
+                        const userData = localData.find(u => u.name === hero.name);
+                        const isOwned = !!userData;
+                        const stars = isOwned ? '★'.repeat(userData.star) : '';
+                        const statusIcon = isOwned ? '✅' : '⚪';
+
+                        cell.innerHTML += `
+                            <div class="tc-card ${isOwned ? '' : 'not-owned'}">
+                                <div class="tc-main">
+                                    <img src="img/${hero.name}.png" class="tc-img" onerror="this.src='img/default.png'">
+                                    <div class="tc-name">${hero.name}</div>
+                                </div>
+                                <div class="tc-footer">
+                                    <span class="tc-status">${statusIcon}</span>
+                                    <span class="tc-stars">${stars}</span>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    grid.appendChild(cell);
+                });
+            });
+
+            section.appendChild(grid);
+            container.appendChild(section);
         });
-    });
-    </script>
+    }
+
+    document.addEventListener('DOMContentLoaded', renderMatrix);
+</script>
+
 </body>
 </html>
