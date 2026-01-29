@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pilih Karakter untuk Update</title>
+    <title>Select Character to Update</title>
     <link rel="stylesheet" href="style.css">
     <style>
         :root {
@@ -76,21 +76,21 @@
         
         <label for="checkmn" id="toggle-btn">☰</label>
 
-        <a href="index.html">📊 <span>Status Karakter</span></a>
-        <a href="tambah.html">➕ <span>Buat Karakter Baru</span></a>
+        <a href="index.html">📊 <span>Character Status</span></a>
+        <a href="create.html">➕ <span>Create New Character</span></a>
         <a href="tier_list.html">🏆 <span>Tier List</span></a>
-        <a href="update_list.html" class="active">📝 <span>Update Karakter</span></a>
+        <a href="update_list.html" class="active">📝 <span>Character Update</span></a>
         <a href="backup_recovery.html">💾 <span>Backup/Recovery</span></a>
     </div>
 
     <div id="main-content">
-        <h1>📝 Pilih Karakter untuk Diperbarui</h1>
-        <p style="color: #aaa; font-size: 0.9rem; margin-bottom: 20px;">*Daftar diurutkan otomatis berdasarkan Level Tertinggi.</p>
+        <h1>📝 Select Character to Update</h1>
+        <p style="color: #aaa; font-size: 0.9rem; margin-bottom: 20px;">*The list is automatically sorted by Highest Level.</p>
         
         <ul id="character-list-container" class="character-list">
         </ul>
         
-        <div id="loading" style="color: var(--text-muted);">Memuat data...</div>
+        <div id="loading" style="color: var(--text-muted);">Loading data...</div>
     </div>
 
     <script>
@@ -103,7 +103,7 @@
         try {
             return storedData ? JSON.parse(storedData) : []; 
         } catch (e) {
-            console.error("Gagal memparsing data dari Local Storage:", e);
+            console.error("Failed to parse data from Local Storage:", e);
             return [];
         }
     }
@@ -121,7 +121,7 @@
 
         // 2. Cek jika data kosong
         if (characters.length === 0) {
-            listContainer.innerHTML = '<li style="padding:15px; text-align:center;">Belum ada karakter yang tersimpan. <a href="tambah.html" style="display:inline; color:#ff5722;">Tambah Baru?</a></li>';
+            listContainer.innerHTML = '<li style="padding:15px; text-align:center;">No characters saved yet. <a href="create.html" style="display:inline; color:#ff5722;">Add New?</a></li>';
             return;
         }
 
