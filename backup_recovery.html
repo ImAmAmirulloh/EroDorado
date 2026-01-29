@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,38 +29,38 @@
         
         <label for="checkmn" id="toggle-btn">☰</label>
 
-        <a href="index.html">📊 <span>Status Karakter</span></a>
-        <a href="tambah.html">➕ <span>Buat Karakter Baru</span></a>
+        <a href="index.html">📊 <span>Character Status</span></a>
+        <a href="create.html">➕ <span>Create New Character</span></a>
         <a href="tier_list.html">🏆 <span>Tier List</span></a>
-        <a href="update_list.html">📝 <span>Update Karakter</span></a>
+        <a href="update_list.html">📝 <span>Character Update</span></a>
         <a href="backup_recovery.html" class="active">💾 <span>Backup/Recovery</span></a>
     </div>
 
     <div id="main-content">
-        <h1>Backup & Recovery Data Karakter</h1>
+        <h1>Character Data Backup & Recovery</h1>
         <div class="card" style="margin-bottom: 30px;">
             <h2>Backup Data (Download JSON)</h2>
-            <p>Pilih metode backup data dari Local Storage browser Anda:</p>
+            <p>Select the data backup method from your browser's Local Storage:</p>
             
             <div style="display: flex; gap: 15px; margin-bottom: 15px;">
                 <button id="backup-btn" class="submit-btn" style="background-color: #5cb85c;">⬇️ Download File JSON</button>
                 
-                <button id="generate-json-btn" class="submit-btn" style="background-color: #007bff;">📋 Generate Teks JSON</button>
+                <button id="generate-json-btn" class="submit-btn" style="background-color: #007bff;">📋 Generate JSON Text</button>
             </div>
             
             <div id="json-output-container" style="display: none; margin-top: 20px;">
-                <label for="json-output" style="display: block; margin-bottom: 5px; font-weight: bold;">Salin Konten JSON di Bawah:</label>
+                <label for="json-output" style="display: block; margin-bottom: 5px; font-weight: bold;">Copy the JSON Content Below:</label>
                 <textarea id="json-output" rows="15" readonly style="width: 100%; padding: 10px; background: #333; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; resize: vertical;"></textarea>
-                <button id="copy-json-btn" class="submit-btn" style="background-color: #333; margin-top: 10px;">Salin ke Clipboard</button>
+                <button id="copy-json-btn" class="submit-btn" style="background-color: #333; margin-top: 10px;">Copy to Clipboard</button>
             </div>
             
             <p id="backup-status" style="margin-top: 10px; color: #5cb85c;"></p>
         </div>
         <div class="card">
             <h2>Recovery Data (Upload JSON)</h2>
-            <p>Pilih file JSON cadangan Anda dan klik "Simpan ke Browser" untuk **menimpa** data di Local Storage browser Anda.</p>
+            <p>Select your backup JSON file and click "Save to Browser" to **overwrite** the data in your browser's Local Storage.</p>
             <input type="file" id="recovery-file-input" accept=".json" style="margin-bottom: 15px;">
-            <button id="recovery-btn" class="submit-btn" style="background-color: #f0ad4e;">⬆️ Simpan ke Browser</button>
+            <button id="recovery-btn" class="submit-btn" style="background-color: #f0ad4e;">⬆️ Save to Browser</button>
             <p id="recovery-status" style="margin-top: 10px; color: #f0ad4e;"></p>
         </div>
     </div>
@@ -76,7 +76,7 @@
         try {
             return storedData ? JSON.parse(storedData) : []; 
         } catch (e) {
-            console.error("Gagal memparsing data dari Local Storage:", e);
+            console.error("Failed to parse data from Local Storage:", e);
             return [];
         }
     }
@@ -102,7 +102,7 @@
         function getJsonString() {
             const data = loadCharacters();
             if (data.length === 0) {
-                alert("Local Storage kosong, tidak ada data.");
+                alert("Local Storage is empty, no data.");
                 return null;
             }
             return JSON.stringify(data, null, 2); 
@@ -128,7 +128,7 @@
                 document.body.removeChild(a);
                 
                 URL.revokeObjectURL(url);
-                backupStatusMsg.innerText = `✅ Data ${loadCharacters().length} karakter berhasil diunduh!`;
+                backupStatusMsg.innerText = `✅ ${loadCharacters().length} character data downloaded successfully!`;
             });
         }
 
@@ -146,7 +146,7 @@
                 jsonOutput.value = jsonString;
                 jsonOutputContainer.style.display = 'block';
                 jsonOutput.select(); // Langsung select agar mudah disalin
-                backupStatusMsg.innerText = `📋 Konten JSON siap disalin.`;
+                backupStatusMsg.innerText = `📋 JSON content is ready to be copied.`;
             });
         }
         
@@ -160,13 +160,13 @@
                 
                 try {
                     document.execCommand('copy');
-                    copyJsonBtn.innerText = '✅ Berhasil Disalin!';
+                    copyJsonBtn.innerText = '✅ Successfully Copied!';
                 } catch (err) {
-                    copyJsonBtn.innerText = '❌ Gagal Salin (Gunakan Ctrl+C / Cmd+C)';
+                    copyJsonBtn.innerText = '❌ Copy Failed (Use Ctrl+C / Cmd+C)';
                 }
 
                 setTimeout(() => {
-                    copyJsonBtn.innerText = 'Salin ke Clipboard';
+                    copyJsonBtn.innerText = 'Copy to Clipboard';
                 }, 1500);
             });
         }
@@ -181,13 +181,13 @@
                 const file = fileInput.files[0];
 
                 if (!file) {
-                    recoveryStatusMsg.innerText = 'Pilih file JSON terlebih dahulu.';
+                    recoveryStatusMsg.innerText = 'Select the JSON file first.';
                     recoveryStatusMsg.style.color = '#ff5722';
                     return;
                 }
                 
                 if (!file.name.toLowerCase().endsWith('.json')) {
-                     recoveryStatusMsg.innerText = 'Gagal: File harus berekstensi .json.';
+                     recoveryStatusMsg.innerText = 'Failed: File must have a .json extension.';
                      recoveryStatusMsg.style.color = '#ff5722';
                      return;
                 }
@@ -200,30 +200,30 @@
                         
                         if (Array.isArray(importedData)) {
                             if (importedData.length > 0 && !importedData[0].name) {
-                                throw new Error('Format data tidak dikenali. Pastikan ini adalah file backup karakter.');
+                                throw new Error('The data format is not recognized. Make sure this is a character backup file.');
                             }
 
-                            const confirmation = confirm(`Anda yakin ingin memulihkan data? Ini akan MENIMPA ${loadCharacters().length} data karakter yang sudah ada dengan ${importedData.length} data baru.`);
+                            const confirmation = confirm(`Are you sure you want to recover data? This will OVERWRITE the existing ${loadCharacters().length} character data with the new ${importedData.length} data.`);
                             
                             if (confirmation) {
                                 saveCharacters(importedData);
                                 
-                                recoveryStatusMsg.innerText = `✅ Pemulihan berhasil! ${importedData.length} karakter telah disimpan.`;
+                                recoveryStatusMsg.innerText = `✅ Recovery successful! ${importedData.length} characters has been saved.`;
                                 recoveryStatusMsg.style.color = '#5cb85c';
                                 fileInput.value = '';
 
                                 setTimeout(() => { window.location.href = 'index.html'; }, 1500);
                             } else {
-                                recoveryStatusMsg.innerText = 'Pemulihan dibatalkan oleh pengguna.';
+                                recoveryStatusMsg.innerText = 'The recovery was canceled by the user.';
                                 recoveryStatusMsg.style.color = '#ff5722';
                             }
                         } else {
-                            recoveryStatusMsg.innerText = 'Gagal: Isi file JSON tidak memiliki format array yang diharapkan.';
+                            recoveryStatusMsg.innerText = 'Failed: The JSON file contents do not have the expected array format.';
                             recoveryStatusMsg.style.color = '#ff5722';
                         }
                     } catch (e) {
                         console.error('Recovery Error:', e);
-                        recoveryStatusMsg.innerText = 'Gagal: Terjadi kesalahan saat memproses file JSON. ' + e.message;
+                        recoveryStatusMsg.innerText = 'Failed: An error occurred while processing the JSON file. ' + e.message;
                         recoveryStatusMsg.style.color = '#ff5722';
                     }
                 };
