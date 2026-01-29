@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,20 +11,20 @@
         <input type="checkbox" id="checkmn" checked />
         <label for="checkmn" id="toggle-btn">☰</label>
 
-        <a href="index.html" class="active">📊 <span>Status Karakter</span></a>
-        <a href="tambah.html">➕ <span>Buat Karakter Baru</span></a>
+        <a href="index.html" class="active">📊 <span>Character Statusr</span></a>
+        <a href="create.html">➕ <span>Create New Character</span></a>
         <a href="tier_list.html">🏆 <span>Tier List</span></a> 
-        <a href="update_list.html">📝 <span>Update Karakter</span></a>
+        <a href="update_list.html">📝 <span>Character Update</span></a>
         <a href="backup_recovery.html">💾 <span>Backup/Recovery</span></a>
     </div>
 
     <div id="main-content">
-        <h1>Status Karakter Saat Ini</h1>
+        <h1>Current Character Status</h1>
         
         <div id="filter-controls">
-            <label for="sort-by">Urutkan Menurut:</label>
+            <label for="sort-by">Sort:</label>
             <select id="sort-by">
-                <option value="power" selected>Power (Tertinggi)</option>
+                <option value="power" selected>Power</option>
                 <option value="default">Default (Element)</option>
                 <option value="level">Level</option>
                 <option value="star">Star</option>
@@ -32,7 +32,7 @@
                 <option value="cardStar">Card Star</option>
                 <option value="shards">Shards</option>
             </select>
-            <button id="sort-button">Urutkan</button>
+            <button id="sort-button">Sort</button>
         </div>
 
         <div id="card-container"></div>
