@@ -34,12 +34,13 @@
   /* --- GRID SYSTEM --- */
   .matrix-container {
    width: min-content;
+   height: min-content;
    margin: 0 auto;
    border: 1px solid var(--border-color);
    background: var(--border-color);
    display: grid;
    /* Kolom: Element (80px), Role (60px), SSR+, SSR, SR, R */
-   grid-template-columns: 80px 60px repeat(4, minmax(auto, 1fr));
+   grid-template-columns: auto auto repeat(4, minmax(auto, 1fr));
    grid-gap: 1px;
   }
 
@@ -120,7 +121,6 @@
 
   .role-icon {
    width: 35px;
-   height: 35px;
    object-fit: contain;
   }
 
@@ -218,15 +218,11 @@
   /* Responsive */
   @media (max-width: 768px) {
    .matrix-container {
-    grid-template-columns: 40px 40px repeat(4, 1fr);
+    grid-template-columns: auto auto repeat(4, 1fr);
    }
 
    .element-label {
     font-size: 0.8rem;
-   }
-
-   .data-cell {
-    min-width: 80px;
    }
   }
  </style>
