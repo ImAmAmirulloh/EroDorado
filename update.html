@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Edit Karakter</title>
+ <title>Edit Character</title>
  <link rel="stylesheet" href="style.css">
  <style>
   /* CSS Tambahan khusus halaman ini */
@@ -95,20 +95,20 @@
     
     <label for="checkmn" id="toggle-btn">☰</label>
 
-    <a href="index.html">📊 <span>Status Karakter</span></a>
-    <a href="tambah.html">➕ <span>Buat Karakter Baru</span></a>
+    <a href="index.html">📊 <span>Character Status</span></a>
+    <a href="create.html">➕ <span>Create New Character</span></a>
     <a href="tier_list.html">🏆 <span>Tier List</span></a>
-    <a href="update_list.html" class="active">📝 <span>Update Karakter</span></a>
+    <a href="update_list.html" class="active">📝 <span>Character Update</span></a>
     <a href="backup_recovery.html">💾 <span>Backup/Recovery</span></a>
     </div>
 
  <div id="main-content">
-  <h1 id="page-title">📝 Edit Karakter</h1>
+  <h1 id="page-title">📝 Edit Character</h1>
 
   <form id="edit-form">
    <div class="form-grid">
     <div class="form-group">
-     <label for="name">Nama Karakter</label>
+     <label for="name">Character Name</label>
      <input type="text" id="name" name="name" required>
     </div>
     <div class="form-group">
@@ -191,15 +191,15 @@
      <label for="power">Power (Ex: 10K)</label><input type="text" id="power" name="power" required>
     </div>
     <div class="form-group">
-     <label for="shards">Shards Saat Ini</label><input type="number" id="shards" name="shards" min="0" required>
+     <label for="shards">Current Shards</label><input type="number" id="shards" name="shards" min="0" required>
     </div>
     <div class="form-group">
      <label for="shardMax">Shards Max</label><input type="number" id="shardMax" name="shardMax" min="1" required>
     </div>
 
     <div class="form-group full-width btn-container">
-     <button type="submit" class="submit-btn update-btn">💾 Simpan Perubahan</button>
-     <button type="button" id="delete-btn" class="submit-btn delete-btn">🗑️ Hapus Karakter</button>
+     <button type="submit" class="submit-btn update-btn">💾 Save Changes</button>
+     <button type="button" id="delete-btn" class="submit-btn delete-btn">🗑️ Delete Character</button>
     </div>
    </div>
    
@@ -236,7 +236,7 @@
    
    // Validasi ID
    if (charId === null || isNaN(charIndex) || charIndex < 0 || charIndex >= characters.length) {
-    if(statusMsg) statusMsg.innerText = "❌ Error: Karakter tidak ditemukan!";
+    if(statusMsg) statusMsg.innerText = "❌ Error: Character not found!";
     document.querySelector('.form-grid').style.display = 'none'; // Sembunyikan form
     setTimeout(() => { window.location.href = 'update_list.html'; }, 2000);
     return;
@@ -245,7 +245,7 @@
    const character = characters[charIndex];
 
    // 2. ISI FORM (Populasi Data)
-   pageTitle.innerText = `📝 Edit Karakter: ${character.name}`;
+   pageTitle.innerText = `📝 Edit Character: ${character.name}`;
    
    // Loop otomatis mengisi input berdasarkan 'name' di HTML yg sama dengan key JSON
    for (const key in character) {
@@ -275,7 +275,7 @@
     characters[charIndex] = updatedCharacter;
     saveCharacters(characters);
 
-    statusMsg.innerText = "✅ Perubahan berhasil disimpan!";
+    statusMsg.innerText = "✅ Changes saved successfully!";
     statusMsg.style.color = "#4CAF50";
     
     // Kembali ke index setelah 1 detik
@@ -284,11 +284,11 @@
 
    // 4. LOGIKA HAPUS (DELETE)
    deleteBtn.addEventListener('click', function() {
-    if (confirm(`Yakin ingin MENGHAPUS karakter ${character.name} selamanya?`)) {
+    if (confirm(`Are you sure you want to DELETE the character ${character.name} forever?`)) {
      characters.splice(charIndex, 1); // Hapus 1 item dari array
      saveCharacters(characters);
      
-     alert('Karakter telah dihapus.');
+     alert('The character has been deleted.');
      window.location.href = 'index.html';
     }
    });
