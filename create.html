@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Karakter Baru</title>
+    <title>Add New Character</title>
     <link rel="stylesheet" href="style.css">
     <style>
         :root {
@@ -90,19 +90,19 @@
         
         <label for="checkmn" id="toggle-btn">☰</label>
 
-        <a href="index.html">📊 <span>Status Karakter</span></a>
-        <a href="tambah.html" class="active">➕ <span>Buat Karakter Baru</span></a>
+        <a href="index.html">📊 <span>Character Status</span></a>
+        <a href="create.html" class="active">➕ <span>Create New Character</span></a>
         <a href="tier_list.html">🏆 <span>Tier List</span></a>
-        <a href="update_list.html">📝 <span>Update Karakter</span></a>
+        <a href="update_list.html">📝 <span>Character Update</span></a>
         <a href="backup_recovery.html">💾 <span>Backup/Recovery</span></a>
     </div>
 
     <div id="main-content">
-        <h1>➕ Buat Karakter Baru</h1>
+        <h1>➕ Create New Character</h1>
         <form id="character-form" action="" method="POST">
             <div class="form-grid">
                 <div class="form-group">
-                    <label for="name">Nama Karakter</label>
+                    <label for="name">Character Name</label>
                     <input type="text" id="name" name="name" required>
                 </div>
     <div class="form-group">
@@ -154,11 +154,11 @@
                 <div class="form-group"><label for="cardStar">Card Star</label><input type="number" id="cardStar" name="cardStar" value="1" min="0" max="6"></div>
 
                 <div class="form-group"><label for="power">Power (Ex: 10K)</label><input type="text" id="power" name="power" value="0K" required></div>
-                <div class="form-group"><label for="shards">Shards Saat Ini</label><input type="number" id="shards" name="shards" value="0" min="0" required></div>
+                <div class="form-group"><label for="shards">Current Shards</label><input type="number" id="shards" name="shards" value="0" min="0" required></div>
                 <div class="form-group"><label for="shardMax">Shards Max</label><input type="number" id="shardMax" name="shardMax" value="20" min="1" required></div>
 
                 <div class="form-group full-width" style="text-align: center; margin-top: 20px;">
-                    <button type="submit" class="submit-btn">Simpan Karakter Baru</button>
+                    <button type="submit" class="submit-btn">Save New Character</button>
                 </div>
                 <p id="status-message" style="margin-top: 15px; text-align: center; font-weight: bold;"></p>
             </div>
@@ -176,7 +176,7 @@
             // Mengembalikan array kosong jika tidak ada data atau parsing gagal
             return storedData ? JSON.parse(storedData) : []; 
         } catch (e) {
-            console.error("Gagal memparsing data dari Local Storage:", e);
+            console.error("Failed to parse data from Local Storage:", e);
             return [];
         }
     }
@@ -192,11 +192,11 @@
 
         // Pengecekan keamanan: Pastikan form dan statusMsg ditemukan
         if (!form) {
-            console.error("Error FATAL: Elemen 'character-form' tidak ditemukan.");
+            console.error("Error FATAL: Element 'character-form' not found.");
             return;
         }
         if (!statusMsg) {
-             console.warn("Warning: Elemen 'status-message' tidak ditemukan. Pesan status tidak akan ditampilkan.");
+             console.warn("Warning: The 'status-message' element was not found. The status message will not be displayed.");
         }
 
 
@@ -228,7 +228,7 @@
             
             // 5. Beri Feedback dan Reset
             if (statusMsg) {
-                statusMsg.innerText = `✅ Karakter '${newCharacter.name}' berhasil disimpan ke Local Storage!`;
+                statusMsg.innerText = `✅ Character '${newCharacter.name}' was successfully saved to Local Storage!`;
                 statusMsg.style.color = '#5cb85c';
             }
             form.reset(); 
@@ -243,4 +243,5 @@
 </body>
 
 </html>
+
 
