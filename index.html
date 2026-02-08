@@ -628,19 +628,16 @@
                     <div class="grid-item"><span class="grid-label">S4</span><span class="grid-value">${data.skillFourLevel}</span></div>
                 </div>
 
-                <div class="grid-item skill-progress-details" style="border:none; padding:0;">
-                    <span class="grid-label skill-progress-name"><b>${trackedSkillName} ▶ ${skillProgress.current} / ${skillProgress.max} (<span style="color:#ff7043;">${skillProgress.max - skillProgress.current}</span>)</b></span>
-                    <div class="grid-value progress-bg">
-                        <div class="progress-fill" style="width: ${skillProgressPercentage}%"></div>
+                <div class="grid-2-row skill-progress-details">
+                    <div class="grid-item" style="border:none; padding:0;">
+                        <span class="grid-label skill-progress-name"><b>${trackedSkillName} ▶</b></span>
                     </div>
-                </div>
-
-                <div class="grid-5">
-                    <div class="label grid-item" style="margin-top: 5px;">Equipment</div>
-                    <div class="grid-item"><span class="grid-label">Brac.</span><span class="grid-value">${data.bracelet}</span></div>
-                    <div class="grid-item"><span class="grid-label">Bikini</span><span class="grid-value">${data.bikini}</span></div>
-                    <div class="grid-item"><span class="grid-label">Hat</span><span class="grid-value">${data.hat}</span></div>
-                    <div class="grid-item"><span class="grid-label">Sandals</span><span class="grid-value">${data.sandals}</span></div>
+                    <div class="grid-item>
+                        <span class="grid-label skill-progress-name"><b>${skillProgress.current} / ${skillProgress.max} (<span style="color:#ff7043;">${skillProgress.max - skillProgress.current}</span>)</b></span>
+                        <div class="grid-value progress-bg">
+                            <div class="progress-fill" style="width: ${skillProgressPercentage}%"></div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="grid-2-row">
@@ -710,15 +707,6 @@
                     <div class="grid-item"><span class="grid-label">Max</span>
                         <input type="number" class="edit-input" id="edit-skillMax-${index}" value="${skillProgress.max}">
                     </div>
-                </div>
-
-
-                 <div class="grid-5">
-                    <div class="label grid-item">Equip</div>
-                    <div class="grid-item"><span class="grid-label">Brac.</span><input type="text" class="edit-input" id="edit-brac-${index}" value="${data.bracelet}"></div>
-                    <div class="grid-item"><span class="grid-label">Bikini</span><input type="text" class="edit-input" id="edit-bikini-${index}" value="${data.bikini}"></div>
-                    <div class="grid-item"><span class="grid-label">Hat</span><input type="text" class="edit-input" id="edit-hat-${index}" value="${data.hat}"></div>
-                    <div class="grid-item"><span class="grid-label">Sandals</span><input type="text" class="edit-input" id="edit-sandals-${index}" value="${data.sandals}"></div>
                 </div>
 
                 <div class="grid-2-row">
@@ -814,10 +802,6 @@
         updatedChar.skillTwoLevel = parseInt(document.getElementById(`edit-s2-${index}`).value) || 0;
         updatedChar.skillThreeLevel = parseInt(document.getElementById(`edit-s3-${index}`).value) || 0;
         updatedChar.skillFourLevel = parseInt(document.getElementById(`edit-s4-${index}`).value) || 0;
-        updatedChar.bracelet = document.getElementById(`edit-brac-${index}`).value;
-        updatedChar.bikini = document.getElementById(`edit-bikini-${index}`).value;
-        updatedChar.hat = document.getElementById(`edit-hat-${index}`).value;
-        updatedChar.sandals = document.getElementById(`edit-sandals-${index}`).value;
         updatedChar.shards = document.getElementById(`edit-shards-${index}`).value;
         updatedChar.shardMax = document.getElementById(`edit-shardMax-${index}`).value;
         updatedChar.cardLevel = parseInt(document.getElementById(`edit-cardLevel-${index}`).value) || 0;
