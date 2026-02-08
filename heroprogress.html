@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero Skill Progress Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles specific to this page */
+        :root {
+            --rank-ssrr: #ebff52;
+            --rank-ssr: #ffb74d;
+            --rank-sr: #ba68c8;
+            --rank-r: #64b5f6;
+        }
+
+        #main-content {
+            padding: 20px 40px;
+        }
+
+        .hero-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .hero-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+        .hero-card-header {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .hero-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        .hero-info h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+        }
+        .hero-info .meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .hero-info .rank-SSRr { color: var(--rank-ssrr); }
+        .hero-info .rank-SSR { color: var(--rank-ssr); }
+        .hero-info .rank-SR { color: var(--rank-sr); }
+        .hero-info .rank-R { color: var(--rank-r); }
+
+        .hero-card-body {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .skill-progress-bar .info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            margin-bottom: 4px;
+        }
+        .skill-progress-bar .bar-bg {
+            background-color: #333;
+            border-radius: 5px;
+            height: 8px;
+        }
+        .skill-progress-bar .bar-fill {
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        .card-actions {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 8px;
+        }
+        .card-actions button {
+            background: rgba(0,0,0,0.6);
+            border: 1px solid #555;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+        .card-actions button:hover {
+            background-color: var(--accent);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+        .modal-content {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+            border: 1px solid var(--border);
+        }
+        /* Grid styles from the old app */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 768px) {
+            .grid-container { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1200px) {
+            .grid-container { grid-template-columns: repeat(3, 1fr); }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <div id="sidebar">
+        <input type="checkbox" id="checkmn" checked />
+        <label for="checkmn" id="toggle-btn">☰</label>
+
+        <a href="index.html">📊 <span>Character Status</span></a>
+        <a href="heroprogress.html" class="active">📈 <span>Skill Progress</span></a>
+        <a href="create.html">➕ <span>Create New Character</span></a>
+        <a href="tier_list.html">🏆 <span>Tier List</span></a> 
+        <a href="update_list.html">📝 <span>Character Update</span></a>
+        <a href="backup_recovery.html">💾 <span>Backup/Recovery</span></a>
+    </div>
+
+    <div id="main-content">
+        <h1>Hero Skill Progress Tracker</h1>
+        <p style="color: #aaa; font-size: 0.9rem; margin-bottom: 20px;">Focus on your hero progression and track skill upgrades.</p>
+
+        <section id="pinned-heroes-section" class="mb-12">
+            <h2 class="text-2xl font-semibold border-b-2 border-purple-500 pb-2 mb-6 flex items-center gap-2" style="border-color: var(--accent); margin-bottom: 20px;">★ Pinned Heroes</h2>
+            <div id="pinned-heroes-container" class="grid-container">
+                <p id="no-pinned-message">No heroes pinned. Pin a hero from the list below to focus on their progress.</p>
+            </div>
+        </section>
+
+        <section id="all-heroes-section">
+            <h2 class="text-2xl font-semibold border-b-2 border-gray-700 pb-2 mb-6" style="border-color: #444; margin-bottom: 20px;">All Heroes</h2>
+            <div id="all-heroes-container" class="grid-container">
+                 <p>Loading hero data...</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Edit Modal Structure -->
+    <div id="edit-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <h2 id="modal-title">Edit Progress</h2>
+            <div id="modal-body" style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+                <!-- Skill inputs will be generated here -->
+            </div>
+            <div style="text-align: right; margin-top: 20px; display: flex; gap: 10px; justify-content: flex-end;">
+                <button id="modal-cancel-btn" class="submit-btn" style="background-color: #555;">Cancel</button>
+                <button id="modal-save-btn" class="submit-btn" style="background-color: var(--accent);">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const HERO_DATA_KEY = 'CHARACTER_DATA_V1'; // Using the same key as other files
+        const PINNED_HEROES_KEY = 'PINNED_HEROES_DATA';
+
+        const ELEMENT_COLORS = {
+          Fire: { bg: '#ef5350' }, Wind: { bg: '#66bb6a' },
+          Water: { bg: '#42a5f5' }, Light: { bg: '#ffee58' },
+          Dark: { bg: '#ab47bc' },
+        };
+
+        let allHeroes = [];
+        let pinnedHeroNames = [];
+        let currentlyEditingHero = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadData();
+            renderUI();
+            setupEventListeners();
+        });
+
+        function loadData() {
+            try {
+                const storedHeroes = localStorage.getItem(HERO_DATA_KEY);
+                const storedPins = localStorage.getItem(PINNED_HEROES_KEY);
+
+                allHeroes = storedHeroes ? JSON.parse(storedHeroes) : [];
+                pinnedHeroNames = storedPins ? JSON.parse(storedPins) : [];
+
+                // Data migration & validation logic
+                allHeroes = allHeroes.map(hero => {
+                    if (!hero.skills) { // If skills object doesn't exist, create it
+                        hero.skills = {
+                            skillOne: { level: hero.skillOneLevel || 1, current: 0, max: 1000 },
+                            skillTwo: { level: hero.skillTwoLevel || 1, current: 0, max: 2000 },
+                            skillThree: { level: hero.skillThreeLevel || 1, current: 0, max: 5000 },
+                            skillFour: { level: hero.skillFourLevel || 1, current: hero.cardLevel || 0, max: 100 },
+                        };
+                    } else { // If it exists, ensure skill 4 is updated
+                         hero.skills.skillFour.current = hero.cardLevel || 0;
+                    }
+                    return hero;
+                });
+                
+                // Save migrated data back to local storage
+                localStorage.setItem(HERO_DATA_KEY, JSON.stringify(allHeroes));
+
+            } catch (e) {
+                console.error("Failed to load or parse data:", e);
+                allHeroes = [];
+                pinnedHeroNames = [];
+            }
+        }
+
+        function saveData() {
+             localStorage.setItem(HERO_DATA_KEY, JSON.stringify(allHeroes));
+             localStorage.setItem(PINNED_HEROES_KEY, JSON.stringify(pinnedHeroNames));
+        }
+
+        function renderUI() {
+            const pinnedContainer = document.getElementById('pinned-heroes-container');
+            const allContainer = document.getElementById('all-heroes-container');
+            const noPinnedMessage = document.getElementById('no-pinned-message');
+
+            pinnedContainer.innerHTML = '';
+            allContainer.innerHTML = '';
+
+            const pinnedHeroes = allHeroes.filter(h => pinnedHeroNames.includes(h.name));
+            const unpinnedHeroes = allHeroes.filter(h => !pinnedHeroNames.includes(h.name));
+
+            if (pinnedHeroes.length > 0) {
+                noPinnedMessage.style.display = 'none';
+                pinnedHeroes.forEach(hero => {
+                    pinnedContainer.innerHTML += createHeroCardHTML(hero, true);
+                });
+            } else {
+                pinnedContainer.appendChild(noPinnedMessage);
+                noPinnedMessage.style.display = 'block';
+            }
+
+            if (unpinnedHeroes.length > 0) {
+                 unpinnedHeroes.forEach(hero => {
+                    allContainer.innerHTML += createHeroCardHTML(hero, false);
+                });
+            } else {
+                allContainer.innerHTML = '<p>All heroes are pinned.</p>';
+            }
+        }
+
+        function createHeroCardHTML(hero, isPinned) {
+            const color = ELEMENT_COLORS[hero.element]?.bg || '#78909c';
+            const actionButton = isPinned
+                ? `<button title="Unpin Hero" onclick="unpinHero('${hero.name}')">✖️</button>`
+                : `<button title="Pin Hero" onclick="pinHero('${hero.name}')">📌</button>`;
+
+            return `
+                <div class="hero-card" data-hero-name="${hero.name}">
+                    <div class="hero-card-header" style="background: linear-gradient(135deg, ${color}, #1e1e1e 80%);">
+                        <img src="img/${hero.name}.png" alt="${hero.name}" class="hero-icon" onerror="this.src='img/default.png'">
+                        <div class="hero-info">
+                            <h3>${hero.name}</h3>
+                            <div class="meta">
+                                <span class="rank-${hero.rank}"><b>${hero.rank}</b></span> | ${hero.element}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-card-body">
+                        ${createSkillBarHTML(hero.skills.skillOne, 'Skill 1', color)}
+                        ${createSkillBarHTML(hero.skills.skillTwo, 'Skill 2', color)}
+                        ${createSkillBarHTML(hero.skills.skillThree, 'Skill 3', color)}
+                        ${createSkillBarHTML(hero.skills.skillFour, 'Skill 4 (Card)', color)}
+                    </div>
+                    <div class="card-actions">
+                        <button title="Edit Progress" onclick="openEditModal('${hero.name}')">✏️</button>
+                        ${actionButton}
+                    </div>
+                </div>
+            `;
+        }
+
+        function createSkillBarHTML(skill, name, color) {
+            const percentage = skill.max > 0 ? (skill.current / skill.max) * 100 : 0;
+            return `
+                <div class="skill-progress-bar">
+                    <div class="info">
+                        <span>${name} (Lvl ${skill.level})</span>
+                        <span style="color: ${color};">${skill.current} / ${skill.max}</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="width: ${percentage}%; background-color: ${color};"></div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // --- Event Handlers & Actions ---
+        window.pinHero = (name) => {
+            if (!pinnedHeroNames.includes(name)) {
+                pinnedHeroNames.push(name);
+                saveData();
+                renderUI();
+            }
+        };
+
+        window.unpinHero = (name) => {
+            pinnedHeroNames = pinnedHeroNames.filter(n => n !== name);
+            saveData();
+            renderUI();
+        };
+
+        window.openEditModal = (name) => {
+            currentlyEditingHero = allHeroes.find(h => h.name === name);
+            if (!currentlyEditingHero) return;
+
+            const modal = document.getElementById('edit-modal');
+            const modalBody = document.getElementById('modal-body');
+            document.getElementById('modal-title').innerText = `Edit Progress for ${currentlyEditingHero.name}`;
+            modalBody.innerHTML = ''; // Clear previous content
+
+            const skills = currentlyEditingHero.skills;
+            const skillNames = { skillOne: 'Skill 1', skillTwo: 'Skill 2', skillThree: 'Skill 3', skillFour: 'Skill 4 (Card)' };
+            
+            Object.keys(skills).forEach(key => {
+                const skill = skills[key];
+                const isSkillFour = key === 'skillFour';
+                modalBody.innerHTML += `
+                    <div>
+                        <strong>${skillNames[key]}</strong>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 5px;">
+                            <div>
+                                <label>Level</label>
+                                <input type="number" data-skill-key="${key}" data-field="level" value="${skill.level}" class="edit-input" style="width: 100%;">
+                            </div>
+                             <div>
+                                <label>Current</label>
+                                <input type="number" data-skill-key="${key}" data-field="current" value="${skill.current}" class="edit-input" style="width: 100%;" ${isSkillFour ? 'disabled' : ''}>
+                            </div>
+                             <div>
+                                <label>Max</label>
+                                <input type="number" data-skill-key="${key}" data-field="max" value="${skill.max}" class="edit-input" style="width: 100%;">
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            modal.style.display = 'flex';
+        };
+
+        function setupEventListeners() {
+            const modal = document.getElementById('edit-modal');
+            
+            document.getElementById('modal-cancel-btn').addEventListener('click', () => {
+                modal.style.display = 'none';
+                currentlyEditingHero = null;
+            });
+            
+            document.getElementById('modal-save-btn').addEventListener('click', () => {
+                if (!currentlyEditingHero) return;
+
+                const inputs = modal.querySelectorAll('input[type="number"]');
+                inputs.forEach(input => {
+                    const skillKey = input.dataset.skillKey;
+                    const field = input.dataset.field;
+                    const value = parseInt(input.value, 10);
+
+                    if (!isNaN(value)) {
+                        currentlyEditingHero.skills[skillKey][field] = value;
+                    }
+                });
+
+                saveData();
+                renderUI();
+                modal.style.display = 'none';
+                currentlyEditingHero = null;
+            });
+
+            // Close modal on overlay click
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    currentlyEditingHero = null;
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>
