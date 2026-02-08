@@ -187,9 +187,9 @@
         const PINNED_HEROES_KEY = 'PINNED_HEROES_DATA';
 
         const ELEMENT_COLORS = {
-          Fire: { bg: '#ef5350' }, Wind: { bg: '#66bb6a' },
-          Water: { bg: '#42a5f5' }, Light: { bg: '#ffee58' },
-          Dark: { bg: '#ab47bc' },
+          Fire: { bg: '#bf360c' }, Wind: { bg: '#4caf50' },
+          Water: { bg: '#2196f3' }, Light: { bg: '#ffc107' },
+          Dark: { bg: '#673ab7' },
         };
 
         let allHeroes = [];
@@ -278,7 +278,7 @@
 
             return `
                 <div class="hero-card" data-hero-name="${hero.name}">
-                    <div class="hero-card-header" style="background: linear-gradient(135deg, ${color}, #1e1e1e 80%);">
+                    <div class="hero-card-header" style="background: ${color};">
                         <img src="img/${hero.name}.png" alt="${hero.name}" class="hero-icon" onerror="this.src='img/default.png'">
                         <div class="hero-info">
                             <h3>${hero.name}</h3>
