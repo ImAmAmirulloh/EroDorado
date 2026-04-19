@@ -1154,7 +1154,7 @@
 
 .enemy-card {
     display: grid;
-    grid-template-columns: 130px 1fr; /* Kolom kiri tetap, kolom kanan fleksibel */
+    grid-template-columns: min-content 1fr; /* Kolom kiri tetap, kolom kanan fleksibel */
     background: #1e1e1e;
     border: 1px solid var(--border);
     border-radius: 10px;
@@ -1183,7 +1183,7 @@
 }
 /* Profil Musuh (Container Gambar + Teks Melengkung) */
 .enemy-profile {
-  width: 110px;
+  width: min-content;
     height: 110px;
 }
 
@@ -1273,15 +1273,15 @@
 /* Munculkan tombol saat kartu di-hover */
 .enemy-card:hover .enemy-edit-btn {
     display: flex;
-}
-
-.enemy-edit-btn:hover {
+  }
+  
+  .enemy-edit-btn:hover {
     background: var(--accent);
     border-color: var(--accent);
     transform: scale(1.1);
 }
 
 /* Penyesuaian agar flex-direction column saat edit mode tidak merusak layout asli */
-.enemy-card[style*="flex-direction: column"] .action-buttons {
-    justify-content: flex-end;
+.enemy-card[style*="flex-direction: column"], .enemy-card[style*="flex-direction: column"] .action-buttons {
+  display: block!important;
 }

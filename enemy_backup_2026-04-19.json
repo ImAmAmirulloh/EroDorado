@@ -187,7 +187,11 @@
    {
     "id": "e38",
     "name": "Local Lass",
-    "locations": []
+    "locations": [
+      "1-1",
+      "1-4"
+
+    ]
    },
    {
     "id": "e39",
