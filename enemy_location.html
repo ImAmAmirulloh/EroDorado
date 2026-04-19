@@ -54,27 +54,55 @@
             localStorage.setItem(ENEMY_STORAGE_KEY, JSON.stringify(enemiesData));
         }
 
-        // Render HTML Mode Baca
-        function createEnemyCard(enemy, index) {
-            const locationBadges = enemy.locations.map(loc => `<span class="loc-badge">[${loc}]</span>`).join('');
-            
-            // Perhatikan penggunaan ${enemy.name}.png untuk sumber gambar
-            return `
-            <div class="enemy-card" id="enemy-card-${index}">
-                <button class="enemy-edit-btn" onclick="activateEdit(${index})">✏️</button>
-                <div class="enemy-profile">
-                    <img src="img/${enemy.name}.png" alt="${enemy.name}" onerror="this.src='img/default.png'">
-                    <svg class="enemy-name-svg" viewBox="0 0 120 120">
-                        <path id="curve-${index}" d="M 15 65 A 45 45 0 0 0 105 65" fill="transparent" />
-                        <text><textPath href="#curve-${index}" startOffset="50%" text-anchor="middle">${enemy.name}</textPath></text>
-                    </svg>
-                </div>
-                <div class="enemy-locations">
-                    ${locationBadges || '<span style="color:#555; font-style:italic;">No locations</span>'}
-                </div>
-            </div>
-            `;
+        // Fungsi untuk mengelompokkan data "1-2, 1-8" menjadi { "1": ["2", "8"] }
+function groupLocations(locationsArray) {
+    const groups = {};
+    locationsArray.forEach(loc => {
+        const split = loc.split('-');
+        if (split.length === 2) {
+            const map = split[0].trim();
+            const zone = split[1].trim();
+            if (!groups[map]) groups[map] = [];
+            groups[map].push(zone);
         }
+    });
+    return groups;
+}
+        
+        function createEnemyCard(enemy, index) {
+    const groups = groupLocations(enemy.locations);
+    
+    // Generate HTML untuk box lokasi bertumpuk
+    let locationHTML = '';
+    for (const map in groups) {
+        locationHTML += `
+            <div class="loc-group-box">
+                <div class="loc-map-title">${map}</div>
+                <div class="loc-zones">${groups[map].join(', ')}</div>
+            </div>
+        `;
+    }
+
+    return `
+    <div class="enemy-card" id="enemy-card-${index}">
+        <button class="enemy-edit-btn" onclick="activateEdit(${index})">✏️</button>
+        
+        <div class="enemy-left-panel">
+            <div class="enemy-profile">
+                <img src="img/${enemy.name}.png" alt="${enemy.name}" onerror="this.src='img/default.png'">
+                <svg class="enemy-name-svg" viewBox="0 0 120 120">
+                    <path id="curve-${index}" d="M 15 65 A 45 45 0 0 0 105 65" fill="transparent" />
+                    <text><textPath href="#curve-${index}" startOffset="50%" text-anchor="middle">${enemy.name}</textPath></text>
+                </svg>
+            </div>
+        </div>
+
+        <div class="enemy-right-panel">
+            ${locationHTML || '<span style="color:#555;">No Data</span>'}
+        </div>
+    </div>
+    `;
+}
 
         // Render HTML Mode Edit
         function createEnemyEdit(enemy, index) {
