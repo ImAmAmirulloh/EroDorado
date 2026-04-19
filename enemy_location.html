@@ -87,10 +87,7 @@ function groupLocations(locationsArray) {
         <div class="enemy-left-panel">
             <div class="enemy-profile">
                 <img src="img/enemy/${enemy.name}.png" alt="${enemy.name}">
-                <svg class="enemy-name-svg" viewBox="0 0 120 120">
-                    <path id="curve-${index}" d="M 15 65 A 45 45 0 0 0 105 65" fill="transparent" />
-                    <text><textPath href="#curve-${index}" startOffset="50%" text-anchor="middle">${enemy.name}</textPath></text>
-                </svg>
+                <span class="enemy-name">${enemy.name}</span>
             </div>
         </div>
 
