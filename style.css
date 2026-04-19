@@ -1347,4 +1347,18 @@
     cursor: pointer;
     z-index: 10;
     accent-color: var(--accent); /* Mewarnai checkbox sesuai tema */
+opacity: 0.7; 
+    transition: opacity 0.2s;
+}
+
+/* Berikan opacity penuh jika di-hover ATAU jika sudah di-check */
+.enemy-checkbox:hover,
+.enemy-checkbox:checked {
+    opacity: 1;
+}
+
+/* Opsional: Beri highlight pada kartu yang sudah terpilih */
+.enemy-card:has(.enemy-checkbox:checked) {
+    border-color: var(--accent);
+    background-color: #2a1a15; /* Warna kecokelatan gelap agar kontras */
 }
