@@ -1,0 +1,800 @@
+[
+  {
+    "id": "e1",
+    "name": "Abominable Snow-Fiend",
+    "locations": []
+   },
+   {
+    "id": "e2",
+    "name": "Aerobics Girl",
+    "locations": []
+   },
+   {
+    "id": "e3",
+    "name": "Alluring Maid",
+    "locations": []
+   },
+   {
+    "id": "e4",
+    "name": "Android Tanuki",
+    "locations": []
+   },
+   {
+    "id": "e5",
+    "name": "Apocalyptic Brawler",
+    "locations": []
+   },
+   {
+    "id": "e6",
+    "name": "Arctic Snowboarder",
+    "locations": []
+   },
+   {
+    "id": "e7",
+    "name": "Battle Suit Maiden",
+    "locations": []
+   },
+   {
+    "id": "e8",
+    "name": "BB Bouncer",
+    "locations": []
+   },
+   {
+    "id": "e9",
+    "name": "Biopunk Ecowarrior",
+    "locations": []
+   },
+   {
+    "id": "e10",
+    "name": "Black Suit",
+    "locations": []
+   },
+   {
+    "id": "e11",
+    "name": "Brawler Rogue",
+    "locations": []
+   },
+   {
+    "id": "e12",
+    "name": "Brute Brigandess",
+    "locations": []
+   },
+   {
+    "id": "e13",
+    "name": "Busty Knightess",
+    "locations": []
+   },
+   {
+    "id": "e14",
+    "name": "Captain of the Guard",
+    "locations": []
+   },
+   {
+    "id": "e15",
+    "name": "Casino Bunnygirl",
+    "locations": []
+   },
+   {
+    "id": "e16",
+    "name": "Casino Lady",
+    "locations": []
+   },
+   {
+    "id": "e17",
+    "name": "Cow Bikini Girl",
+    "locations": []
+   },
+   {
+    "id": "e18",
+    "name": "Cyber Chic",
+    "locations": []
+   },
+   {
+    "id": "e19",
+    "name": "Cyber Citizen",
+    "locations": []
+   },
+   {
+    "id": "e20",
+    "name": "Cyber Teacher",
+    "locations": []
+   },
+   {
+    "id": "e21",
+    "name": "Dessert Female Warrior",
+    "locations": []
+   },
+   {
+    "id": "e22",
+    "name": "Devil's Fury Deandra",
+    "locations": []
+   },
+   {
+    "id": "e23",
+    "name": "Dwarven Soldier",
+    "locations": []
+   },
+   {
+    "id": "e24",
+    "name": "Elven Speargirl",
+    "locations": []
+   },
+   {
+    "id": "e25",
+    "name": "Elven Warrior",
+    "locations": []
+   },
+   {
+    "id": "e26",
+    "name": "Foxy Nun Felicia",
+    "locations": []
+   },
+   {
+    "id": "e27",
+    "name": "Fresh-Faced Adventurer",
+    "locations": []
+   },
+   {
+    "id": "e28",
+    "name": "High-Leg Knightess",
+    "locations": []
+   },
+   {
+    "id": "e29",
+    "name": "Hired Fixer",
+    "locations": []
+   },
+   {
+    "id": "e30",
+    "name": "Hydroid",
+    "locations": []
+   },
+   {
+    "id": "e31",
+    "name": "Ice Hockey Girl",
+    "locations": []
+   },
+   {
+    "id": "e32",
+    "name": "Imperial Assassin",
+    "locations": []
+   },
+   {
+    "id": "e33",
+    "name": "Imperial Infantry",
+    "locations": []
+   },
+   {
+    "id": "e34",
+    "name": "Imperial Knightess",
+    "locations": []
+   },
+   {
+    "id": "e35",
+    "name": "Imperial Officer",
+    "locations": []
+   },
+   {
+    "id": "e36",
+    "name": "Joyful One-Piece Siren",
+    "locations": []
+   },
+   {
+    "id": "e37",
+    "name": "Lewd Teacher",
+    "locations": []
+   },
+   {
+    "id": "e38",
+    "name": "Local Lass",
+    "locations": []
+   },
+   {
+    "id": "e39",
+    "name": "Martial Maiden",
+    "locations": []
+   },
+   {
+    "id": "e40",
+    "name": "Masked Diva",
+    "locations": []
+   },
+   {
+    "id": "e41",
+    "name": "Mech Pilot",
+    "locations": []
+   },
+   {
+    "id": "e42",
+    "name": "Mecha Harpy Harper",
+    "locations": []
+   },
+   {
+    "id": "e43",
+    "name": "Military Girl",
+    "locations": []
+   },
+   {
+    "id": "e44",
+    "name": "Muscle Maiden",
+    "locations": []
+   },
+   {
+    "id": "e45",
+    "name": "Mysterious Office Lady",
+    "locations": []
+   },
+   {
+    "id": "e46",
+    "name": "Naive Researcher",
+    "locations": []
+   },
+   {
+    "id": "e47",
+    "name": "Naughty Lust Nessy",
+    "locations": []
+   },
+   {
+    "id": "e48",
+    "name": "Netrunning Siren",
+    "locations": []
+   },
+   {
+    "id": "e49",
+    "name": "Obscene Police Officer",
+    "locations": [
+      "1-1",
+      "2-6",
+      "2-7",
+      "4-3",
+      "4-8",
+      "7-14",
+      "8-1",
+      "9-1",
+      "9-3",
+      "9-11",
+      "9-12",
+      "9-13",
+      "9-14",
+      "10-1",
+      "10-2",
+      "10-3",
+      "10-14",
+      "11-1",
+      "11-2",
+      "11-4",
+      "11-6",
+      "11-8",
+      "11-11",
+      "13-2",
+      "13-4",
+      "13-12",
+      "13-14",
+      "19-4",
+      "19-9",
+      "19-13",
+      "20-4",
+      "24-2",
+      "24-12",
+      "24-13",
+      "26-2",
+      "28-2",
+      "28-4"
+    ]
+   },
+   {
+    "id": "e50",
+    "name": "Office Girl",
+    "locations": []
+   },
+   {
+    "id": "e51",
+    "name": "Otherworldly Adventurer",
+    "locations": []
+   },
+   {
+    "id": "e52",
+    "name": "Pistachio Gyaru",
+    "locations": []
+   },
+   {
+    "id": "e53",
+    "name": "Powered Armored Maven",
+    "locations": []
+   },
+   {
+    "id": "e54",
+    "name": "Rebellious Busty Babe",
+    "locations": []
+   },
+   {
+    "id": "e55",
+    "name": "Rugby Girl",
+    "locations": []
+   },
+   {
+    "id": "e56",
+    "name": "Sailor Girl",
+    "locations": []
+   },
+   {
+    "id": "e57",
+    "name": "Santa's Sexy Elf",
+    "locations": []
+   },
+   {
+    "id": "e58",
+    "name": "Sci-Fi Citizen",
+    "locations": []
+   },
+   {
+    "id": "e59",
+    "name": "Sensual Rogue",
+    "locations": []
+   },
+   {
+    "id": "e60",
+    "name": "Sexy Battle Girl",
+    "locations": []
+   },
+   {
+    "id": "e61",
+    "name": "Sexy Goth Girl",
+    "locations": []
+   },
+   {
+    "id": "e62",
+    "name": "ShyTanuki",
+    "locations": []
+   },
+   {
+    "id": "e63",
+    "name": "SlimeGirl",
+    "locations": []
+   },
+   {
+    "id": "e64",
+    "name": "Snooty Ace Pilot",
+    "locations": []
+   },
+   {
+    "id": "e65",
+    "name": "Snow Bunny",
+    "locations": []
+   },
+   {
+    "id": "e66",
+    "name": "Soccer Girl",
+    "locations": []
+   },
+   {
+    "id": "e67",
+    "name": "Special Elven Forces",
+    "locations": []
+   },
+   {
+    "id": "e68",
+    "name": "Stormbreaker Dwarf",
+    "locations": []
+   },
+   {
+    "id": "e69",
+    "name": "Strawberry Milk Girl",
+    "locations": []
+   },
+   {
+    "id": "e70",
+    "name": "The Female Captive",
+    "locations": []
+   },
+   {
+    "id": "e71",
+    "name": "The Tormentress",
+    "locations": []
+   },
+   {
+    "id": "e72",
+    "name": "Trinity Betrayer Hanana",
+    "locations": []
+   },
+   {
+    "id": "e73",
+    "name": "Trixie Bang",
+    "locations": []
+   },
+   {
+    "id": "e74",
+    "name": "Veteran Knightess",
+    "locations": []
+   },
+   {
+    "id": "e75",
+    "name": "Warden",
+    "locations": []
+   },
+   {
+    "id": "e76",
+    "name": "Wolf Gal Wolfie",
+    "locations": []
+   }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
