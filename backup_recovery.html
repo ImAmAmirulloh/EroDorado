@@ -64,6 +64,21 @@
             <button id="recovery-btn" class="submit-btn" style="background-color: #f0ad4e;">⬆️ Save to Browser</button>
             <p id="recovery-status" style="margin-top: 10px; color: #f0ad4e;"></p>
         </div>
+        <hr style="border: 1px dashed var(--border); margin: 40px 0;">
+        <h1>Enemy Data Backup & Recovery</h1>
+        
+        <div class="card" style="margin-bottom: 30px;">
+            <h2>Backup Enemy Data (Download JSON)</h2>
+            <button id="backup-enemy-btn" class="submit-btn" style="background-color: #5cb85c;">⬇️ Download Enemy JSON</button>
+            <p id="backup-enemy-status" style="margin-top: 10px; color: #5cb85c;"></p>
+        </div>
+
+        <div class="card">
+            <h2>Recovery Enemy Data (Upload JSON)</h2>
+            <input type="file" id="recovery-enemy-file" accept=".json" style="margin-bottom: 15px;">
+            <button id="recovery-enemy-btn" class="submit-btn" style="background-color: #f0ad4e;">⬆️ Save Enemy to Browser</button>
+            <p id="recovery-enemy-status" style="margin-top: 10px; color: #f0ad4e;"></p>
+        </div>
     </div>
 
     
@@ -233,6 +248,81 @@
             });
         }
     });
+
+    // ==========================================================
+        // C. LOGIKA BACKUP & RECOVERY UNTUK ENEMY DATA
+        // ==========================================================
+        const ENEMY_STORAGE_KEY = 'ENEMY_DATA_V1';
+        const backupEnemyBtn = document.getElementById('backup-enemy-btn');
+        const recoveryEnemyBtn = document.getElementById('recovery-enemy-btn');
+        const recoveryEnemyFile = document.getElementById('recovery-enemy-file');
+        
+        function loadEnemies() {
+            try {
+                return JSON.parse(localStorage.getItem(ENEMY_STORAGE_KEY)) || [];
+            } catch { return []; }
+        }
+
+        // C1. BACKUP ENEMY
+        if (backupEnemyBtn) {
+            backupEnemyBtn.addEventListener('click', function() {
+                const data = loadEnemies();
+                if (data.length === 0) {
+                    alert("No Enemy Data to backup!");
+                    return;
+                }
+                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'enemy_backup_' + new Date().toISOString().slice(0, 10) + '.json'; 
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                document.getElementById('backup-enemy-status').innerText = `✅ ${data.length} enemy data downloaded successfully!`;
+            });
+        }
+
+        // C2. RECOVERY ENEMY
+        if (recoveryEnemyBtn && recoveryEnemyFile) {
+            recoveryEnemyBtn.addEventListener('click', function() {
+                const file = recoveryEnemyFile.files[0];
+                const statusMsg = document.getElementById('recovery-enemy-status');
+
+                if (!file) {
+                    statusMsg.innerText = 'Select the JSON file first.';
+                    statusMsg.style.color = '#ff5722';
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    try {
+                        const importedData = JSON.parse(event.target.result);
+                        if (Array.isArray(importedData)) {
+                            // Validasi sederhana: Pastikan objek memiliki properti 'locations'
+                            if (importedData.length > 0 && !importedData[0].locations) {
+                                throw new Error('Data format error. Make sure this is an ENEMY backup file, not Character.');
+                            }
+
+                            if (confirm(`Overwrite existing Enemy data with ${importedData.length} new entries?`)) {
+                                localStorage.setItem(ENEMY_STORAGE_KEY, JSON.stringify(importedData));
+                                statusMsg.innerText = `✅ Recovery successful! ${importedData.length} enemies saved.`;
+                                statusMsg.style.color = '#5cb85c';
+                                setTimeout(() => { window.location.href = 'enemy_location.html'; }, 1500);
+                            }
+                        } else {
+                            throw new Error('JSON is not an array.');
+                        }
+                    } catch (e) {
+                        statusMsg.innerText = 'Failed: ' + e.message;
+                        statusMsg.style.color = '#ff5722';
+                    }
+                };
+                reader.readAsText(file);
+            });
+        }
 </script>
 </body>
 </html>
