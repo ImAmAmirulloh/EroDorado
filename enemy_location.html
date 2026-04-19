@@ -23,6 +23,12 @@
         <h1>Enemy Locations</h1>
         <p style="color: var(--text-muted); margin-bottom: 20px;">Hover over an enemy card and click the pencil icon to edit. Locations should be comma-separated (e.g., 1-4, 2-7, 8-9).</p>
         
+        <div class="bulk-action-panel">
+            <label for="bulk-loc-input">Mass Add Location:</label>
+            <input type="text" id="bulk-loc-input" class="edit-input" placeholder="e.g., 2-3, 4-5">
+            <button onclick="applyBulkLocation()" class="btn-bulk-save">➕ Apply to Selected</button>
+            <button onclick="toggleSelectAll()" class="btn-bulk-select">☑️ Select/Deselect All</button>
+        </div>
         <div id="enemy-container" class="enemy-grid"></div>
     </div>
 
@@ -82,6 +88,7 @@ function groupLocations(locationsArray) {
 
     return `
     <div class="enemy-card" id="enemy-card-${index}">
+        <input type="checkbox" class="enemy-checkbox" value="${index}">
         <button class="enemy-edit-btn" onclick="activateEdit(${index})">✏️</button>
         
         <div class="enemy-left-panel">
@@ -148,6 +155,52 @@ function groupLocations(locationsArray) {
 
             saveEnemies();
             renderEnemies();
+        }
+
+        // --- FITUR MASS ADD LOCATION ---
+        function applyBulkLocation() {
+            const inputVal = document.getElementById('bulk-loc-input').value.trim();
+            if (!inputVal) {
+                alert('Please enter location data first (e.g., 2-3)');
+                return;
+            }
+
+            const checkboxes = document.querySelectorAll('.enemy-checkbox:checked');
+            if (checkboxes.length === 0) {
+                alert('Please check/select at least one enemy card!');
+                return;
+            }
+
+            // Pecah lokasi baru menjadi array
+            const newLocations = inputVal.split(',').map(s => s.trim()).filter(s => s !== "");
+
+            checkboxes.forEach(cb => {
+                const idx = parseInt(cb.value);
+                const enemy = enemiesData[idx];
+                
+                // Gabungkan lokasi lama dan baru
+                const combinedLocations = [...enemy.locations, ...newLocations];
+                
+                // Hapus duplikat menggunakan Set (jika data sudah ada, tidak akan masuk 2 kali)
+                enemy.locations = [...new Set(combinedLocations)];
+                
+                // Opsional: Urutkan array agar lebih rapi saat dibaca ulang
+                // enemy.locations.sort(); 
+            });
+
+            saveEnemies();
+            renderEnemies();
+            
+            // Bersihkan input form setelah sukses
+            document.getElementById('bulk-loc-input').value = '';
+            alert(`Success! Location added to ${checkboxes.length} enemies.`);
+        }
+
+        let isAllSelected = false;
+        function toggleSelectAll() {
+            isAllSelected = !isAllSelected;
+            const checkboxes = document.querySelectorAll('.enemy-checkbox');
+            checkboxes.forEach(cb => cb.checked = isAllSelected);
         }
 
         document.addEventListener('DOMContentLoaded', loadEnemies);
