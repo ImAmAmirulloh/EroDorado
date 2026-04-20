@@ -1,0 +1,8245 @@
+[
+ {
+  "data": [
+   {
+    "location": "36-4",
+    "count": "1x"
+   },
+   {
+    "location": "36-9",
+    "count": "1x"
+   },
+   {
+    "location": "37-1",
+    "count": "2x"
+   },
+   {
+    "location": "37-2",
+    "count": "2x"
+   },
+   {
+    "location": "37-3",
+    "count": "2x"
+   },
+   {
+    "location": "37-4",
+    "count": "2x"
+   },
+   {
+    "location": "37-8",
+    "count": "1x"
+   },
+   {
+    "location": "37-12",
+    "count": "1x"
+   },
+   {
+    "location": "37-14",
+    "count": "1x"
+   },
+   {
+    "location": "38-3",
+    "count": "1x"
+   },
+   {
+    "location": "38-4",
+    "count": "1x"
+   },
+   {
+    "location": "38-8",
+    "count": "1x"
+   },
+   {
+    "location": "38-9",
+    "count": "1x"
+   },
+   {
+    "location": "38-11",
+    "count": "1x"
+   },
+   {
+    "location": "39-3",
+    "count": "1x"
+   },
+   {
+    "location": "40-9",
+    "count": "1x"
+   },
+   {
+    "location": "40-11",
+    "count": "1x"
+   },
+   {
+    "location": "40-12",
+    "count": "1x"
+   },
+   {
+    "location": "40-13",
+    "count": "1x"
+   },
+   {
+    "location": "40-14",
+    "count": "1x"
+   }
+  ],
+  "name": "Abominable Snow-Fiend"
+ },
+ {
+  "data": [
+   {
+    "location": "2-11",
+    "count": "2x"
+   },
+   {
+    "location": "3-7",
+    "count": "2x"
+   },
+   {
+    "location": "4-2",
+    "count": "2x"
+   },
+   {
+    "location": "4-7",
+    "count": "2x"
+   },
+   {
+    "location": "4-12",
+    "count": "1x"
+   },
+   {
+    "location": "4-13",
+    "count": "1x"
+   },
+   {
+    "location": "4-14",
+    "count": "1x"
+   },
+   {
+    "location": "8-6",
+    "count": "2x"
+   },
+   {
+    "location": "8-8",
+    "count": "2x"
+   },
+   {
+    "location": "13-3",
+    "count": "2x"
+   },
+   {
+    "location": "13-8",
+    "count": "1x"
+   },
+   {
+    "location": "19-6",
+    "count": "2x"
+   },
+   {
+    "location": "19-7",
+    "count": "2x"
+   },
+   {
+    "location": "19-8",
+    "count": "2x"
+   },
+   {
+    "location": "19-9",
+    "count": "1x"
+   },
+   {
+    "location": "28-9",
+    "count": "1x"
+   },
+   {
+    "location": "31-1",
+    "count": "2x"
+   },
+   {
+    "location": "32-9",
+    "count": "1x"
+   },
+   {
+    "location": "33-11",
+    "count": "2x"
+   },
+   {
+    "location": "36-14",
+    "count": "1x"
+   },
+   {
+    "location": "39-7",
+    "count": "1x"
+   }
+  ],
+  "name": "Aerobics Girl"
+ },
+ {
+  "data": [
+   {
+    "location": "2-6",
+    "count": "1x"
+   },
+   {
+    "location": "2-9",
+    "count": "2x"
+   },
+   {
+    "location": "2-14",
+    "count": "1x"
+   },
+   {
+    "location": "8-4",
+    "count": "1x"
+   },
+   {
+    "location": "8-6",
+    "count": "2x"
+   },
+   {
+    "location": "8-9",
+    "count": "1x"
+   },
+   {
+    "location": "8-11",
+    "count": "1x"
+   },
+   {
+    "location": "8-13",
+    "count": "1x"
+   },
+   {
+    "location": "14-2",
+    "count": "1x"
+   },
+   {
+    "location": "14-3",
+    "count": "2x"
+   },
+   {
+    "location": "14-4",
+    "count": "2x"
+   },
+   {
+    "location": "14-6",
+    "count": "1x"
+   },
+   {
+    "location": "14-7",
+    "count": "2x"
+   },
+   {
+    "location": "14-8",
+    "count": "2x"
+   },
+   {
+    "location": "14-9",
+    "count": "3x"
+   },
+   {
+    "location": "14-11",
+    "count": "1x"
+   },
+   {
+    "location": "14-12",
+    "count": "1x"
+   },
+   {
+    "location": "14-13",
+    "count": "2x"
+   },
+   {
+    "location": "14-14",
+    "count": "2x"
+   },
+   {
+    "location": "17-3",
+    "count": "2x"
+   },
+   {
+    "location": "17-6",
+    "count": "3x"
+   },
+   {
+    "location": "17-11",
+    "count": "2x"
+   },
+   {
+    "location": "18-1",
+    "count": "2x"
+   },
+   {
+    "location": "18-6",
+    "count": "3x"
+   },
+   {
+    "location": "18-13",
+    "count": "2x"
+   },
+   {
+    "location": "18-14",
+    "count": "2x"
+   },
+   {
+    "location": "25-6",
+    "count": "1x"
+   },
+   {
+    "location": "25-7",
+    "count": "1x"
+   },
+   {
+    "location": "25-8",
+    "count": "1x"
+   },
+   {
+    "location": "25-9",
+    "count": "2x"
+   },
+   {
+    "location": "25-12",
+    "count": "2x"
+   },
+   {
+    "location": "25-13",
+    "count": "1x"
+   },
+   {
+    "location": "26-2",
+    "count": "1x"
+   },
+   {
+    "location": "28-7",
+    "count": "1x"
+   },
+   {
+    "location": "30-1",
+    "count": "1x"
+   },
+   {
+    "location": "30-2",
+    "count": "1x"
+   },
+   {
+    "location": "30-3",
+    "count": "1x"
+   },
+   {
+    "location": "30-4",
+    "count": "1x"
+   },
+   {
+    "location": "30-12",
+    "count": "1x"
+   },
+   {
+    "location": "32-7",
+    "count": "1x"
+   },
+   {
+    "location": "37-12",
+    "count": "1x"
+   }
+  ],
+  "name": "Alluring Maid"
+ },
+ {
+  "data": [
+   {
+    "location": "1-8",
+    "count": "2x"
+   },
+   {
+    "location": "3-6",
+    "count": "1x"
+   },
+   {
+    "location": "3-9",
+    "count": "1x"
+   },
+   {
+    "location": "3-12",
+    "count": "1x"
+   },
+   {
+    "location": "16-12",
+    "count": "2x"
+   },
+   {
+    "location": "22-1",
+    "count": "3x"
+   },
+   {
+    "location": "22-6",
+    "count": "2x"
+   },
+   {
+    "location": "22-11",
+    "count": "1x"
+   },
+   {
+    "location": "23-1",
+    "count": "3x"
+   },
+   {
+    "location": "23-2",
+    "count": "1x"
+   },
+   {
+    "location": "23-7",
+    "count": "1x"
+   },
+   {
+    "location": "25-7",
+    "count": "1x"
+   },
+   {
+    "location": "26-12",
+    "count": "1x"
+   },
+   {
+    "location": "28-8",
+    "count": "2x"
+   },
+   {
+    "location": "28-12",
+    "count": "2x"
+   },
+   {
+    "location": "29-1",
+    "count": "2x"
+   },
+   {
+    "location": "30-1",
+    "count": "1x"
+   },
+   {
+    "location": "30-2",
+    "count": "1x"
+   },
+   {
+    "location": "30-3",
+    "count": "1x"
+   },
+   {
+    "location": "30-4",
+    "count": "1x"
+   },
+   {
+    "location": "31-12",
+    "count": "2x"
+   },
+   {
+    "location": "32-2",
+    "count": "2x"
+   },
+   {
+    "location": "32-8",
+    "count": "2x"
+   },
+   {
+    "location": "33-1",
+    "count": "1x"
+   },
+   {
+    "location": "33-7",
+    "count": "2x"
+   },
+   {
+    "location": "34-6",
+    "count": "2x"
+   },
+   {
+    "location": "35-1",
+    "count": "2x"
+   },
+   {
+    "location": "38-6",
+    "count": "1x"
+   },
+   {
+    "location": "38-7",
+    "count": "1x"
+   },
+   {
+    "location": "38-8",
+    "count": "1x"
+   },
+   {
+    "location": "38-9",
+    "count": "1x"
+   }
+  ],
+  "name": "Android Tanuki"
+ },
+ {
+  "data": [
+   {
+    "location": "20-12",
+    "count": "1x"
+   },
+   {
+    "location": "20-13",
+    "count": "2x"
+   },
+   {
+    "location": "20-14",
+    "count": "3x"
+   },
+   {
+    "location": "21-2",
+    "count": "1x"
+   },
+   {
+    "location": "21-3",
+    "count": "1x"
+   },
+   {
+    "location": "21-4",
+    "count": "2x"
+   },
+   {
+    "location": "21-13",
+    "count": "2x"
+   },
+   {
+    "location": "24-1",
+    "count": "1x"
+   },
+   {
+    "location": "24-6",
+    "count": "2x"
+   },
+   {
+    "location": "24-7",
+    "count": "2x"
+   },
+   {
+    "location": "24-11",
+    "count": "1x"
+   },
+   {
+    "location": "24-14",
+    "count": "1x"
+   },
+   {
+    "location": "32-11",
+    "count": "1x"
+   },
+   {
+    "location": "34-1",
+    "count": "1x"
+   },
+   {
+    "location": "38-1",
+    "count": "1x"
+   },
+   {
+    "location": "38-2",
+    "count": "2x"
+   },
+   {
+    "location": "38-3",
+    "count": "2x"
+   },
+   {
+    "location": "38-4",
+    "count": "1x"
+   },
+   {
+    "location": "38-7",
+    "count": "1x"
+   },
+   {
+    "location": "38-8",
+    "count": "2x"
+   },
+   {
+    "location": "40-2",
+    "count": "1x"
+   },
+   {
+    "location": "40-3",
+    "count": "1x"
+   },
+   {
+    "location": "40-4",
+    "count": "1x"
+   }
+  ],
+  "name": "Apocalyptic Brawler"
+ },
+ {
+  "data": [
+   {
+    "location": "37-1",
+    "count": "2x"
+   },
+   {
+    "location": "37-2",
+    "count": "2x"
+   },
+   {
+    "location": "37-3",
+    "count": "1x"
+   },
+   {
+    "location": "38-11",
+    "count": "1x"
+   },
+   {
+    "location": "38-12",
+    "count": "1x"
+   },
+   {
+    "location": "38-13",
+    "count": "2x"
+   },
+   {
+    "location": "38-14",
+    "count": "1x"
+   },
+   {
+    "location": "39-4",
+    "count": "1x"
+   },
+   {
+    "location": "40-7",
+    "count": "2x"
+   },
+   {
+    "location": "40-11",
+    "count": "1x"
+   },
+   {
+    "location": "40-12",
+    "count": "1x"
+   },
+   {
+    "location": "40-13",
+    "count": "1x"
+   },
+   {
+    "location": "40-14",
+    "count": "1x"
+   }
+  ],
+  "name": "Arctic Snowboarder"
+ },
+ {
+  "data": [
+   {
+    "location": "1-7",
+    "count": "1x"
+   },
+   {
+    "location": "1-9",
+    "count": "2x"
+   },
+   {
+    "location": "2-3",
+    "count": "1x"
+   },
+   {
+    "location": "2-4",
+    "count": "1x"
+   },
+   {
+    "location": "2-8",
+    "count": "1x"
+   },
+   {
+    "location": "19-3",
+    "count": "1x"
+   },
+   {
+    "location": "22-2",
+    "count": "2x"
+   },
+   {
+    "location": "22-4",
+    "count": "2x"
+   },
+   {
+    "location": "22-7",
+    "count": "1x"
+   },
+   {
+    "location": "22-9",
+    "count": "1x"
+   },
+   {
+    "location": "22-12",
+    "count": "2x"
+   },
+   {
+    "location": "22-14",
+    "count": "2x"
+   },
+   {
+    "location": "23-11",
+    "count": "2x"
+   },
+   {
+    "location": "24-2",
+    "count": "1x"
+   },
+   {
+    "location": "24-8",
+    "count": "2x"
+   },
+   {
+    "location": "24-9",
+    "count": "3x"
+   },
+   {
+    "location": "28-6",
+    "count": "1x"
+   },
+   {
+    "location": "29-13",
+    "count": "1x"
+   },
+   {
+    "location": "32-6",
+    "count": "1x"
+   },
+   {
+    "location": "32-12",
+    "count": "1x"
+   },
+   {
+    "location": "34-2",
+    "count": "1x"
+   },
+   {
+    "location": "39-2",
+    "count": "1x"
+   }
+  ],
+  "name": "Battle Suit Maiden"
+ },
+ {
+  "data": [
+   {
+    "location": "36-8",
+    "count": "1x"
+   },
+   {
+    "location": "39-6",
+    "count": "1x"
+   },
+   {
+    "location": "40-7",
+    "count": "2x"
+   },
+   {
+    "location": "40-8",
+    "count": "2x"
+   }
+  ],
+  "name": "BB Bouncer"
+ },
+ {
+  "data": [
+   {
+    "location": "7-7",
+    "count": "1x"
+   },
+   {
+    "location": "8-8",
+    "count": "2x"
+   },
+   {
+    "location": "8-9",
+    "count": "2x"
+   },
+   {
+    "location": "12-12",
+    "count": "1x"
+   },
+   {
+    "location": "12-13",
+    "count": "1x"
+   },
+   {
+    "location": "12-14",
+    "count": "2x"
+   },
+   {
+    "location": "16-7",
+    "count": "2x"
+   },
+   {
+    "location": "19-4",
+    "count": "1x"
+   },
+   {
+    "location": "21-3",
+    "count": "1x"
+   },
+   {
+    "location": "21-4",
+    "count": "1x"
+   },
+   {
+    "location": "23-14",
+    "count": "1x"
+   },
+   {
+    "location": "24-11",
+    "count": "1x"
+   },
+   {
+    "location": "27-9",
+    "count": "2x"
+   },
+   {
+    "location": "28-6",
+    "count": "1x"
+   },
+   {
+    "location": "28-13",
+    "count": "2x"
+   },
+   {
+    "location": "29-8",
+    "count": "2x"
+   },
+   {
+    "location": "29-12",
+    "count": "1x"
+   },
+   {
+    "location": "30-2",
+    "count": "1x"
+   },
+   {
+    "location": "31-4",
+    "count": "1x"
+   },
+   {
+    "location": "31-7",
+    "count": "2x"
+   },
+   {
+    "location": "32-3",
+    "count": "2x"
+   },
+   {
+    "location": "32-6",
+    "count": "1x"
+   },
+   {
+    "location": "33-1",
+    "count": "2x"
+   },
+   {
+    "location": "33-2",
+    "count": "2x"
+   },
+   {
+    "location": "33-3",
+    "count": "1x"
+   },
+   {
+    "location": "33-4",
+    "count": "1x"
+   },
+   {
+    "location": "33-14",
+    "count": "1x"
+   },
+   {
+    "location": "33-15",
+    "count": "1x"
+   },
+   {
+    "location": "34-13",
+    "count": "2x"
+   },
+   {
+    "location": "35-13",
+    "count": "2x"
+   },
+   {
+    "location": "39-13",
+    "count": "3x"
+   },
+   {
+    "location": "40-2",
+    "count": "2x"
+   }
+  ],
+  "name": "Biopunk Ecowarrior"
+ },
+ {
+  "data": [
+   {
+    "location": "3-6",
+    "count": "1x"
+   },
+   {
+    "location": "3-9",
+    "count": "1x"
+   },
+   {
+    "location": "7-7",
+    "count": "1x"
+   },
+   {
+    "location": "7-8",
+    "count": "1x"
+   },
+   {
+    "location": "7-12",
+    "count": "2x"
+   },
+   {
+    "location": "7-14",
+    "count": "1x"
+   },
+   {
+    "location": "9-6",
+    "count": "1x"
+   },
+   {
+    "location": "9-7",
+    "count": "2x"
+   },
+   {
+    "location": "12-1",
+    "count": "2x"
+   },
+   {
+    "location": "12-2",
+    "count": "1x"
+   },
+   {
+    "location": "12-12",
+    "count": "2x"
+   },
+   {
+    "location": "12-13",
+    "count": "2x"
+   },
+   {
+    "location": "13-2",
+    "count": "2x"
+   },
+   {
+    "location": "13-4",
+    "count": "1x"
+   },
+   {
+    "location": "13-12",
+    "count": "2x"
+   },
+   {
+    "location": "13-14",
+    "count": "1x"
+   },
+   {
+    "location": "15-8",
+    "count": "1x"
+   },
+   {
+    "location": "16-3",
+    "count": "1x"
+   },
+   {
+    "location": "16-14",
+    "count": "2x"
+   },
+   {
+    "location": "23-9",
+    "count": "2x"
+   },
+   {
+    "location": "24-13",
+    "count": "1x"
+   },
+   {
+    "location": "26-14",
+    "count": "1x"
+   },
+   {
+    "location": "31-14",
+    "count": "2x"
+   },
+   {
+    "location": "33-9",
+    "count": "2x"
+   }
+  ],
+  "name": "Black Suit"
+ },
+ {
+  "data": [
+   {
+    "location": "3-12",
+    "count": "2x"
+   },
+   {
+    "location": "5-6",
+    "count": "2x"
+   },
+   {
+    "location": "5-7",
+    "count": "2x"
+   },
+   {
+    "location": "5-9",
+    "count": "3x"
+   },
+   {
+    "location": "5-11",
+    "count": "2x"
+   },
+   {
+    "location": "5-12",
+    "count": "2x"
+   },
+   {
+    "location": "6-1",
+    "count": "2x"
+   },
+   {
+    "location": "6-6",
+    "count": "1x"
+   },
+   {
+    "location": "6-11",
+    "count": "2x"
+   },
+   {
+    "location": "7-1",
+    "count": "2x"
+   },
+   {
+    "location": "7-3",
+    "count": "1x"
+   },
+   {
+    "location": "7-6",
+    "count": "2x"
+   },
+   {
+    "location": "7-7",
+    "count": "1x"
+   },
+   {
+    "location": "7-8",
+    "count": "1x"
+   },
+   {
+    "location": "7-9",
+    "count": "2x"
+   },
+   {
+    "location": "7-11",
+    "count": "2x"
+   },
+   {
+    "location": "7-12",
+    "count": "2x"
+   },
+   {
+    "location": "7-13",
+    "count": "2x"
+   },
+   {
+    "location": "8-1",
+    "count": "1x"
+   },
+   {
+    "location": "8-13",
+    "count": "1x"
+   },
+   {
+    "location": "12-6",
+    "count": "2x"
+   },
+   {
+    "location": "12-8",
+    "count": "1x"
+   },
+   {
+    "location": "13-11",
+    "count": "2x"
+   },
+   {
+    "location": "13-13",
+    "count": "2x"
+   },
+   {
+    "location": "16-12",
+    "count": "2x"
+   },
+   {
+    "location": "21-11",
+    "count": "3x"
+   },
+   {
+    "location": "21-12",
+    "count": "1x"
+   },
+   {
+    "location": "28-8",
+    "count": "1x"
+   },
+   {
+    "location": "28-12",
+    "count": "1x"
+   },
+   {
+    "location": "29-1",
+    "count": "2x"
+   },
+   {
+    "location": "31-12",
+    "count": "2x"
+   },
+   {
+    "location": "32-2",
+    "count": "1x"
+   },
+   {
+    "location": "32-8",
+    "count": "1x"
+   },
+   {
+    "location": "33-7",
+    "count": "2x"
+   },
+   {
+    "location": "34-6",
+    "count": "2x"
+   },
+   {
+    "location": "35-1",
+    "count": "2x"
+   },
+   {
+    "location": "39-11",
+    "count": "2x"
+   }
+  ],
+  "name": "Brawler Rogue"
+ },
+ {
+  "data": [
+   {
+    "location": "3-12",
+    "count": "2x"
+   },
+   {
+    "location": "4-15",
+    "count": "1x"
+   },
+   {
+    "location": "5-8",
+    "count": "1x"
+   },
+   {
+    "location": "5-9",
+    "count": "3x"
+   },
+   {
+    "location": "5-11",
+    "count": "1x"
+   },
+   {
+    "location": "5-12",
+    "count": "2x"
+   },
+   {
+    "location": "6-1",
+    "count": "1x"
+   },
+   {
+    "location": "6-2",
+    "count": "2x"
+   },
+   {
+    "location": "6-3",
+    "count": "2x"
+   },
+   {
+    "location": "6-6",
+    "count": "1x"
+   },
+   {
+    "location": "6-7",
+    "count": "1x"
+   },
+   {
+    "location": "6-8",
+    "count": "2x"
+   },
+   {
+    "location": "6-11",
+    "count": "1x"
+   },
+   {
+    "location": "6-12",
+    "count": "2x"
+   },
+   {
+    "location": "6-13",
+    "count": "2x"
+   },
+   {
+    "location": "7-1",
+    "count": "2x"
+   },
+   {
+    "location": "7-2",
+    "count": "2x"
+   },
+   {
+    "location": "7-3",
+    "count": "1x"
+   },
+   {
+    "location": "7-8",
+    "count": "2x"
+   },
+   {
+    "location": "7-14",
+    "count": "1x"
+   },
+   {
+    "location": "8-14",
+    "count": "2x"
+   },
+   {
+    "location": "10-2",
+    "count": "1x"
+   },
+   {
+    "location": "12-6",
+    "count": "2x"
+   },
+   {
+    "location": "12-7",
+    "count": "2x"
+   },
+   {
+    "location": "12-8",
+    "count": "1x"
+   },
+   {
+    "location": "16-9",
+    "count": "2x"
+   },
+   {
+    "location": "21-11",
+    "count": "3x"
+   },
+   {
+    "location": "21-13",
+    "count": "1x"
+   },
+   {
+    "location": "31-9",
+    "count": "2x"
+   },
+   {
+    "location": "39-11",
+    "count": "3x"
+   }
+  ],
+  "name": "Brute Brigandess"
+ },
+ {
+  "data": [
+   {
+    "location": "9-2",
+    "count": "3x"
+   },
+   {
+    "location": "9-4",
+    "count": "3x"
+   },
+   {
+    "location": "9-7",
+    "count": "2x"
+   },
+   {
+    "location": "9-9",
+    "count": "2x"
+   },
+   {
+    "location": "9-11",
+    "count": "2x"
+   },
+   {
+    "location": "9-12",
+    "count": "2x"
+   },
+   {
+    "location": "10-3",
+    "count": "1x"
+   },
+   {
+    "location": "10-12",
+    "count": "3x"
+   },
+   {
+    "location": "11-14",
+    "count": "1x"
+   },
+   {
+    "location": "13-1",
+    "count": "1x"
+   },
+   {
+    "location": "13-6",
+    "count": "1x"
+   },
+   {
+    "location": "13-7",
+    "count": "1x"
+   },
+   {
+    "location": "15-2",
+    "count": "2x"
+   },
+   {
+    "location": "15-4",
+    "count": "1x"
+   },
+   {
+    "location": "15-6",
+    "count": "1x"
+   },
+   {
+    "location": "15-7",
+    "count": "3x"
+   },
+   {
+    "location": "15-8",
+    "count": "2x"
+   },
+   {
+    "location": "15-9",
+    "count": "2x"
+   },
+   {
+    "location": "15-11",
+    "count": "1x"
+   },
+   {
+    "location": "15-12",
+    "count": "2x"
+   },
+   {
+    "location": "15-13",
+    "count": "2x"
+   },
+   {
+    "location": "15-14",
+    "count": "2x"
+   },
+   {
+    "location": "16-1",
+    "count": "1x"
+   },
+   {
+    "location": "16-2",
+    "count": "3x"
+   },
+   {
+    "location": "16-3",
+    "count": "2x"
+   },
+   {
+    "location": "16-4",
+    "count": "2x"
+   },
+   {
+    "location": "16-6",
+    "count": "2x"
+   },
+   {
+    "location": "16-14",
+    "count": "1x"
+   },
+   {
+    "location": "19-2",
+    "count": "3x"
+   },
+   {
+    "location": "19-7",
+    "count": "2x"
+   },
+   {
+    "location": "19-12",
+    "count": "1x"
+   },
+   {
+    "location": "20-2",
+    "count": "3x"
+   },
+   {
+    "location": "25-8",
+    "count": "1x"
+   },
+   {
+    "location": "26-1",
+    "count": "1x"
+   },
+   {
+    "location": "26-2",
+    "count": "1x"
+   },
+   {
+    "location": "26-3",
+    "count": "1x"
+   },
+   {
+    "location": "26-4",
+    "count": "1x"
+   },
+   {
+    "location": "26-6",
+    "count": "1x"
+   },
+   {
+    "location": "26-14",
+    "count": "1x"
+   },
+   {
+    "location": "28-9",
+    "count": "2x"
+   },
+   {
+    "location": "31-6",
+    "count": "2x"
+   },
+   {
+    "location": "31-14",
+    "count": "1x"
+   },
+   {
+    "location": "32-9",
+    "count": "2x"
+   },
+   {
+    "location": "33-9",
+    "count": "1x"
+   }
+  ],
+  "name": "Busty Knightess"
+ },
+ {
+  "data": [
+   {
+    "location": "10-15",
+    "count": "1x"
+   }
+  ],
+  "name": "Captain of the Guard"
+ },
+ {
+  "data": [
+   {
+    "location": "36-7",
+    "count": "1x"
+   },
+   {
+    "location": "36-12",
+    "count": "2x"
+   },
+   {
+    "location": "37-6",
+    "count": "1x"
+   },
+   {
+    "location": "37-9",
+    "count": "1x"
+   },
+   {
+    "location": "39-12",
+    "count": "1x"
+   },
+   {
+    "location": "40-6",
+    "count": "1x"
+   },
+   {
+    "location": "40-13",
+    "count": "1x"
+   }
+  ],
+  "name": "Casino Bunnygirl"
+ },
+ {
+  "data": [
+   {
+    "location": "36-6",
+    "count": "1x"
+   },
+   {
+    "location": "36-11",
+    "count": "2x"
+   },
+   {
+    "location": "37-6",
+    "count": "1x"
+   },
+   {
+    "location": "37-7",
+    "count": "1x"
+   },
+   {
+    "location": "37-8",
+    "count": "1x"
+   },
+   {
+    "location": "37-9",
+    "count": "1x"
+   },
+   {
+    "location": "39-11",
+    "count": "1x"
+   },
+   {
+    "location": "40-6",
+    "count": "1x"
+   },
+   {
+    "location": "40-13",
+    "count": "1x"
+   }
+  ],
+  "name": "Casino Lady"
+ },
+ {
+  "data": [
+   {
+    "location": "2-12",
+    "count": "1x"
+   },
+   {
+    "location": "2-13",
+    "count": "2x"
+   },
+   {
+    "location": "3-8",
+    "count": "2x"
+   },
+   {
+    "location": "3-13",
+    "count": "2x"
+   },
+   {
+    "location": "3-14",
+    "count": "1x"
+   },
+   {
+    "location": "4-8",
+    "count": "1x"
+   },
+   {
+    "location": "4-12",
+    "count": "1x"
+   },
+   {
+    "location": "4-13",
+    "count": "1x"
+   },
+   {
+    "location": "5-1",
+    "count": "1x"
+   },
+   {
+    "location": "5-2",
+    "count": "2x"
+   },
+   {
+    "location": "5-3",
+    "count": "2x"
+   },
+   {
+    "location": "5-13",
+    "count": "2x"
+   },
+   {
+    "location": "8-7",
+    "count": "2x"
+   },
+   {
+    "location": "8-11",
+    "count": "1x"
+   },
+   {
+    "location": "8-13",
+    "count": "1x"
+   },
+   {
+    "location": "9-13",
+    "count": "1x"
+   },
+   {
+    "location": "9-14",
+    "count": "1x"
+   },
+   {
+    "location": "10-4",
+    "count": "1x"
+   },
+   {
+    "location": "19-14",
+    "count": "1x"
+   },
+   {
+    "location": "24-12",
+    "count": "1x"
+   },
+   {
+    "location": "25-1",
+    "count": "2x"
+   },
+   {
+    "location": "25-2",
+    "count": "2x"
+   },
+   {
+    "location": "25-4",
+    "count": "2x"
+   },
+   {
+    "location": "26-2",
+    "count": "1x"
+   },
+   {
+    "location": "30-7",
+    "count": "1x"
+   },
+   {
+    "location": "30-12",
+    "count": "2x"
+   },
+   {
+    "location": "36-14",
+    "count": "1x"
+   }
+  ],
+  "name": "Cow Bikini Girl"
+ },
+ {
+  "data": [
+   {
+    "location": "1-11",
+    "count": "2x"
+   },
+   {
+    "location": "1-13",
+    "count": "2x"
+   },
+   {
+    "location": "1-14",
+    "count": "2x"
+   },
+   {
+    "location": "2-1",
+    "count": "1x"
+   },
+   {
+    "location": "2-2",
+    "count": "1x"
+   },
+   {
+    "location": "2-3",
+    "count": "1x"
+   },
+   {
+    "location": "2-9",
+    "count": "1x"
+   },
+   {
+    "location": "2-14",
+    "count": "1x"
+   },
+   {
+    "location": "3-11",
+    "count": "1x"
+   },
+   {
+    "location": "22-3",
+    "count": "3x"
+   },
+   {
+    "location": "22-6",
+    "count": "1x"
+   },
+   {
+    "location": "22-7",
+    "count": "1x"
+   },
+   {
+    "location": "22-8",
+    "count": "2x"
+   },
+   {
+    "location": "22-13",
+    "count": "3x"
+   },
+   {
+    "location": "23-3",
+    "count": "2x"
+   },
+   {
+    "location": "23-4",
+    "count": "2x"
+   },
+   {
+    "location": "23-12",
+    "count": "1x"
+   },
+   {
+    "location": "28-7",
+    "count": "1x"
+   },
+   {
+    "location": "29-1",
+    "count": "1x"
+   },
+   {
+    "location": "29-3",
+    "count": "1x"
+   },
+   {
+    "location": "32-7",
+    "count": "1x"
+   },
+   {
+    "location": "34-6",
+    "count": "1x"
+   },
+   {
+    "location": "34-8",
+    "count": "1x"
+   },
+   {
+    "location": "35-1",
+    "count": "1x"
+   },
+   {
+    "location": "35-3",
+    "count": "1x"
+   },
+   {
+    "location": "39-14",
+    "count": "2x"
+   }
+  ],
+  "name": "Cyber Chic"
+ },
+ {
+  "data": [
+   {
+    "location": "1-6",
+    "count": "1x"
+   },
+   {
+    "location": "2-1",
+    "count": "1x"
+   },
+   {
+    "location": "2-2",
+    "count": "2x"
+   },
+   {
+    "location": "2-6",
+    "count": "1x"
+   },
+   {
+    "location": "2-9",
+    "count": "1x"
+   },
+   {
+    "location": "3-11",
+    "count": "1x"
+   },
+   {
+    "location": "22-11",
+    "count": "1x"
+   },
+   {
+    "location": "22-12",
+    "count": "1x"
+   },
+   {
+    "location": "23-1",
+    "count": "1x"
+   },
+   {
+    "location": "23-4",
+    "count": "2x"
+   },
+   {
+    "location": "23-13",
+    "count": "2x"
+   },
+   {
+    "location": "23-14",
+    "count": "1x"
+   },
+   {
+    "location": "28-7",
+    "count": "1x"
+   },
+   {
+    "location": "29-2",
+    "count": "1x"
+   },
+   {
+    "location": "32-7",
+    "count": "1x"
+   },
+   {
+    "location": "34-7",
+    "count": "1x"
+   },
+   {
+    "location": "35-2",
+    "count": "1x"
+   }
+  ],
+  "name": "Cyber Citizen"
+ },
+ {
+  "data": [
+   {
+    "location": "1-11",
+    "count": "2x"
+   },
+   {
+    "location": "1-13",
+    "count": "1x"
+   },
+   {
+    "location": "2-1",
+    "count": "1x"
+   },
+   {
+    "location": "2-4",
+    "count": "1x"
+   },
+   {
+    "location": "2-6",
+    "count": "1x"
+   },
+   {
+    "location": "2-7",
+    "count": "1x"
+   },
+   {
+    "location": "2-8",
+    "count": "1x"
+   },
+   {
+    "location": "3-13",
+    "count": "1x"
+   },
+   {
+    "location": "5-13",
+    "count": "1x"
+   },
+   {
+    "location": "9-11",
+    "count": "1x"
+   },
+   {
+    "location": "9-13",
+    "count": "1x"
+   },
+   {
+    "location": "10-4",
+    "count": "1x"
+   },
+   {
+    "location": "11-11",
+    "count": "1x"
+   },
+   {
+    "location": "15-8",
+    "count": "1x"
+   },
+   {
+    "location": "15-13",
+    "count": "1x"
+   },
+   {
+    "location": "16-3",
+    "count": "1x"
+   },
+   {
+    "location": "17-1",
+    "count": "2x"
+   },
+   {
+    "location": "17-2",
+    "count": "2x"
+   },
+   {
+    "location": "17-3",
+    "count": "2x"
+   },
+   {
+    "location": "26-4",
+    "count": "1x"
+   },
+   {
+    "location": "28-3",
+    "count": "1x"
+   },
+   {
+    "location": "29-4",
+    "count": "1x"
+   },
+   {
+    "location": "30-14",
+    "count": "2x"
+   },
+   {
+    "location": "34-9",
+    "count": "1x"
+   },
+   {
+    "location": "35-4",
+    "count": "1x"
+   }
+  ],
+  "name": "Cyber Teacher"
+ },
+ {
+  "data": [
+   {
+    "location": "5-14",
+    "count": "3x"
+   },
+   {
+    "location": "6-1",
+    "count": "1x"
+   },
+   {
+    "location": "6-11",
+    "count": "1x"
+   },
+   {
+    "location": "7-11",
+    "count": "2x"
+   },
+   {
+    "location": "7-12",
+    "count": "1x"
+   },
+   {
+    "location": "8-4",
+    "count": "2x"
+   },
+   {
+    "location": "8-11",
+    "count": "2x"
+   },
+   {
+    "location": "10-1",
+    "count": "1x"
+   },
+   {
+    "location": "11-1",
+    "count": "1x"
+   },
+   {
+    "location": "13-1",
+    "count": "1x"
+   },
+   {
+    "location": "13-2",
+    "count": "1x"
+   },
+   {
+    "location": "13-6",
+    "count": "1x"
+   },
+   {
+    "location": "13-11",
+    "count": "2x"
+   },
+   {
+    "location": "13-12",
+    "count": "1x"
+   },
+   {
+    "location": "16-11",
+    "count": "2x"
+   },
+   {
+    "location": "19-12",
+    "count": "1x"
+   },
+   {
+    "location": "20-6",
+    "count": "3x"
+   },
+   {
+    "location": "20-11",
+    "count": "3x"
+   },
+   {
+    "location": "20-13",
+    "count": "2x"
+   },
+   {
+    "location": "21-1",
+    "count": "3x"
+   },
+   {
+    "location": "21-3",
+    "count": "1x"
+   },
+   {
+    "location": "23-6",
+    "count": "1x"
+   },
+   {
+    "location": "24-6",
+    "count": "1x"
+   },
+   {
+    "location": "28-9",
+    "count": "1x"
+   },
+   {
+    "location": "28-11",
+    "count": "1x"
+   },
+   {
+    "location": "31-3",
+    "count": "2x"
+   },
+   {
+    "location": "31-11",
+    "count": "2x"
+   },
+   {
+    "location": "32-1",
+    "count": "1x"
+   },
+   {
+    "location": "32-9",
+    "count": "1x"
+   },
+   {
+    "location": "33-6",
+    "count": "2x"
+   },
+   {
+    "location": "33-13",
+    "count": "2x"
+   },
+   {
+    "location": "35-6",
+    "count": "2x"
+   },
+   {
+    "location": "35-7",
+    "count": "2x"
+   },
+   {
+    "location": "35-8",
+    "count": "2x"
+   },
+   {
+    "location": "35-9",
+    "count": "2x"
+   },
+   {
+    "location": "37-6",
+    "count": "2x"
+   },
+   {
+    "location": "37-7",
+    "count": "2x"
+   },
+   {
+    "location": "37-8",
+    "count": "2x"
+   },
+   {
+    "location": "37-9",
+    "count": "2x"
+   },
+   {
+    "location": "40-1",
+    "count": "3x"
+   },
+   {
+    "location": "40-2",
+    "count": "1x"
+   },
+   {
+    "location": "40-3",
+    "count": "2x"
+   },
+   {
+    "location": "40-4",
+    "count": "1x"
+   }
+  ],
+  "name": "Dessert Female Warrior"
+ },
+ {
+  "data": [
+   {
+    "location": "36-1",
+    "count": "3x"
+   },
+   {
+    "location": "36-2",
+    "count": "2x"
+   },
+   {
+    "location": "36-3",
+    "count": "2x"
+   },
+   {
+    "location": "36-4",
+    "count": "2x"
+   },
+   {
+    "location": "36-11",
+    "count": "4x"
+   },
+   {
+    "location": "36-12",
+    "count": "4x"
+   },
+   {
+    "location": "36-13",
+    "count": "4x"
+   },
+   {
+    "location": "36-14",
+    "count": "4x"
+   },
+   {
+    "location": "37-6",
+    "count": "1x"
+   },
+   {
+    "location": "39-6",
+    "count": "2x"
+   },
+   {
+    "location": "39-7",
+    "count": "2x"
+   },
+   {
+    "location": "39-8",
+    "count": "2x"
+   },
+   {
+    "location": "39-9",
+    "count": "2x"
+   },
+   {
+    "location": "39-13",
+    "count": "1x"
+   },
+   {
+    "location": "40-6",
+    "count": "1x"
+   },
+   {
+    "location": "40-11",
+    "count": "1x"
+   }
+  ],
+  "name": "Dwarven Soldier"
+ },
+ {
+  "data": [
+   {
+    "location": "36-1",
+    "count": "2x"
+   },
+   {
+    "location": "36-2",
+    "count": "1x"
+   },
+   {
+    "location": "36-3",
+    "count": "2x"
+   },
+   {
+    "location": "36-4",
+    "count": "2x"
+   },
+   {
+    "location": "36-6",
+    "count": "4x"
+   },
+   {
+    "location": "36-7",
+    "count": "4x"
+   },
+   {
+    "location": "36-8",
+    "count": "4x"
+   },
+   {
+    "location": "36-9",
+    "count": "4x"
+   },
+   {
+    "location": "37-11",
+    "count": "4x"
+   },
+   {
+    "location": "37-12",
+    "count": "4x"
+   },
+   {
+    "location": "37-13",
+    "count": "4x"
+   },
+   {
+    "location": "37-14",
+    "count": "4x"
+   },
+   {
+    "location": "38-1",
+    "count": "3x"
+   },
+   {
+    "location": "38-2",
+    "count": "2x"
+   },
+   {
+    "location": "38-3",
+    "count": "2x"
+   },
+   {
+    "location": "38-4",
+    "count": "1x"
+   },
+   {
+    "location": "38-6",
+    "count": "3x"
+   },
+   {
+    "location": "38-7",
+    "count": "2x"
+   },
+   {
+    "location": "38-9",
+    "count": "1x"
+   },
+   {
+    "location": "39-1",
+    "count": "2x"
+   },
+   {
+    "location": "39-2",
+    "count": "1x"
+   },
+   {
+    "location": "39-3",
+    "count": "1x"
+   },
+   {
+    "location": "39-4",
+    "count": "1x"
+   },
+   {
+    "location": "39-14",
+    "count": "1x"
+   },
+   {
+    "location": "40-6",
+    "count": "1x"
+   },
+   {
+    "location": "40-9",
+    "count": "2x"
+   },
+   {
+    "location": "40-12",
+    "count": "1x"
+   }
+  ],
+  "name": "Elven Speargirl"
+ },
+ {
+  "data": [
+   {
+    "location": "39-1",
+    "count": "1x"
+   },
+   {
+    "location": "39-2",
+    "count": "1x"
+   },
+   {
+    "location": "39-3",
+    "count": "1x"
+   },
+   {
+    "location": "39-4",
+    "count": "1x"
+   },
+   {
+    "location": "40-9",
+    "count": "1x"
+   },
+   {
+    "location": "40-12",
+    "count": "1x"
+   }
+  ],
+  "name": "Elven Warrior"
+ },
+ {
+  "data": [
+   {
+    "location": "4-12",
+    "count": "1x"
+   },
+   {
+    "location": "5-1",
+    "count": "1x"
+   },
+   {
+    "location": "5-3",
+    "count": "2x"
+   },
+   {
+    "location": "6-9",
+    "count": "1x"
+   },
+   {
+    "location": "9-1",
+    "count": "1x"
+   },
+   {
+    "location": "9-6",
+    "count": "2x"
+   },
+   {
+    "location": "10-13",
+    "count": "1x"
+   },
+   {
+    "location": "10-14",
+    "count": "1x"
+   },
+   {
+    "location": "11-2",
+    "count": "1x"
+   },
+   {
+    "location": "11-12",
+    "count": "2x"
+   },
+   {
+    "location": "14-3",
+    "count": "1x"
+   },
+   {
+    "location": "14-4",
+    "count": "1x"
+   },
+   {
+    "location": "14-13",
+    "count": "1x"
+   },
+   {
+    "location": "14-14",
+    "count": "1x"
+   },
+   {
+    "location": "15-1",
+    "count": "1x"
+   },
+   {
+    "location": "15-2",
+    "count": "1x"
+   },
+   {
+    "location": "16-13",
+    "count": "2x"
+   },
+   {
+    "location": "19-4",
+    "count": "2x"
+   },
+   {
+    "location": "19-9",
+    "count": "2x"
+   },
+   {
+    "location": "19-14",
+    "count": "2x"
+   },
+   {
+    "location": "20-3",
+    "count": "1x"
+   },
+   {
+    "location": "20-4",
+    "count": "2x"
+   },
+   {
+    "location": "20-7",
+    "count": "1x"
+   },
+   {
+    "location": "20-12",
+    "count": "2x"
+   },
+   {
+    "location": "21-2",
+    "count": "2x"
+   },
+   {
+    "location": "21-7",
+    "count": "2x"
+   },
+   {
+    "location": "24-1",
+    "count": "2x"
+   },
+   {
+    "location": "24-3",
+    "count": "2x"
+   },
+   {
+    "location": "24-6",
+    "count": "1x"
+   },
+   {
+    "location": "24-7",
+    "count": "1x"
+   },
+   {
+    "location": "24-8",
+    "count": "1x"
+   },
+   {
+    "location": "24-14",
+    "count": "1x"
+   },
+   {
+    "location": "25-8",
+    "count": "1x"
+   },
+   {
+    "location": "27-1",
+    "count": "2x"
+   },
+   {
+    "location": "27-2",
+    "count": "1x"
+   },
+   {
+    "location": "27-6",
+    "count": "1x"
+   },
+   {
+    "location": "27-7",
+    "count": "1x"
+   },
+   {
+    "location": "27-11",
+    "count": "2x"
+   },
+   {
+    "location": "27-13",
+    "count": "2x"
+   },
+   {
+    "location": "27-14",
+    "count": "2x"
+   },
+   {
+    "location": "28-7",
+    "count": "1x"
+   },
+   {
+    "location": "28-13",
+    "count": "1x"
+   },
+   {
+    "location": "29-3",
+    "count": "2x"
+   },
+   {
+    "location": "30-7",
+    "count": "1x"
+   },
+   {
+    "location": "30-13",
+    "count": "1x"
+   },
+   {
+    "location": "31-13",
+    "count": "2x"
+   },
+   {
+    "location": "31-15",
+    "count": "1x"
+   },
+   {
+    "location": "32-3",
+    "count": "1x"
+   },
+   {
+    "location": "32-7",
+    "count": "1x"
+   },
+   {
+    "location": "32-11",
+    "count": "2x"
+   },
+   {
+    "location": "32-13",
+    "count": "2x"
+   },
+   {
+    "location": "33-8",
+    "count": "2x"
+   },
+   {
+    "location": "34-1",
+    "count": "2x"
+   },
+   {
+    "location": "34-3",
+    "count": "2x"
+   },
+   {
+    "location": "34-8",
+    "count": "2x"
+   },
+   {
+    "location": "35-3",
+    "count": "2x"
+   },
+   {
+    "location": "36-2",
+    "count": "2x"
+   },
+   {
+    "location": "36-6",
+    "count": "1x"
+   },
+   {
+    "location": "39-1",
+    "count": "1x"
+   }
+  ],
+  "name": "Fresh-Faced Adventurer"
+ },
+ {
+  "data": [
+   {
+    "location": "9-1",
+    "count": "1x"
+   },
+   {
+    "location": "9-3",
+    "count": "3x"
+   },
+   {
+    "location": "9-4",
+    "count": "3x"
+   },
+   {
+    "location": "9-9",
+    "count": "2x"
+   },
+   {
+    "location": "9-13",
+    "count": "2x"
+   },
+   {
+    "location": "9-14",
+    "count": "2x"
+   },
+   {
+    "location": "9-15",
+    "count": "1x"
+   },
+   {
+    "location": "10-3",
+    "count": "1x"
+   },
+   {
+    "location": "10-8",
+    "count": "2x"
+   },
+   {
+    "location": "10-13",
+    "count": "2x"
+   },
+   {
+    "location": "10-14",
+    "count": "2x"
+   },
+   {
+    "location": "15-1",
+    "count": "2x"
+   },
+   {
+    "location": "15-4",
+    "count": "3x"
+   },
+   {
+    "location": "15-7",
+    "count": "2x"
+   },
+   {
+    "location": "15-9",
+    "count": "1x"
+   },
+   {
+    "location": "15-12",
+    "count": "3x"
+   },
+   {
+    "location": "15-14",
+    "count": "1x"
+   },
+   {
+    "location": "16-2",
+    "count": "3x"
+   },
+   {
+    "location": "16-4",
+    "count": "1x"
+   },
+   {
+    "location": "18-1",
+    "count": "1x"
+   },
+   {
+    "location": "18-4",
+    "count": "1x"
+   },
+   {
+    "location": "19-3",
+    "count": "2x"
+   },
+   {
+    "location": "19-4",
+    "count": "1x"
+   },
+   {
+    "location": "19-8",
+    "count": "2x"
+   },
+   {
+    "location": "20-3",
+    "count": "2x"
+   },
+   {
+    "location": "20-4",
+    "count": "2x"
+   },
+   {
+    "location": "26-1",
+    "count": "1x"
+   },
+   {
+    "location": "26-11",
+    "count": "1x"
+   },
+   {
+    "location": "26-12",
+    "count": "1x"
+   },
+   {
+    "location": "26-13",
+    "count": "1x"
+   },
+   {
+    "location": "26-14",
+    "count": "1x"
+   },
+   {
+    "location": "28-8",
+    "count": "2x"
+   },
+   {
+    "location": "30-11",
+    "count": "1x"
+   },
+   {
+    "location": "32-8",
+    "count": "2x"
+   }
+  ],
+  "name": "High-Leg Knightess"
+ },
+ {
+  "data": [
+   {
+    "location": "36-9",
+    "count": "1x"
+   },
+   {
+    "location": "39-7",
+    "count": "1x"
+   },
+   {
+    "location": "40-8",
+    "count": "2x"
+   }
+  ],
+  "name": "Hired Fixer"
+ },
+ {
+  "data": [
+   {
+    "location": "1-7",
+    "count": "2x"
+   },
+   {
+    "location": "3-9",
+    "count": "1x"
+   },
+   {
+    "location": "3-11",
+    "count": "1x"
+   },
+   {
+    "location": "16-7",
+    "count": "2x"
+   },
+   {
+    "location": "22-1",
+    "count": "3x"
+   },
+   {
+    "location": "22-4",
+    "count": "2x"
+   },
+   {
+    "location": "22-6",
+    "count": "3x"
+   },
+   {
+    "location": "22-9",
+    "count": "1x"
+   },
+   {
+    "location": "22-11",
+    "count": "2x"
+   },
+   {
+    "location": "22-14",
+    "count": "1x"
+   },
+   {
+    "location": "23-2",
+    "count": "2x"
+   },
+   {
+    "location": "26-3",
+    "count": "1x"
+   },
+   {
+    "location": "28-6",
+    "count": "2x"
+   },
+   {
+    "location": "29-2",
+    "count": "1x"
+   },
+   {
+    "location": "30-11",
+    "count": "2x"
+   },
+   {
+    "location": "30-13",
+    "count": "1x"
+   },
+   {
+    "location": "31-7",
+    "count": "2x"
+   },
+   {
+    "location": "32-6",
+    "count": "2x"
+   },
+   {
+    "location": "33-2",
+    "count": "2x"
+   },
+   {
+    "location": "34-7",
+    "count": "1x"
+   },
+   {
+    "location": "35-2",
+    "count": "1x"
+   }
+  ],
+  "name": "Hydroid"
+ },
+ {
+  "data": [
+   {
+    "location": "37-2",
+    "count": "1x"
+   },
+   {
+    "location": "37-4",
+    "count": "2x"
+   },
+   {
+    "location": "38-6",
+    "count": "1x"
+   },
+   {
+    "location": "38-8",
+    "count": "1x"
+   },
+   {
+    "location": "38-11",
+    "count": "1x"
+   },
+   {
+    "location": "38-12",
+    "count": "2x"
+   },
+   {
+    "location": "38-13",
+    "count": "1x"
+   },
+   {
+    "location": "38-14",
+    "count": "1x"
+   },
+   {
+    "location": "40-7",
+    "count": "2x"
+   },
+   {
+    "location": "40-14",
+    "count": "1x"
+   }
+  ],
+  "name": "Ice Hockey Girl"
+ },
+ {
+  "data": [
+   {
+    "location": "8-6",
+    "count": "1x"
+   },
+   {
+    "location": "8-9",
+    "count": "1x"
+   },
+   {
+    "location": "14-8",
+    "count": "1x"
+   },
+   {
+    "location": "14-9",
+    "count": "1x"
+   },
+   {
+    "location": "14-11",
+    "count": "1x"
+   },
+   {
+    "location": "14-12",
+    "count": "1x"
+   },
+   {
+    "location": "14-13",
+    "count": "1x"
+   },
+   {
+    "location": "14-14",
+    "count": "1x"
+   },
+   {
+    "location": "14-15",
+    "count": "1x"
+   },
+   {
+    "location": "15-2",
+    "count": "1x"
+   },
+   {
+    "location": "15-3",
+    "count": "1x"
+   },
+   {
+    "location": "15-6",
+    "count": "1x"
+   },
+   {
+    "location": "15-8",
+    "count": "1x"
+   },
+   {
+    "location": "15-11",
+    "count": "2x"
+   },
+   {
+    "location": "15-13",
+    "count": "1x"
+   },
+   {
+    "location": "16-1",
+    "count": "2x"
+   },
+   {
+    "location": "16-3",
+    "count": "1x"
+   },
+   {
+    "location": "17-13",
+    "count": "1x"
+   },
+   {
+    "location": "18-1",
+    "count": "2x"
+   },
+   {
+    "location": "18-2",
+    "count": "2x"
+   },
+   {
+    "location": "18-3",
+    "count": "1x"
+   },
+   {
+    "location": "18-4",
+    "count": "2x"
+   },
+   {
+    "location": "25-13",
+    "count": "1x"
+   },
+   {
+    "location": "26-1",
+    "count": "2x"
+   },
+   {
+    "location": "26-4",
+    "count": "1x"
+   },
+   {
+    "location": "26-6",
+    "count": "1x"
+   },
+   {
+    "location": "26-7",
+    "count": "2x"
+   },
+   {
+    "location": "26-8",
+    "count": "1x"
+   },
+   {
+    "location": "26-9",
+    "count": "1x"
+   },
+   {
+    "location": "30-11",
+    "count": "2x"
+   },
+   {
+    "location": "40-4",
+    "count": "1x"
+   }
+  ],
+  "name": "Imperial Assassin"
+ },
+ {
+  "data": [
+   {
+    "location": "9-11",
+    "count": "1x"
+   },
+   {
+    "location": "10-2",
+    "count": "2x"
+   },
+   {
+    "location": "10-3",
+    "count": "1x"
+   },
+   {
+    "location": "10-4",
+    "count": "2x"
+   },
+   {
+    "location": "10-6",
+    "count": "2x"
+   },
+   {
+    "location": "10-7",
+    "count": "2x"
+   },
+   {
+    "location": "10-8",
+    "count": "2x"
+   },
+   {
+    "location": "10-11",
+    "count": "3x"
+   },
+   {
+    "location": "10-13",
+    "count": "3x"
+   },
+   {
+    "location": "10-14",
+    "count": "2x"
+   },
+   {
+    "location": "11-1",
+    "count": "1x"
+   },
+   {
+    "location": "11-6",
+    "count": "1x"
+   },
+   {
+    "location": "11-7",
+    "count": "3x"
+   },
+   {
+    "location": "11-9",
+    "count": "3x"
+   },
+   {
+    "location": "11-14",
+    "count": "1x"
+   },
+   {
+    "location": "11-15",
+    "count": "1x"
+   },
+   {
+    "location": "12-1",
+    "count": "2x"
+   },
+   {
+    "location": "12-2",
+    "count": "1x"
+   },
+   {
+    "location": "12-3",
+    "count": "2x"
+   },
+   {
+    "location": "12-4",
+    "count": "2x"
+   },
+   {
+    "location": "17-1",
+    "count": "3x"
+   },
+   {
+    "location": "17-3",
+    "count": "2x"
+   },
+   {
+    "location": "17-4",
+    "count": "2x"
+   },
+   {
+    "location": "17-7",
+    "count": "2x"
+   },
+   {
+    "location": "17-8",
+    "count": "2x"
+   },
+   {
+    "location": "17-9",
+    "count": "1x"
+   },
+   {
+    "location": "17-12",
+    "count": "2x"
+   },
+   {
+    "location": "17-13",
+    "count": "2x"
+   },
+   {
+    "location": "17-14",
+    "count": "1x"
+   },
+   {
+    "location": "18-2",
+    "count": "2x"
+   },
+   {
+    "location": "18-3",
+    "count": "2x"
+   },
+   {
+    "location": "18-4",
+    "count": "1x"
+   },
+   {
+    "location": "18-7",
+    "count": "2x"
+   },
+   {
+    "location": "18-8",
+    "count": "2x"
+   },
+   {
+    "location": "18-9",
+    "count": "1x"
+   },
+   {
+    "location": "18-11",
+    "count": "2x"
+   },
+   {
+    "location": "18-12",
+    "count": "3x"
+   },
+   {
+    "location": "18-13",
+    "count": "1x"
+   },
+   {
+    "location": "19-11",
+    "count": "2x"
+   },
+   {
+    "location": "19-12",
+    "count": "2x"
+   },
+   {
+    "location": "26-6",
+    "count": "2x"
+   },
+   {
+    "location": "26-8",
+    "count": "2x"
+   },
+   {
+    "location": "31-3",
+    "count": "1x"
+   },
+   {
+    "location": "33-13",
+    "count": "1x"
+   }
+  ],
+  "name": "Imperial Infantry"
+ },
+ {
+  "data": [
+   {
+    "location": "10-9",
+    "count": "2x"
+   },
+   {
+    "location": "13-1",
+    "count": "1x"
+   },
+   {
+    "location": "13-3",
+    "count": "1x"
+   },
+   {
+    "location": "14-6",
+    "count": "1x"
+   },
+   {
+    "location": "14-7",
+    "count": "1x"
+   },
+   {
+    "location": "14-8",
+    "count": "1x"
+   },
+   {
+    "location": "14-11",
+    "count": "1x"
+   },
+   {
+    "location": "14-12",
+    "count": "1x"
+   },
+   {
+    "location": "14-13",
+    "count": "1x"
+   },
+   {
+    "location": "16-12",
+    "count": "2x"
+   },
+   {
+    "location": "17-15",
+    "count": "1x"
+   },
+   {
+    "location": "18-11",
+    "count": "1x"
+   },
+   {
+    "location": "18-13",
+    "count": "1x"
+   },
+   {
+    "location": "18-14",
+    "count": "2x"
+   },
+   {
+    "location": "25-6",
+    "count": "1x"
+   },
+   {
+    "location": "25-7",
+    "count": "1x"
+   },
+   {
+    "location": "25-8",
+    "count": "1x"
+   },
+   {
+    "location": "25-9",
+    "count": "2x"
+   },
+   {
+    "location": "26-1",
+    "count": "1x"
+   },
+   {
+    "location": "26-2",
+    "count": "1x"
+   },
+   {
+    "location": "26-3",
+    "count": "1x"
+   },
+   {
+    "location": "26-4",
+    "count": "1x"
+   },
+   {
+    "location": "26-7",
+    "count": "1x"
+   },
+   {
+    "location": "26-9",
+    "count": "1x"
+   },
+   {
+    "location": "26-11",
+    "count": "1x"
+   },
+   {
+    "location": "26-12",
+    "count": "1x"
+   },
+   {
+    "location": "26-13",
+    "count": "1x"
+   },
+   {
+    "location": "26-14",
+    "count": "1x"
+   },
+   {
+    "location": "29-2",
+    "count": "2x"
+   },
+   {
+    "location": "31-12",
+    "count": "2x"
+   },
+   {
+    "location": "33-7",
+    "count": "2x"
+   },
+   {
+    "location": "34-7",
+    "count": "2x"
+   }
+  ],
+  "name": "Imperial Knightess"
+ },
+ {
+  "data": [
+   {
+    "location": "10-3",
+    "count": "1x"
+   },
+   {
+    "location": "10-4",
+    "count": "1x"
+   },
+   {
+    "location": "10-6",
+    "count": "1x"
+   },
+   {
+    "location": "10-7",
+    "count": "1x"
+   },
+   {
+    "location": "10-8",
+    "count": "1x"
+   },
+   {
+    "location": "10-9",
+    "count": "2x"
+   },
+   {
+    "location": "10-11",
+    "count": "1x"
+   },
+   {
+    "location": "10-12",
+    "count": "1x"
+   },
+   {
+    "location": "11-8",
+    "count": "1x"
+   },
+   {
+    "location": "11-9",
+    "count": "3x"
+   },
+   {
+    "location": "11-13",
+    "count": "1x"
+   },
+   {
+    "location": "12-1",
+    "count": "1x"
+   },
+   {
+    "location": "12-2",
+    "count": "2x"
+   },
+   {
+    "location": "12-3",
+    "count": "2x"
+   },
+   {
+    "location": "12-4",
+    "count": "1x"
+   },
+   {
+    "location": "17-1",
+    "count": "1x"
+   },
+   {
+    "location": "17-4",
+    "count": "1x"
+   },
+   {
+    "location": "17-8",
+    "count": "1x"
+   },
+   {
+    "location": "17-9",
+    "count": "1x"
+   },
+   {
+    "location": "17-13",
+    "count": "1x"
+   },
+   {
+    "location": "17-14",
+    "count": "1x"
+   },
+   {
+    "location": "18-3",
+    "count": "1x"
+   },
+   {
+    "location": "18-4",
+    "count": "1x"
+   },
+   {
+    "location": "18-8",
+    "count": "1x"
+   },
+   {
+    "location": "18-9",
+    "count": "1x"
+   },
+   {
+    "location": "18-13",
+    "count": "1x"
+   },
+   {
+    "location": "18-14",
+    "count": "2x"
+   },
+   {
+    "location": "19-7",
+    "count": "1x"
+   },
+   {
+    "location": "19-8",
+    "count": "1x"
+   },
+   {
+    "location": "19-9",
+    "count": "1x"
+   },
+   {
+    "location": "19-11",
+    "count": "1x"
+   },
+   {
+    "location": "19-12",
+    "count": "1x"
+   },
+   {
+    "location": "26-6",
+    "count": "1x"
+   },
+   {
+    "location": "26-8",
+    "count": "1x"
+   },
+   {
+    "location": "31-4",
+    "count": "1x"
+   },
+   {
+    "location": "33-14",
+    "count": "1x"
+   }
+  ],
+  "name": "Imperial Officer"
+ },
+ {
+  "data": [
+   {
+    "location": "2-14",
+    "count": "1x"
+   },
+   {
+    "location": "3-6",
+    "count": "2x"
+   },
+   {
+    "location": "3-9",
+    "count": "1x"
+   },
+   {
+    "location": "3-11",
+    "count": "1x"
+   },
+   {
+    "location": "3-14",
+    "count": "1x"
+   },
+   {
+    "location": "8-8",
+    "count": "1x"
+   },
+   {
+    "location": "8-9",
+    "count": "2x"
+   },
+   {
+    "location": "8-12",
+    "count": "1x"
+   },
+   {
+    "location": "8-13",
+    "count": "1x"
+   },
+   {
+    "location": "10-7",
+    "count": "1x"
+   },
+   {
+    "location": "10-11",
+    "count": "2x"
+   },
+   {
+    "location": "11-11",
+    "count": "2x"
+   },
+   {
+    "location": "11-13",
+    "count": "1x"
+   },
+   {
+    "location": "11-14",
+    "count": "1x"
+   },
+   {
+    "location": "13-9",
+    "count": "1x"
+   },
+   {
+    "location": "19-1",
+    "count": "3x"
+   },
+   {
+    "location": "19-6",
+    "count": "2x"
+   },
+   {
+    "location": "19-11",
+    "count": "1x"
+   },
+   {
+    "location": "20-1",
+    "count": "3x"
+   },
+   {
+    "location": "21-6",
+    "count": "3x"
+   },
+   {
+    "location": "21-8",
+    "count": "2x"
+   },
+   {
+    "location": "21-9",
+    "count": "1x"
+   },
+   {
+    "location": "24-11",
+    "count": "1x"
+   },
+   {
+    "location": "24-13",
+    "count": "1x"
+   },
+   {
+    "location": "25-7",
+    "count": "2x"
+   },
+   {
+    "location": "26-13",
+    "count": "1x"
+   },
+   {
+    "location": "28-12",
+    "count": "2x"
+   },
+   {
+    "location": "29-1",
+    "count": "1x"
+   },
+   {
+    "location": "29-3",
+    "count": "1x"
+   },
+   {
+    "location": "29-14",
+    "count": "1x"
+   },
+   {
+    "location": "30-4",
+    "count": "1x"
+   },
+   {
+    "location": "31-3",
+    "count": "1x"
+   },
+   {
+    "location": "32-2",
+    "count": "2x"
+   },
+   {
+    "location": "33-4",
+    "count": "1x"
+   },
+   {
+    "location": "33-13",
+    "count": "1x"
+   },
+   {
+    "location": "34-6",
+    "count": "1x"
+   },
+   {
+    "location": "34-8",
+    "count": "1x"
+   },
+   {
+    "location": "35-1",
+    "count": "1x"
+   },
+   {
+    "location": "35-3",
+    "count": "1x"
+   },
+   {
+    "location": "35-6",
+    "count": "1x"
+   },
+   {
+    "location": "39-12",
+    "count": "3x"
+   }
+  ],
+  "name": "Joyful One-Piece Siren"
+ },
+ {
+  "data": [
+   {
+    "location": "1-3",
+    "count": "2x"
+   },
+   {
+    "location": "1-14",
+    "count": "2x"
+   },
+   {
+    "location": "2-4",
+    "count": "1x"
+   },
+   {
+    "location": "2-8",
+    "count": "1x"
+   },
+   {
+    "location": "3-14",
+    "count": "1x"
+   },
+   {
+    "location": "4-13",
+    "count": "1x"
+   },
+   {
+    "location": "8-4",
+    "count": "1x"
+   },
+   {
+    "location": "9-12",
+    "count": "1x"
+   },
+   {
+    "location": "10-4",
+    "count": "1x"
+   },
+   {
+    "location": "11-7",
+    "count": "3x"
+   },
+   {
+    "location": "14-3",
+    "count": "2x"
+   },
+   {
+    "location": "14-8",
+    "count": "1x"
+   },
+   {
+    "location": "16-9",
+    "count": "1x"
+   },
+   {
+    "location": "17-2",
+    "count": "2x"
+   },
+   {
+    "location": "19-13",
+    "count": "1x"
+   },
+   {
+    "location": "25-12",
+    "count": "2x"
+   },
+   {
+    "location": "26-9",
+    "count": "1x"
+   },
+   {
+    "location": "28-3",
+    "count": "1x"
+   },
+   {
+    "location": "29-8",
+    "count": "1x"
+   },
+   {
+    "location": "29-13",
+    "count": "1x"
+   },
+   {
+    "location": "30-3",
+    "count": "1x"
+   },
+   {
+    "location": "30-7",
+    "count": "1x"
+   },
+   {
+    "location": "31-9",
+    "count": "1x"
+   },
+   {
+    "location": "33-4",
+    "count": "1x"
+   },
+   {
+    "location": "34-13",
+    "count": "1x"
+   },
+   {
+    "location": "35-13",
+    "count": "1x"
+   }
+  ],
+  "name": "Lewd Teacher"
+ },
+ {
+  "data": [
+   {
+    "location": "1-1",
+    "count": "2x"
+   },
+   {
+    "location": "1-4",
+    "count": "1x"
+   },
+   {
+    "location": "2-13",
+    "count": "1x"
+   },
+   {
+    "location": "3-6",
+    "count": "1x"
+   },
+   {
+    "location": "3-8",
+    "count": "2x"
+   },
+   {
+    "location": "3-12",
+    "count": "1x"
+   },
+   {
+    "location": "4-1",
+    "count": "2x"
+   },
+   {
+    "location": "4-2",
+    "count": "2x"
+   },
+   {
+    "location": "4-6",
+    "count": "1x"
+   },
+   {
+    "location": "4-7",
+    "count": "2x"
+   },
+   {
+    "location": "4-11",
+    "count": "2x"
+   },
+   {
+    "location": "4-14",
+    "count": "2x"
+   },
+   {
+    "location": "5-6",
+    "count": "2x"
+   },
+   {
+    "location": "5-8",
+    "count": "3x"
+   },
+   {
+    "location": "8-2",
+    "count": "1x"
+   },
+   {
+    "location": "9-2",
+    "count": "3x"
+   },
+   {
+    "location": "9-14",
+    "count": "1x"
+   },
+   {
+    "location": "10-3",
+    "count": "1x"
+   },
+   {
+    "location": "10-7",
+    "count": "2x"
+   },
+   {
+    "location": "10-9",
+    "count": "2x"
+   },
+   {
+    "location": "10-12",
+    "count": "2x"
+   },
+   {
+    "location": "11-1",
+    "count": "1x"
+   },
+   {
+    "location": "11-2",
+    "count": "1x"
+   },
+   {
+    "location": "11-3",
+    "count": "1x"
+   },
+   {
+    "location": "11-4",
+    "count": "1x"
+   },
+   {
+    "location": "11-6",
+    "count": "3x"
+   },
+   {
+    "location": "11-12",
+    "count": "1x"
+   },
+   {
+    "location": "13-1",
+    "count": "1x"
+   },
+   {
+    "location": "14-1",
+    "count": "3x"
+   },
+   {
+    "location": "14-2",
+    "count": "2x"
+   },
+   {
+    "location": "14-6",
+    "count": "3x"
+   },
+   {
+    "location": "14-7",
+    "count": "2x"
+   },
+   {
+    "location": "14-11",
+    "count": "2x"
+   },
+   {
+    "location": "14-12",
+    "count": "1x"
+   },
+   {
+    "location": "16-9",
+    "count": "2x"
+   },
+   {
+    "location": "19-2",
+    "count": "2x"
+   },
+   {
+    "location": "19-7",
+    "count": "1x"
+   },
+   {
+    "location": "19-12",
+    "count": "1x"
+   },
+   {
+    "location": "20-2",
+    "count": "3x"
+   },
+   {
+    "location": "21-7",
+    "count": "1x"
+   },
+   {
+    "location": "25-1",
+    "count": "1x"
+   },
+   {
+    "location": "25-3",
+    "count": "2x"
+   },
+   {
+    "location": "26-3",
+    "count": "1x"
+   },
+   {
+    "location": "26-9",
+    "count": "1x"
+   },
+   {
+    "location": "26-12",
+    "count": "2x"
+   },
+   {
+    "location": "28-9",
+    "count": "1x"
+   },
+   {
+    "location": "30-6",
+    "count": "2x"
+   },
+   {
+    "location": "30-13",
+    "count": "1x"
+   },
+   {
+    "location": "31-3",
+    "count": "1x"
+   },
+   {
+    "location": "31-9",
+    "count": "2x"
+   },
+   {
+    "location": "32-9",
+    "count": "1x"
+   },
+   {
+    "location": "33-4",
+    "count": "2x"
+   },
+   {
+    "location": "33-13",
+    "count": "1x"
+   },
+   {
+    "location": "39-9",
+    "count": "1x"
+   }
+  ],
+  "name": "Local Lass"
+ },
+ {
+  "data": [
+   {
+    "location": "11-3",
+    "count": "2x"
+   },
+   {
+    "location": "11-4",
+    "count": "1x"
+   },
+   {
+    "location": "19-2",
+    "count": "1x"
+   },
+   {
+    "location": "20-7",
+    "count": "1x"
+   },
+   {
+    "location": "20-8",
+    "count": "2x"
+   },
+   {
+    "location": "20-9",
+    "count": "1x"
+   },
+   {
+    "location": "20-12",
+    "count": "1x"
+   },
+   {
+    "location": "21-2",
+    "count": "1x"
+   },
+   {
+    "location": "21-12",
+    "count": "2x"
+   },
+   {
+    "location": "24-11",
+    "count": "1x"
+   },
+   {
+    "location": "27-8",
+    "count": "1x"
+   },
+   {
+    "location": "28-6",
+    "count": "1x"
+   },
+   {
+    "location": "29-14",
+    "count": "1x"
+   },
+   {
+    "location": "32-6",
+    "count": "1x"
+   },
+   {
+    "location": "35-2",
+    "count": "2x"
+   },
+   {
+    "location": "35-4",
+    "count": "1x"
+   },
+   {
+    "location": "36-2",
+    "count": "1x"
+   }
+  ],
+  "name": "Martial Maiden"
+ },
+ {
+  "data": [
+   {
+    "location": "15-9",
+    "count": "2x"
+   },
+   {
+    "location": "15-14",
+    "count": "2x"
+   },
+   {
+    "location": "16-4",
+    "count": "3x"
+   },
+   {
+    "location": "18-6",
+    "count": "1x"
+   },
+   {
+    "location": "18-7",
+    "count": "1x"
+   },
+   {
+    "location": "18-8",
+    "count": "1x"
+   },
+   {
+    "location": "18-9",
+    "count": "1x"
+   },
+   {
+    "location": "18-12",
+    "count": "3x"
+   },
+   {
+    "location": "18-13",
+    "count": "1x"
+   },
+   {
+    "location": "19-15",
+    "count": "1x"
+   },
+   {
+    "location": "25-6",
+    "count": "1x"
+   },
+   {
+    "location": "25-7",
+    "count": "1x"
+   },
+   {
+    "location": "25-8",
+    "count": "1x"
+   },
+   {
+    "location": "25-9",
+    "count": "1x"
+   },
+   {
+    "location": "25-11",
+    "count": "3x"
+   },
+   {
+    "location": "25-12",
+    "count": "1x"
+   },
+   {
+    "location": "25-13",
+    "count": "1x"
+   },
+   {
+    "location": "29-4",
+    "count": "1x"
+   },
+   {
+    "location": "34-9",
+    "count": "1x"
+   },
+   {
+    "location": "35-4",
+    "count": "1x"
+   },
+   {
+    "location": "39-9",
+    "count": "1x"
+   }
+  ],
+  "name": "Masked Diva"
+ },
+ {
+  "data": [
+   {
+    "location": "2-3",
+    "count": "1x"
+   },
+   {
+    "location": "22-2",
+    "count": "2x"
+   },
+   {
+    "location": "22-4",
+    "count": "1x"
+   },
+   {
+    "location": "22-7",
+    "count": "2x"
+   },
+   {
+    "location": "22-9",
+    "count": "1x"
+   },
+   {
+    "location": "22-12",
+    "count": "1x"
+   },
+   {
+    "location": "22-14",
+    "count": "1x"
+   },
+   {
+    "location": "23-7",
+    "count": "3x"
+   },
+   {
+    "location": "23-8",
+    "count": "2x"
+   },
+   {
+    "location": "23-14",
+    "count": "2x"
+   },
+   {
+    "location": "28-1",
+    "count": "1x"
+   },
+   {
+    "location": "28-6",
+    "count": "1x"
+   },
+   {
+    "location": "29-6",
+    "count": "1x"
+   },
+   {
+    "location": "32-6",
+    "count": "1x"
+   },
+   {
+    "location": "34-11",
+    "count": "1x"
+   },
+   {
+    "location": "35-6",
+    "count": "1x"
+   },
+   {
+    "location": "35-11",
+    "count": "1x"
+   },
+   {
+    "location": "37-6",
+    "count": "1x"
+   },
+   {
+    "location": "37-7",
+    "count": "1x"
+   },
+   {
+    "location": "37-8",
+    "count": "1x"
+   },
+   {
+    "location": "37-9",
+    "count": "1x"
+   }
+  ],
+  "name": "Mech Pilot"
+ },
+ {
+  "data": [
+   {
+    "location": "7-11",
+    "count": "2x"
+   },
+   {
+    "location": "7-13",
+    "count": "1x"
+   },
+   {
+    "location": "12-2",
+    "count": "2x"
+   },
+   {
+    "location": "13-1",
+    "count": "1x"
+   },
+   {
+    "location": "13-3",
+    "count": "1x"
+   },
+   {
+    "location": "13-11",
+    "count": "2x"
+   },
+   {
+    "location": "13-13",
+    "count": "1x"
+   },
+   {
+    "location": "16-6",
+    "count": "2x"
+   },
+   {
+    "location": "16-13",
+    "count": "1x"
+   },
+   {
+    "location": "21-1",
+    "count": "1x"
+   },
+   {
+    "location": "21-2",
+    "count": "1x"
+   },
+   {
+    "location": "21-3",
+    "count": "1x"
+   },
+   {
+    "location": "21-4",
+    "count": "1x"
+   },
+   {
+    "location": "23-8",
+    "count": "1x"
+   },
+   {
+    "location": "24-4",
+    "count": "1x"
+   },
+   {
+    "location": "24-14",
+    "count": "2x"
+   },
+   {
+    "location": "26-1",
+    "count": "1x"
+   },
+   {
+    "location": "26-6",
+    "count": "1x"
+   },
+   {
+    "location": "27-2",
+    "count": "2x"
+   },
+   {
+    "location": "27-3",
+    "count": "2x"
+   },
+   {
+    "location": "27-6",
+    "count": "1x"
+   },
+   {
+    "location": "27-7",
+    "count": "1x"
+   },
+   {
+    "location": "27-8",
+    "count": "1x"
+   },
+   {
+    "location": "27-13",
+    "count": "1x"
+   },
+   {
+    "location": "27-14",
+    "count": "1x"
+   },
+   {
+    "location": "28-3",
+    "count": "1x"
+   },
+   {
+    "location": "28-12",
+    "count": "1x"
+   },
+   {
+    "location": "28-13",
+    "count": "2x"
+   },
+   {
+    "location": "29-8",
+    "count": "1x"
+   },
+   {
+    "location": "30-7",
+    "count": "1x"
+   },
+   {
+    "location": "30-8",
+    "count": "2x"
+   },
+   {
+    "location": "30-11",
+    "count": "1x"
+   },
+   {
+    "location": "31-6",
+    "count": "2x"
+   },
+   {
+    "location": "31-13",
+    "count": "1x"
+   },
+   {
+    "location": "32-2",
+    "count": "1x"
+   },
+   {
+    "location": "32-3",
+    "count": "2x"
+   },
+   {
+    "location": "32-14",
+    "count": "1x"
+   },
+   {
+    "location": "33-1",
+    "count": "1x"
+   },
+   {
+    "location": "33-8",
+    "count": "1x"
+   },
+   {
+    "location": "34-4",
+    "count": "1x"
+   },
+   {
+    "location": "34-13",
+    "count": "1x"
+   },
+   {
+    "location": "35-8",
+    "count": "1x"
+   },
+   {
+    "location": "35-13",
+    "count": "1x"
+   },
+   {
+    "location": "36-1",
+    "count": "1x"
+   },
+   {
+    "location": "38-4",
+    "count": "1x"
+   },
+   {
+    "location": "38-9",
+    "count": "1x"
+   },
+   {
+    "location": "40-3",
+    "count": "1x"
+   },
+   {
+    "location": "40-4",
+    "count": "1x"
+   }
+  ],
+  "name": "Military Girl"
+ },
+ {
+  "data": [
+   {
+    "location": "7-2",
+    "count": "1x"
+   },
+   {
+    "location": "7-3",
+    "count": "1x"
+   },
+   {
+    "location": "7-4",
+    "count": "2x"
+   },
+   {
+    "location": "7-6",
+    "count": "2x"
+   },
+   {
+    "location": "7-8",
+    "count": "1x"
+   },
+   {
+    "location": "8-12",
+    "count": "1x"
+   },
+   {
+    "location": "8-14",
+    "count": "2x"
+   },
+   {
+    "location": "10-2",
+    "count": "1x"
+   },
+   {
+    "location": "12-7",
+    "count": "1x"
+   },
+   {
+    "location": "12-8",
+    "count": "1x"
+   },
+   {
+    "location": "12-9",
+    "count": "2x"
+   },
+   {
+    "location": "12-11",
+    "count": "2x"
+   },
+   {
+    "location": "12-13",
+    "count": "2x"
+   },
+   {
+    "location": "20-11",
+    "count": "3x"
+   },
+   {
+    "location": "20-14",
+    "count": "3x"
+   },
+   {
+    "location": "21-1",
+    "count": "1x"
+   },
+   {
+    "location": "21-4",
+    "count": "2x"
+   },
+   {
+    "location": "21-13",
+    "count": "2x"
+   },
+   {
+    "location": "24-6",
+    "count": "2x"
+   },
+   {
+    "location": "24-8",
+    "count": "1x"
+   },
+   {
+    "location": "24-13",
+    "count": "1x"
+   },
+   {
+    "location": "27-4",
+    "count": "2x"
+   },
+   {
+    "location": "28-8",
+    "count": "1x"
+   },
+   {
+    "location": "29-4",
+    "count": "1x"
+   },
+   {
+    "location": "30-9",
+    "count": "2x"
+   },
+   {
+    "location": "32-8",
+    "count": "1x"
+   },
+   {
+    "location": "34-9",
+    "count": "1x"
+   },
+   {
+    "location": "35-4",
+    "count": "1x"
+   },
+   {
+    "location": "35-7",
+    "count": "1x"
+   },
+   {
+    "location": "35-8",
+    "count": "1x"
+   },
+   {
+    "location": "35-9",
+    "count": "1x"
+   },
+   {
+    "location": "39-12",
+    "count": "2x"
+   },
+   {
+    "location": "40-3",
+    "count": "1x"
+   }
+  ],
+  "name": "Muscle Maiden"
+ },
+ {
+  "data": [
+   {
+    "location": "2-15",
+    "count": "1x"
+   }
+  ],
+  "name": "Mysterious Office Lady"
+ },
+ {
+  "data": [
+   {
+    "location": "1-11",
+    "count": "1x"
+   },
+   {
+    "location": "1-12",
+    "count": "3x"
+   },
+   {
+    "location": "1-13",
+    "count": "1x"
+   },
+   {
+    "location": "1-14",
+    "count": "1x"
+   },
+   {
+    "location": "2-1",
+    "count": "1x"
+   },
+   {
+    "location": "2-2",
+    "count": "1x"
+   },
+   {
+    "location": "2-4",
+    "count": "1x"
+   },
+   {
+    "location": "2-6",
+    "count": "2x"
+   },
+   {
+    "location": "2-9",
+    "count": "1x"
+   },
+   {
+    "location": "16-7",
+    "count": "2x"
+   },
+   {
+    "location": "17-7",
+    "count": "1x"
+   },
+   {
+    "location": "17-8",
+    "count": "2x"
+   },
+   {
+    "location": "17-9",
+    "count": "1x"
+   },
+   {
+    "location": "17-12",
+    "count": "1x"
+   },
+   {
+    "location": "17-13",
+    "count": "1x"
+   },
+   {
+    "location": "17-14",
+    "count": "1x"
+   },
+   {
+    "location": "18-2",
+    "count": "1x"
+   },
+   {
+    "location": "18-3",
+    "count": "1x"
+   },
+   {
+    "location": "18-7",
+    "count": "1x"
+   },
+   {
+    "location": "18-8",
+    "count": "1x"
+   },
+   {
+    "location": "18-9",
+    "count": "1x"
+   },
+   {
+    "location": "23-11",
+    "count": "2x"
+   },
+   {
+    "location": "23-12",
+    "count": "2x"
+   },
+   {
+    "location": "23-14",
+    "count": "1x"
+   },
+   {
+    "location": "26-7",
+    "count": "1x"
+   },
+   {
+    "location": "29-2",
+    "count": "2x"
+   },
+   {
+    "location": "30-8",
+    "count": "1x"
+   },
+   {
+    "location": "31-7",
+    "count": "2x"
+   },
+   {
+    "location": "33-2",
+    "count": "2x"
+   },
+   {
+    "location": "34-7",
+    "count": "2x"
+   },
+   {
+    "location": "35-2",
+    "count": "2x"
+   }
+  ],
+  "name": "Naive Researcher"
+ },
+ {
+  "data": [
+   {
+    "location": "1-9",
+    "count": "1x"
+   },
+   {
+    "location": "2-9",
+    "count": "1x"
+   },
+   {
+    "location": "22-8",
+    "count": "2x"
+   },
+   {
+    "location": "22-9",
+    "count": "2x"
+   },
+   {
+    "location": "23-2",
+    "count": "2x"
+   },
+   {
+    "location": "23-3",
+    "count": "2x"
+   },
+   {
+    "location": "23-11",
+    "count": "2x"
+   },
+   {
+    "location": "24-4",
+    "count": "1x"
+   },
+   {
+    "location": "32-14",
+    "count": "1x"
+   },
+   {
+    "location": "34-4",
+    "count": "1x"
+   },
+   {
+    "location": "37-13",
+    "count": "1x"
+   },
+   {
+    "location": "39-8",
+    "count": "1x"
+   }
+  ],
+  "name": "Netrunning Siren"
+ },
+ {
+  "data": [
+   {
+    "location": "1-1",
+    "count": "1x"
+   },
+   {
+    "location": "2-6",
+    "count": "1x"
+   },
+   {
+    "location": "2-7",
+    "count": "2x"
+   },
+   {
+    "location": "4-3",
+    "count": "2x"
+   },
+   {
+    "location": "4-8",
+    "count": "2x"
+   },
+   {
+    "location": "7-14",
+    "count": "1x"
+   },
+   {
+    "location": "8-1",
+    "count": "1x"
+   },
+   {
+    "location": "9-1",
+    "count": "2x"
+   },
+   {
+    "location": "9-3",
+    "count": "3x"
+   },
+   {
+    "location": "9-11",
+    "count": "1x"
+   },
+   {
+    "location": "9-12",
+    "count": "1x"
+   },
+   {
+    "location": "9-13",
+    "count": "2x"
+   },
+   {
+    "location": "9-14",
+    "count": "1x"
+   },
+   {
+    "location": "10-1",
+    "count": "1x"
+   },
+   {
+    "location": "10-2",
+    "count": "1x"
+   },
+   {
+    "location": "10-3",
+    "count": "1x"
+   },
+   {
+    "location": "10-14",
+    "count": "1x"
+   },
+   {
+    "location": "11-1",
+    "count": "1x"
+   },
+   {
+    "location": "11-2",
+    "count": "1x"
+   },
+   {
+    "location": "11-4",
+    "count": "1x"
+   },
+   {
+    "location": "11-6",
+    "count": "2x"
+   },
+   {
+    "location": "11-8",
+    "count": "2x"
+   },
+   {
+    "location": "11-11",
+    "count": "1x"
+   },
+   {
+    "location": "13-2",
+    "count": "1x"
+   },
+   {
+    "location": "13-4",
+    "count": "2x"
+   },
+   {
+    "location": "13-12",
+    "count": "2x"
+   },
+   {
+    "location": "13-14",
+    "count": "2x"
+   },
+   {
+    "location": "19-4",
+    "count": "1x"
+   },
+   {
+    "location": "19-9",
+    "count": "1x"
+   },
+   {
+    "location": "19-13",
+    "count": "1x"
+   },
+   {
+    "location": "20-4",
+    "count": "1x"
+   },
+   {
+    "location": "24-2",
+    "count": "2x"
+   },
+   {
+    "location": "24-12",
+    "count": "1x"
+   },
+   {
+    "location": "24-13",
+    "count": "1x"
+   },
+   {
+    "location": "26-2",
+    "count": "1x"
+   },
+   {
+    "location": "28-2",
+    "count": "2x"
+   },
+   {
+    "location": "28-4",
+    "count": "1x"
+   },
+   {
+    "location": "29-7",
+    "count": "2x"
+   },
+   {
+    "location": "29-9",
+    "count": "1x"
+   },
+   {
+    "location": "29-12",
+    "count": "1x"
+   },
+   {
+    "location": "30-2",
+    "count": "1x"
+   },
+   {
+    "location": "30-7",
+    "count": "1x"
+   },
+   {
+    "location": "30-12",
+    "count": "2x"
+   },
+   {
+    "location": "32-12",
+    "count": "2x"
+   },
+   {
+    "location": "34-2",
+    "count": "2x"
+   },
+   {
+    "location": "34-12",
+    "count": "2x"
+   },
+   {
+    "location": "34-14",
+    "count": "1x"
+   },
+   {
+    "location": "35-9",
+    "count": "1x"
+   },
+   {
+    "location": "35-12",
+    "count": "2x"
+   },
+   {
+    "location": "35-14",
+    "count": "1x"
+   }
+  ],
+  "name": "Obscene Police Officer"
+ },
+ {
+  "data": [
+   {
+    "location": "1-2",
+    "count": "1x"
+   },
+   {
+    "location": "1-12",
+    "count": "3x"
+   },
+   {
+    "location": "1-13",
+    "count": "2x"
+   },
+   {
+    "location": "1-14",
+    "count": "1x"
+   },
+   {
+    "location": "1-15",
+    "count": "1x"
+   },
+   {
+    "location": "2-3",
+    "count": "1x"
+   },
+   {
+    "location": "2-8",
+    "count": "1x"
+   },
+   {
+    "location": "2-13",
+    "count": "1x"
+   },
+   {
+    "location": "16-8",
+    "count": "2x"
+   },
+   {
+    "location": "17-2",
+    "count": "2x"
+   },
+   {
+    "location": "17-4",
+    "count": "3x"
+   },
+   {
+    "location": "17-7",
+    "count": "2x"
+   },
+   {
+    "location": "17-8",
+    "count": "1x"
+   },
+   {
+    "location": "17-9",
+    "count": "1x"
+   },
+   {
+    "location": "17-12",
+    "count": "1x"
+   },
+   {
+    "location": "17-13",
+    "count": "1x"
+   },
+   {
+    "location": "17-14",
+    "count": "1x"
+   },
+   {
+    "location": "18-3",
+    "count": "1x"
+   },
+   {
+    "location": "18-7",
+    "count": "1x"
+   },
+   {
+    "location": "18-8",
+    "count": "1x"
+   },
+   {
+    "location": "18-9",
+    "count": "1x"
+   },
+   {
+    "location": "18-11",
+    "count": "3x"
+   },
+   {
+    "location": "25-9",
+    "count": "1x"
+   },
+   {
+    "location": "26-8",
+    "count": "1x"
+   },
+   {
+    "location": "28-14",
+    "count": "2x"
+   },
+   {
+    "location": "29-6",
+    "count": "2x"
+   },
+   {
+    "location": "30-6",
+    "count": "1x"
+   },
+   {
+    "location": "31-2",
+    "count": "2x"
+   },
+   {
+    "location": "31-8",
+    "count": "2x"
+   },
+   {
+    "location": "32-4",
+    "count": "2x"
+   },
+   {
+    "location": "33-3",
+    "count": "2x"
+   },
+   {
+    "location": "33-12",
+    "count": "2x"
+   },
+   {
+    "location": "34-11",
+    "count": "2x"
+   },
+   {
+    "location": "35-6",
+    "count": "1x"
+   },
+   {
+    "location": "35-11",
+    "count": "2x"
+   },
+   {
+    "location": "39-7",
+    "count": "1x"
+   }
+  ],
+  "name": "Office Girl"
+ },
+ {
+  "data": [
+   {
+    "location": "2-8",
+    "count": "1x"
+   },
+   {
+    "location": "5-4",
+    "count": "1x"
+   },
+   {
+    "location": "6-7",
+    "count": "1x"
+   },
+   {
+    "location": "8-2",
+    "count": "1x"
+   },
+   {
+    "location": "8-3",
+    "count": "1x"
+   },
+   {
+    "location": "9-14",
+    "count": "1x"
+   },
+   {
+    "location": "10-6",
+    "count": "1x"
+   },
+   {
+    "location": "10-8",
+    "count": "1x"
+   },
+   {
+    "location": "13-8",
+    "count": "1x"
+   },
+   {
+    "location": "14-2",
+    "count": "1x"
+   },
+   {
+    "location": "14-3",
+    "count": "1x"
+   },
+   {
+    "location": "14-4",
+    "count": "1x"
+   },
+   {
+    "location": "14-7",
+    "count": "1x"
+   },
+   {
+    "location": "14-8",
+    "count": "1x"
+   },
+   {
+    "location": "14-13",
+    "count": "1x"
+   },
+   {
+    "location": "14-14",
+    "count": "1x"
+   },
+   {
+    "location": "15-1",
+    "count": "1x"
+   },
+   {
+    "location": "15-2",
+    "count": "1x"
+   },
+   {
+    "location": "15-3",
+    "count": "2x"
+   },
+   {
+    "location": "16-11",
+    "count": "2x"
+   },
+   {
+    "location": "16-13",
+    "count": "1x"
+   },
+   {
+    "location": "19-1",
+    "count": "1x"
+   },
+   {
+    "location": "23-6",
+    "count": "1x"
+   },
+   {
+    "location": "24-3",
+    "count": "1x"
+   },
+   {
+    "location": "24-4",
+    "count": "2x"
+   },
+   {
+    "location": "24-11",
+    "count": "1x"
+   },
+   {
+    "location": "24-13",
+    "count": "1x"
+   },
+   {
+    "location": "25-1",
+    "count": "1x"
+   },
+   {
+    "location": "25-3",
+    "count": "1x"
+   },
+   {
+    "location": "25-14",
+    "count": "2x"
+   },
+   {
+    "location": "26-13",
+    "count": "1x"
+   },
+   {
+    "location": "27-13",
+    "count": "1x"
+   },
+   {
+    "location": "27-14",
+    "count": "2x"
+   },
+   {
+    "location": "29-13",
+    "count": "1x"
+   },
+   {
+    "location": "30-3",
+    "count": "1x"
+   },
+   {
+    "location": "31-3",
+    "count": "1x"
+   },
+   {
+    "location": "31-11",
+    "count": "2x"
+   },
+   {
+    "location": "31-13",
+    "count": "1x"
+   },
+   {
+    "location": "32-13",
+    "count": "1x"
+   },
+   {
+    "location": "32-14",
+    "count": "2x"
+   },
+   {
+    "location": "33-6",
+    "count": "2x"
+   },
+   {
+    "location": "33-8",
+    "count": "1x"
+   },
+   {
+    "location": "33-13",
+    "count": "1x"
+   },
+   {
+    "location": "34-3",
+    "count": "1x"
+   },
+   {
+    "location": "34-4",
+    "count": "2x"
+   },
+   {
+    "location": "35-9",
+    "count": "1x"
+   },
+   {
+    "location": "36-4",
+    "count": "1x"
+   }
+  ],
+  "name": "Otherworldly Adventurer"
+ },
+ {
+  "data": [
+   {
+    "location": "1-4",
+    "count": "1x"
+   },
+   {
+    "location": "2-7",
+    "count": "1x"
+   },
+   {
+    "location": "2-11",
+    "count": "1x"
+   },
+   {
+    "location": "2-12",
+    "count": "2x"
+   },
+   {
+    "location": "3-1",
+    "count": "1x"
+   },
+   {
+    "location": "3-2",
+    "count": "2x"
+   },
+   {
+    "location": "3-3",
+    "count": "1x"
+   },
+   {
+    "location": "3-4",
+    "count": "1x"
+   },
+   {
+    "location": "3-6",
+    "count": "1x"
+   },
+   {
+    "location": "3-8",
+    "count": "1x"
+   },
+   {
+    "location": "3-9",
+    "count": "1x"
+   },
+   {
+    "location": "3-14",
+    "count": "1x"
+   },
+   {
+    "location": "4-11",
+    "count": "2x"
+   },
+   {
+    "location": "11-11",
+    "count": "2x"
+   },
+   {
+    "location": "11-13",
+    "count": "1x"
+   },
+   {
+    "location": "11-14",
+    "count": "2x"
+   },
+   {
+    "location": "13-7",
+    "count": "1x"
+   },
+   {
+    "location": "13-9",
+    "count": "1x"
+   },
+   {
+    "location": "21-6",
+    "count": "3x"
+   },
+   {
+    "location": "21-8",
+    "count": "2x"
+   },
+   {
+    "location": "21-9",
+    "count": "2x"
+   },
+   {
+    "location": "25-12",
+    "count": "1x"
+   },
+   {
+    "location": "26-11",
+    "count": "1x"
+   },
+   {
+    "location": "28-1",
+    "count": "1x"
+   },
+   {
+    "location": "39-6",
+    "count": "1x"
+   }
+  ],
+  "name": "Pistachio Gyaru"
+ },
+ {
+  "data": [
+   {
+    "location": "1-7",
+    "count": "1x"
+   },
+   {
+    "location": "16-9",
+    "count": "1x"
+   },
+   {
+    "location": "21-13",
+    "count": "1x"
+   },
+   {
+    "location": "21-14",
+    "count": "3x"
+   },
+   {
+    "location": "22-11",
+    "count": "2x"
+   },
+   {
+    "location": "22-13",
+    "count": "1x"
+   },
+   {
+    "location": "22-14",
+    "count": "1x"
+   },
+   {
+    "location": "23-2",
+    "count": "1x"
+   },
+   {
+    "location": "23-3",
+    "count": "2x"
+   },
+   {
+    "location": "23-6",
+    "count": "2x"
+   },
+   {
+    "location": "23-7",
+    "count": "1x"
+   },
+   {
+    "location": "23-8",
+    "count": "1x"
+   },
+   {
+    "location": "23-9",
+    "count": "1x"
+   },
+   {
+    "location": "23-12",
+    "count": "2x"
+   },
+   {
+    "location": "23-13",
+    "count": "2x"
+   },
+   {
+    "location": "24-8",
+    "count": "2x"
+   },
+   {
+    "location": "24-9",
+    "count": "3x"
+   },
+   {
+    "location": "24-13",
+    "count": "1x"
+   },
+   {
+    "location": "28-3",
+    "count": "1x"
+   },
+   {
+    "location": "29-8",
+    "count": "1x"
+   },
+   {
+    "location": "30-13",
+    "count": "1x"
+   },
+   {
+    "location": "31-9",
+    "count": "1x"
+   },
+   {
+    "location": "33-4",
+    "count": "1x"
+   },
+   {
+    "location": "34-13",
+    "count": "1x"
+   },
+   {
+    "location": "35-8",
+    "count": "1x"
+   },
+   {
+    "location": "35-13",
+    "count": "1x"
+   },
+   {
+    "location": "39-14",
+    "count": "3x"
+   }
+  ],
+  "name": "Powered Armored Maven"
+ },
+ {
+  "data": [
+   {
+    "location": "2-1",
+    "count": "1x"
+   },
+   {
+    "location": "2-4",
+    "count": "1x"
+   },
+   {
+    "location": "2-8",
+    "count": "1x"
+   },
+   {
+    "location": "2-11",
+    "count": "2x"
+   },
+   {
+    "location": "2-12",
+    "count": "2x"
+   },
+   {
+    "location": "2-13",
+    "count": "1x"
+   },
+   {
+    "location": "3-1",
+    "count": "2x"
+   },
+   {
+    "location": "3-4",
+    "count": "1x"
+   },
+   {
+    "location": "3-7",
+    "count": "1x"
+   },
+   {
+    "location": "3-11",
+    "count": "1x"
+   },
+   {
+    "location": "4-11",
+    "count": "1x"
+   },
+   {
+    "location": "5-7",
+    "count": "2x"
+   },
+   {
+    "location": "5-8",
+    "count": "2x"
+   },
+   {
+    "location": "5-11",
+    "count": "2x"
+   },
+   {
+    "location": "7-2",
+    "count": "2x"
+   },
+   {
+    "location": "7-4",
+    "count": "2x"
+   },
+   {
+    "location": "8-1",
+    "count": "2x"
+   },
+   {
+    "location": "8-2",
+    "count": "1x"
+   },
+   {
+    "location": "8-3",
+    "count": "1x"
+   },
+   {
+    "location": "10-1",
+    "count": "1x"
+   },
+   {
+    "location": "11-3",
+    "count": "2x"
+   },
+   {
+    "location": "11-13",
+    "count": "1x"
+   },
+   {
+    "location": "12-7",
+    "count": "2x"
+   },
+   {
+    "location": "12-9",
+    "count": "2x"
+   },
+   {
+    "location": "17-6",
+    "count": "3x"
+   },
+   {
+    "location": "17-9",
+    "count": "1x"
+   },
+   {
+    "location": "17-11",
+    "count": "3x"
+   },
+   {
+    "location": "18-1",
+    "count": "1x"
+   },
+   {
+    "location": "18-4",
+    "count": "1x"
+   },
+   {
+    "location": "18-6",
+    "count": "2x"
+   },
+   {
+    "location": "18-9",
+    "count": "1x"
+   },
+   {
+    "location": "19-14",
+    "count": "1x"
+   },
+   {
+    "location": "20-8",
+    "count": "1x"
+   },
+   {
+    "location": "20-9",
+    "count": "1x"
+   },
+   {
+    "location": "25-11",
+    "count": "3x"
+   },
+   {
+    "location": "25-14",
+    "count": "2x"
+   },
+   {
+    "location": "28-4",
+    "count": "2x"
+   },
+   {
+    "location": "30-6",
+    "count": "1x"
+   }
+  ],
+  "name": "Rebellious Busty Babe"
+ },
+ {
+  "data": [
+   {
+    "location": "4-14",
+    "count": "1x"
+   },
+   {
+    "location": "5-1",
+    "count": "2x"
+   },
+   {
+    "location": "5-2",
+    "count": "3x"
+   },
+   {
+    "location": "5-12",
+    "count": "1x"
+   },
+   {
+    "location": "6-2",
+    "count": "2x"
+   },
+   {
+    "location": "6-7",
+    "count": "1x"
+   },
+   {
+    "location": "6-12",
+    "count": "2x"
+   },
+   {
+    "location": "7-1",
+    "count": "2x"
+   },
+   {
+    "location": "7-2",
+    "count": "1x"
+   },
+   {
+    "location": "7-8",
+    "count": "1x"
+   },
+   {
+    "location": "7-9",
+    "count": "2x"
+   },
+   {
+    "location": "8-12",
+    "count": "2x"
+   },
+   {
+    "location": "9-8",
+    "count": "3x"
+   },
+   {
+    "location": "9-9",
+    "count": "2x"
+   },
+   {
+    "location": "10-1",
+    "count": "1x"
+   },
+   {
+    "location": "11-4",
+    "count": "2x"
+   },
+   {
+    "location": "12-6",
+    "count": "2x"
+   },
+   {
+    "location": "12-7",
+    "count": "1x"
+   },
+   {
+    "location": "12-13",
+    "count": "1x"
+   },
+   {
+    "location": "12-14",
+    "count": "2x"
+   },
+   {
+    "location": "15-6",
+    "count": "2x"
+   },
+   {
+    "location": "15-11",
+    "count": "1x"
+   },
+   {
+    "location": "16-1",
+    "count": "2x"
+   },
+   {
+    "location": "19-11",
+    "count": "1x"
+   },
+   {
+    "location": "20-8",
+    "count": "2x"
+   },
+   {
+    "location": "20-9",
+    "count": "2x"
+   },
+   {
+    "location": "20-12",
+    "count": "2x"
+   },
+   {
+    "location": "21-1",
+    "count": "1x"
+   },
+   {
+    "location": "21-2",
+    "count": "1x"
+   },
+   {
+    "location": "24-7",
+    "count": "1x"
+   },
+   {
+    "location": "27-1",
+    "count": "1x"
+   },
+   {
+    "location": "27-2",
+    "count": "1x"
+   },
+   {
+    "location": "27-3",
+    "count": "2x"
+   },
+   {
+    "location": "27-4",
+    "count": "2x"
+   },
+   {
+    "location": "27-6",
+    "count": "1x"
+   },
+   {
+    "location": "27-7",
+    "count": "1x"
+   },
+   {
+    "location": "27-8",
+    "count": "1x"
+   },
+   {
+    "location": "27-9",
+    "count": "2x"
+   },
+   {
+    "location": "27-14",
+    "count": "1x"
+   },
+   {
+    "location": "29-11",
+    "count": "2x"
+   },
+   {
+    "location": "29-12",
+    "count": "1x"
+   },
+   {
+    "location": "29-13",
+    "count": "1x"
+   },
+   {
+    "location": "29-14",
+    "count": "2x"
+   },
+   {
+    "location": "30-1",
+    "count": "1x"
+   },
+   {
+    "location": "30-3",
+    "count": "1x"
+   },
+   {
+    "location": "30-4",
+    "count": "2x"
+   },
+   {
+    "location": "30-8",
+    "count": "2x"
+   },
+   {
+    "location": "30-9",
+    "count": "2x"
+   },
+   {
+    "location": "31-2",
+    "count": "1x"
+   },
+   {
+    "location": "33-12",
+    "count": "1x"
+   },
+   {
+    "location": "35-14",
+    "count": "2x"
+   },
+   {
+    "location": "37-4",
+    "count": "1x"
+   },
+   {
+    "location": "40-1",
+    "count": "1x"
+   },
+   {
+    "location": "40-2",
+    "count": "1x"
+   }
+  ],
+  "name": "Rugby Girl"
+ },
+ {
+  "data": [
+   {
+    "location": "1-2",
+    "count": "2x"
+   },
+   {
+    "location": "2-11",
+    "count": "1x"
+   },
+   {
+    "location": "3-3",
+    "count": "1x"
+   },
+   {
+    "location": "3-8",
+    "count": "1x"
+   },
+   {
+    "location": "4-9",
+    "count": "1x"
+   },
+   {
+    "location": "4-12",
+    "count": "1x"
+   },
+   {
+    "location": "4-13",
+    "count": "1x"
+   },
+   {
+    "location": "5-6",
+    "count": "2x"
+   },
+   {
+    "location": "7-13",
+    "count": "1x"
+   },
+   {
+    "location": "8-2",
+    "count": "1x"
+   },
+   {
+    "location": "8-7",
+    "count": "1x"
+   },
+   {
+    "location": "11-8",
+    "count": "1x"
+   },
+   {
+    "location": "11-14",
+    "count": "1x"
+   },
+   {
+    "location": "13-3",
+    "count": "1x"
+   },
+   {
+    "location": "13-13",
+    "count": "1x"
+   },
+   {
+    "location": "14-2",
+    "count": "2x"
+   },
+   {
+    "location": "14-12",
+    "count": "2x"
+   },
+   {
+    "location": "16-13",
+    "count": "2x"
+   },
+   {
+    "location": "21-9",
+    "count": "1x"
+   },
+   {
+    "location": "23-8",
+    "count": "1x"
+   },
+   {
+    "location": "24-1",
+    "count": "3x"
+   },
+   {
+    "location": "25-6",
+    "count": "3x"
+   },
+   {
+    "location": "25-13",
+    "count": "1x"
+   },
+   {
+    "location": "26-13",
+    "count": "1x"
+   },
+   {
+    "location": "27-11",
+    "count": "1x"
+   },
+   {
+    "location": "27-13",
+    "count": "2x"
+   },
+   {
+    "location": "28-11",
+    "count": "2x"
+   },
+   {
+    "location": "30-7",
+    "count": "1x"
+   },
+   {
+    "location": "31-13",
+    "count": "2x"
+   },
+   {
+    "location": "32-1",
+    "count": "2x"
+   },
+   {
+    "location": "32-11",
+    "count": "3x"
+   },
+   {
+    "location": "33-8",
+    "count": "2x"
+   },
+   {
+    "location": "34-1",
+    "count": "3x"
+   }
+  ],
+  "name": "Sailor Girl"
+ },
+ {
+  "data": [
+   {
+    "location": "36-13",
+    "count": "2x"
+   },
+   {
+    "location": "37-8",
+    "count": "1x"
+   },
+   {
+    "location": "38-11",
+    "count": "1x"
+   },
+   {
+    "location": "38-12",
+    "count": "1x"
+   },
+   {
+    "location": "38-13",
+    "count": "1x"
+   },
+   {
+    "location": "38-14",
+    "count": "2x"
+   },
+   {
+    "location": "39-3",
+    "count": "1x"
+   },
+   {
+    "location": "40-6",
+    "count": "1x"
+   },
+   {
+    "location": "40-8",
+    "count": "2x"
+   },
+   {
+    "location": "40-11",
+    "count": "1x"
+   },
+   {
+    "location": "40-12",
+    "count": "1x"
+   },
+   {
+    "location": "40-13",
+    "count": "1x"
+   },
+   {
+    "location": "40-14",
+    "count": "1x"
+   }
+  ],
+  "name": "Santa's Sexy Elf"
+ },
+ {
+  "data": [
+   {
+    "location": "2-2",
+    "count": "1x"
+   },
+   {
+    "location": "2-3",
+    "count": "2x"
+   },
+   {
+    "location": "2-14",
+    "count": "1x"
+   },
+   {
+    "location": "22-2",
+    "count": "2x"
+   },
+   {
+    "location": "22-3",
+    "count": "3x"
+   },
+   {
+    "location": "22-7",
+    "count": "2x"
+   },
+   {
+    "location": "22-8",
+    "count": "2x"
+   },
+   {
+    "location": "22-12",
+    "count": "2x"
+   },
+   {
+    "location": "22-13",
+    "count": "2x"
+   },
+   {
+    "location": "23-1",
+    "count": "2x"
+   },
+   {
+    "location": "23-4",
+    "count": "2x"
+   },
+   {
+    "location": "23-6",
+    "count": "1x"
+   },
+   {
+    "location": "23-7",
+    "count": "1x"
+   },
+   {
+    "location": "23-8",
+    "count": "1x"
+   },
+   {
+    "location": "23-9",
+    "count": "1x"
+   },
+   {
+    "location": "28-2",
+    "count": "1x"
+   },
+   {
+    "location": "29-7",
+    "count": "1x"
+   },
+   {
+    "location": "29-12",
+    "count": "1x"
+   },
+   {
+    "location": "34-12",
+    "count": "1x"
+   },
+   {
+    "location": "35-7",
+    "count": "1x"
+   },
+   {
+    "location": "35-12",
+    "count": "1x"
+   },
+   {
+    "location": "36-7",
+    "count": "1x"
+   },
+   {
+    "location": "37-9",
+    "count": "1x"
+   }
+  ],
+  "name": "Sci-Fi Citizen"
+ },
+ {
+  "data": [
+   {
+    "location": "3-13",
+    "count": "1x"
+   },
+   {
+    "location": "5-11",
+    "count": "1x"
+   },
+   {
+    "location": "5-12",
+    "count": "1x"
+   },
+   {
+    "location": "5-13",
+    "count": "1x"
+   },
+   {
+    "location": "5-14",
+    "count": "2x"
+   },
+   {
+    "location": "6-1",
+    "count": "2x"
+   },
+   {
+    "location": "6-2",
+    "count": "2x"
+   },
+   {
+    "location": "6-3",
+    "count": "1x"
+   },
+   {
+    "location": "6-4",
+    "count": "2x"
+   },
+   {
+    "location": "6-7",
+    "count": "1x"
+   },
+   {
+    "location": "6-8",
+    "count": "1x"
+   },
+   {
+    "location": "6-9",
+    "count": "1x"
+   },
+   {
+    "location": "6-11",
+    "count": "2x"
+   },
+   {
+    "location": "6-12",
+    "count": "2x"
+   },
+   {
+    "location": "6-13",
+    "count": "1x"
+   },
+   {
+    "location": "6-14",
+    "count": "2x"
+   },
+   {
+    "location": "7-15",
+    "count": "1x"
+   },
+   {
+    "location": "10-6",
+    "count": "1x"
+   },
+   {
+    "location": "11-2",
+    "count": "1x"
+   },
+   {
+    "location": "12-3",
+    "count": "2x"
+   },
+   {
+    "location": "16-14",
+    "count": "2x"
+   },
+   {
+    "location": "20-7",
+    "count": "2x"
+   },
+   {
+    "location": "23-9",
+    "count": "2x"
+   },
+   {
+    "location": "25-2",
+    "count": "1x"
+   },
+   {
+    "location": "25-3",
+    "count": "2x"
+   },
+   {
+    "location": "25-8",
+    "count": "1x"
+   },
+   {
+    "location": "26-7",
+    "count": "2x"
+   },
+   {
+    "location": "26-9",
+    "count": "2x"
+   },
+   {
+    "location": "26-13",
+    "count": "1x"
+   },
+   {
+    "location": "26-14",
+    "count": "1x"
+   },
+   {
+    "location": "28-13",
+    "count": "1x"
+   },
+   {
+    "location": "29-3",
+    "count": "2x"
+   },
+   {
+    "location": "31-14",
+    "count": "2x"
+   },
+   {
+    "location": "32-3",
+    "count": "1x"
+   },
+   {
+    "location": "33-9",
+    "count": "2x"
+   },
+   {
+    "location": "34-8",
+    "count": "2x"
+   },
+   {
+    "location": "35-3",
+    "count": "2x"
+   },
+   {
+    "location": "39-6",
+    "count": "1x"
+   },
+   {
+    "location": "40-4",
+    "count": "1x"
+   }
+  ],
+  "name": "Sensual Rogue"
+ },
+ {
+  "data": [
+   {
+    "location": "7-4",
+    "count": "2x"
+   },
+   {
+    "location": "7-9",
+    "count": "2x"
+   },
+   {
+    "location": "8-11",
+    "count": "1x"
+   },
+   {
+    "location": "8-12",
+    "count": "1x"
+   },
+   {
+    "location": "8-13",
+    "count": "1x"
+   },
+   {
+    "location": "8-14",
+    "count": "2x"
+   },
+   {
+    "location": "12-1",
+    "count": "1x"
+   },
+   {
+    "location": "12-9",
+    "count": "2x"
+   },
+   {
+    "location": "12-14",
+    "count": "2x"
+   },
+   {
+    "location": "15-1",
+    "count": "1x"
+   },
+   {
+    "location": "15-2",
+    "count": "1x"
+   },
+   {
+    "location": "15-3",
+    "count": "1x"
+   },
+   {
+    "location": "15-4",
+    "count": "1x"
+   },
+   {
+    "location": "15-6",
+    "count": "1x"
+   },
+   {
+    "location": "15-7",
+    "count": "1x"
+   },
+   {
+    "location": "15-9",
+    "count": "1x"
+   },
+   {
+    "location": "20-15",
+    "count": "1x"
+   },
+   {
+    "location": "24-2",
+    "count": "1x"
+   },
+   {
+    "location": "24-3",
+    "count": "1x"
+   },
+   {
+    "location": "24-14",
+    "count": "1x"
+   },
+   {
+    "location": "27-7",
+    "count": "1x"
+   },
+   {
+    "location": "27-8",
+    "count": "1x"
+   },
+   {
+    "location": "27-11",
+    "count": "1x"
+   },
+   {
+    "location": "27-12",
+    "count": "3x"
+   },
+   {
+    "location": "28-4",
+    "count": "1x"
+   },
+   {
+    "location": "29-9",
+    "count": "1x"
+   },
+   {
+    "location": "29-11",
+    "count": "1x"
+   },
+   {
+    "location": "29-14",
+    "count": "1x"
+   },
+   {
+    "location": "30-4",
+    "count": "1x"
+   },
+   {
+    "location": "32-12",
+    "count": "1x"
+   },
+   {
+    "location": "32-13",
+    "count": "1x"
+   },
+   {
+    "location": "34-2",
+    "count": "1x"
+   },
+   {
+    "location": "34-3",
+    "count": "1x"
+   },
+   {
+    "location": "34-14",
+    "count": "1x"
+   },
+   {
+    "location": "35-14",
+    "count": "1x"
+   },
+   {
+    "location": "36-3",
+    "count": "1x"
+   },
+   {
+    "location": "38-1",
+    "count": "1x"
+   },
+   {
+    "location": "38-2",
+    "count": "1x"
+   },
+   {
+    "location": "38-3",
+    "count": "1x"
+   },
+   {
+    "location": "38-8",
+    "count": "1x"
+   },
+   {
+    "location": "39-13",
+    "count": "2x"
+   },
+   {
+    "location": "40-1",
+    "count": "1x"
+   },
+   {
+    "location": "40-3",
+    "count": "1x"
+   },
+   {
+    "location": "40-4",
+    "count": "1x"
+   }
+  ],
+  "name": "Sexy Battle Girl"
+ },
+ {
+  "data": [
+   {
+    "location": "2-14",
+    "count": "1x"
+   },
+   {
+    "location": "3-11",
+    "count": "1x"
+   },
+   {
+    "location": "6-6",
+    "count": "1x"
+   },
+   {
+    "location": "10-6",
+    "count": "1x"
+   },
+   {
+    "location": "12-15",
+    "count": "1x"
+   },
+   {
+    "location": "15-11",
+    "count": "1x"
+   },
+   {
+    "location": "15-12",
+    "count": "1x"
+   },
+   {
+    "location": "15-13",
+    "count": "1x"
+   },
+   {
+    "location": "15-14",
+    "count": "1x"
+   },
+   {
+    "location": "17-11",
+    "count": "1x"
+   },
+   {
+    "location": "17-12",
+    "count": "1x"
+   },
+   {
+    "location": "17-14",
+    "count": "1x"
+   },
+   {
+    "location": "24-11",
+    "count": "1x"
+   },
+   {
+    "location": "24-14",
+    "count": "1x"
+   },
+   {
+    "location": "25-3",
+    "count": "1x"
+   },
+   {
+    "location": "25-4",
+    "count": "3x"
+   },
+   {
+    "location": "25-13",
+    "count": "2x"
+   },
+   {
+    "location": "25-14",
+    "count": "2x"
+   },
+   {
+    "location": "25-15",
+    "count": "1x"
+   },
+   {
+    "location": "27-3",
+    "count": "2x"
+   },
+   {
+    "location": "27-4",
+    "count": "1x"
+   },
+   {
+    "location": "27-8",
+    "count": "2x"
+   },
+   {
+    "location": "27-9",
+    "count": "1x"
+   },
+   {
+    "location": "28-3",
+    "count": "1x"
+   },
+   {
+    "location": "29-8",
+    "count": "1x"
+   },
+   {
+    "location": "29-13",
+    "count": "1x"
+   },
+   {
+    "location": "30-9",
+    "count": "1x"
+   },
+   {
+    "location": "34-13",
+    "count": "1x"
+   },
+   {
+    "location": "35-8",
+    "count": "1x"
+   },
+   {
+    "location": "35-13",
+    "count": "1x"
+   },
+   {
+    "location": "36-8",
+    "count": "1x"
+   },
+   {
+    "location": "37-11",
+    "count": "1x"
+   },
+   {
+    "location": "39-4",
+    "count": "1x"
+   }
+  ],
+  "name": "Sexy Goth Girl"
+ },
+ {
+  "data": [
+   {
+    "location": "1-9",
+    "count": "1x"
+   },
+   {
+    "location": "4-3",
+    "count": "2x"
+   },
+   {
+    "location": "4-4",
+    "count": "2x"
+   },
+   {
+    "location": "4-8",
+    "count": "2x"
+   },
+   {
+    "location": "4-9",
+    "count": "2x"
+   },
+   {
+    "location": "4-11",
+    "count": "1x"
+   },
+   {
+    "location": "4-14",
+    "count": "2x"
+   },
+   {
+    "location": "5-1",
+    "count": "2x"
+   },
+   {
+    "location": "5-2",
+    "count": "1x"
+   },
+   {
+    "location": "5-4",
+    "count": "2x"
+   },
+   {
+    "location": "8-6",
+    "count": "1x"
+   },
+   {
+    "location": "8-7",
+    "count": "2x"
+   },
+   {
+    "location": "8-8",
+    "count": "1x"
+   },
+   {
+    "location": "24-12",
+    "count": "1x"
+   },
+   {
+    "location": "27-2",
+    "count": "2x"
+   },
+   {
+    "location": "27-7",
+    "count": "2x"
+   },
+   {
+    "location": "28-2",
+    "count": "1x"
+   },
+   {
+    "location": "28-3",
+    "count": "1x"
+   },
+   {
+    "location": "28-4",
+    "count": "1x"
+   },
+   {
+    "location": "28-7",
+    "count": "2x"
+   },
+   {
+    "location": "32-7",
+    "count": "2x"
+   }
+  ],
+  "name": "ShyTanuki"
+ },
+ {
+  "data": [
+   {
+    "location": "1-6",
+    "count": "2x"
+   },
+   {
+    "location": "1-8",
+    "count": "2x"
+   },
+   {
+    "location": "1-9",
+    "count": "1x"
+   },
+   {
+    "location": "3-7",
+    "count": "1x"
+   },
+   {
+    "location": "4-1",
+    "count": "1x"
+   },
+   {
+    "location": "4-2",
+    "count": "2x"
+   },
+   {
+    "location": "4-4",
+    "count": "2x"
+   },
+   {
+    "location": "4-6",
+    "count": "1x"
+   },
+   {
+    "location": "4-7",
+    "count": "1x"
+   },
+   {
+    "location": "4-9",
+    "count": "1x"
+   },
+   {
+    "location": "7-6",
+    "count": "2x"
+   },
+   {
+    "location": "8-7",
+    "count": "1x"
+   },
+   {
+    "location": "9-8",
+    "count": "1x"
+   },
+   {
+    "location": "12-11",
+    "count": "2x"
+   },
+   {
+    "location": "24-12",
+    "count": "2x"
+   },
+   {
+    "location": "26-4",
+    "count": "1x"
+   },
+   {
+    "location": "27-1",
+    "count": "1x"
+   },
+   {
+    "location": "27-4",
+    "count": "1x"
+   },
+   {
+    "location": "27-6",
+    "count": "1x"
+   },
+   {
+    "location": "27-9",
+    "count": "1x"
+   },
+   {
+    "location": "28-2",
+    "count": "1x"
+   },
+   {
+    "location": "29-4",
+    "count": "2x"
+   },
+   {
+    "location": "29-7",
+    "count": "2x"
+   },
+   {
+    "location": "29-12",
+    "count": "1x"
+   },
+   {
+    "location": "30-2",
+    "count": "1x"
+   },
+   {
+    "location": "30-9",
+    "count": "1x"
+   },
+   {
+    "location": "30-14",
+    "count": "2x"
+   },
+   {
+    "location": "31-4",
+    "count": "1x"
+   },
+   {
+    "location": "33-14",
+    "count": "1x"
+   },
+   {
+    "location": "34-9",
+    "count": "2x"
+   },
+   {
+    "location": "34-12",
+    "count": "2x"
+   },
+   {
+    "location": "35-4",
+    "count": "1x"
+   },
+   {
+    "location": "35-7",
+    "count": "2x"
+   },
+   {
+    "location": "35-12",
+    "count": "2x"
+   }
+  ],
+  "name": "SlimeGirl"
+ },
+ {
+  "data": [
+   {
+    "location": "1-8",
+    "count": "1x"
+   },
+   {
+    "location": "1-9",
+    "count": "1x"
+   },
+   {
+    "location": "2-1",
+    "count": "1x"
+   },
+   {
+    "location": "2-4",
+    "count": "1x"
+   },
+   {
+    "location": "2-7",
+    "count": "1x"
+   },
+   {
+    "location": "16-11",
+    "count": "2x"
+   },
+   {
+    "location": "21-12",
+    "count": "1x"
+   },
+   {
+    "location": "21-14",
+    "count": "3x"
+   },
+   {
+    "location": "22-4",
+    "count": "1x"
+   },
+   {
+    "location": "22-9",
+    "count": "1x"
+   },
+   {
+    "location": "22-14",
+    "count": "1x"
+   },
+   {
+    "location": "23-6",
+    "count": "1x"
+   },
+   {
+    "location": "23-12",
+    "count": "1x"
+   },
+   {
+    "location": "23-13",
+    "count": "2x"
+   },
+   {
+    "location": "23-14",
+    "count": "1x"
+   },
+   {
+    "location": "24-4",
+    "count": "2x"
+   },
+   {
+    "location": "26-4",
+    "count": "1x"
+   },
+   {
+    "location": "26-11",
+    "count": "1x"
+   },
+   {
+    "location": "28-4",
+    "count": "1x"
+   },
+   {
+    "location": "28-9",
+    "count": "1x"
+   },
+   {
+    "location": "29-4",
+    "count": "1x"
+   },
+   {
+    "location": "29-9",
+    "count": "2x"
+   },
+   {
+    "location": "30-14",
+    "count": "2x"
+   },
+   {
+    "location": "31-11",
+    "count": "2x"
+   },
+   {
+    "location": "32-9",
+    "count": "1x"
+   },
+   {
+    "location": "32-14",
+    "count": "2x"
+   },
+   {
+    "location": "33-6",
+    "count": "2x"
+   },
+   {
+    "location": "34-4",
+    "count": "2x"
+   },
+   {
+    "location": "34-9",
+    "count": "1x"
+   },
+   {
+    "location": "34-14",
+    "count": "2x"
+   },
+   {
+    "location": "35-4",
+    "count": "1x"
+   },
+   {
+    "location": "35-9",
+    "count": "1x"
+   },
+   {
+    "location": "35-14",
+    "count": "2x"
+   }
+  ],
+  "name": "Snooty Ace Pilot"
+ },
+ {
+  "data": [
+   {
+    "location": "36-3",
+    "count": "1x"
+   },
+   {
+    "location": "37-1",
+    "count": "1x"
+   },
+   {
+    "location": "37-2",
+    "count": "1x"
+   },
+   {
+    "location": "37-3",
+    "count": "2x"
+   },
+   {
+    "location": "37-4",
+    "count": "1x"
+   },
+   {
+    "location": "37-7",
+    "count": "1x"
+   },
+   {
+    "location": "37-11",
+    "count": "1x"
+   },
+   {
+    "location": "37-13",
+    "count": "1x"
+   },
+   {
+    "location": "38-11",
+    "count": "2x"
+   },
+   {
+    "location": "38-12",
+    "count": "2x"
+   },
+   {
+    "location": "38-13",
+    "count": "2x"
+   },
+   {
+    "location": "38-14",
+    "count": "2x"
+   },
+   {
+    "location": "39-2",
+    "count": "1x"
+   },
+   {
+    "location": "40-9",
+    "count": "2x"
+   },
+   {
+    "location": "40-11",
+    "count": "1x"
+   },
+   {
+    "location": "40-12",
+    "count": "1x"
+   },
+   {
+    "location": "40-13",
+    "count": "1x"
+   },
+   {
+    "location": "40-14",
+    "count": "1x"
+   }
+  ],
+  "name": "Snow Bunny"
+ },
+ {
+  "data": [
+   {
+    "location": "1-11",
+    "count": "1x"
+   },
+   {
+    "location": "4-3",
+    "count": "2x"
+   },
+   {
+    "location": "4-4",
+    "count": "2x"
+   },
+   {
+    "location": "4-6",
+    "count": "2x"
+   },
+   {
+    "location": "4-8",
+    "count": "1x"
+   },
+   {
+    "location": "4-9",
+    "count": "2x"
+   },
+   {
+    "location": "4-13",
+    "count": "1x"
+   },
+   {
+    "location": "5-3",
+    "count": "2x"
+   },
+   {
+    "location": "5-4",
+    "count": "3x"
+   },
+   {
+    "location": "9-11",
+    "count": "1x"
+   },
+   {
+    "location": "9-12",
+    "count": "1x"
+   },
+   {
+    "location": "15-1",
+    "count": "1x"
+   },
+   {
+    "location": "15-3",
+    "count": "2x"
+   },
+   {
+    "location": "16-6",
+    "count": "2x"
+   },
+   {
+    "location": "16-15",
+    "count": "1x"
+   },
+   {
+    "location": "21-9",
+    "count": "2x"
+   },
+   {
+    "location": "25-1",
+    "count": "2x"
+   },
+   {
+    "location": "28-11",
+    "count": "1x"
+   },
+   {
+    "location": "31-2",
+    "count": "2x"
+   },
+   {
+    "location": "31-6",
+    "count": "2x"
+   },
+   {
+    "location": "32-1",
+    "count": "1x"
+   },
+   {
+    "location": "33-1",
+    "count": "2x"
+   },
+   {
+    "location": "33-12",
+    "count": "2x"
+   },
+   {
+    "location": "39-9",
+    "count": "1x"
+   }
+  ],
+  "name": "Soccer Girl"
+ },
+ {
+  "data": [
+   {
+    "location": "38-7",
+    "count": "1x"
+   },
+   {
+    "location": "38-9",
+    "count": "1x"
+   },
+   {
+    "location": "39-1",
+    "count": "2x"
+   },
+   {
+    "location": "39-2",
+    "count": "2x"
+   },
+   {
+    "location": "39-3",
+    "count": "2x"
+   },
+   {
+    "location": "39-4",
+    "count": "2x"
+   },
+   {
+    "location": "40-14",
+    "count": "1x"
+   }
+  ],
+  "name": "Special Elven Forces"
+ },
+ {
+  "data": [
+   {
+    "location": "37-1",
+    "count": "1x"
+   },
+   {
+    "location": "37-7",
+    "count": "1x"
+   },
+   {
+    "location": "39-6",
+    "count": "1x"
+   },
+   {
+    "location": "39-7",
+    "count": "1x"
+   },
+   {
+    "location": "39-8",
+    "count": "1x"
+   },
+   {
+    "location": "39-9",
+    "count": "1x"
+   },
+   {
+    "location": "40-6",
+    "count": "1x"
+   },
+   {
+    "location": "40-11",
+    "count": "1x"
+   }
+  ],
+  "name": "Stormbreaker Dwarf"
+ },
+ {
+  "data": [
+   {
+    "location": "3-3",
+    "count": "1x"
+   },
+   {
+    "location": "3-4",
+    "count": "2x"
+   },
+   {
+    "location": "4-1",
+    "count": "3x"
+   },
+   {
+    "location": "4-6",
+    "count": "2x"
+   },
+   {
+    "location": "4-7",
+    "count": "1x"
+   },
+   {
+    "location": "4-12",
+    "count": "1x"
+   },
+   {
+    "location": "4-13",
+    "count": "1x"
+   },
+   {
+    "location": "7-13",
+    "count": "2x"
+   },
+   {
+    "location": "7-14",
+    "count": "2x"
+   },
+   {
+    "location": "9-12",
+    "count": "1x"
+   },
+   {
+    "location": "11-2",
+    "count": "1x"
+   },
+   {
+    "location": "11-12",
+    "count": "2x"
+   },
+   {
+    "location": "11-13",
+    "count": "2x"
+   },
+   {
+    "location": "13-3",
+    "count": "1x"
+   },
+   {
+    "location": "13-4",
+    "count": "2x"
+   },
+   {
+    "location": "13-9",
+    "count": "1x"
+   },
+   {
+    "location": "13-13",
+    "count": "2x"
+   },
+   {
+    "location": "13-14",
+    "count": "2x"
+   },
+   {
+    "location": "14-1",
+    "count": "3x"
+   },
+   {
+    "location": "14-4",
+    "count": "1x"
+   },
+   {
+    "location": "14-6",
+    "count": "1x"
+   },
+   {
+    "location": "14-9",
+    "count": "1x"
+   },
+   {
+    "location": "14-11",
+    "count": "1x"
+   },
+   {
+    "location": "20-7",
+    "count": "2x"
+   },
+   {
+    "location": "21-7",
+    "count": "2x"
+   },
+   {
+    "location": "21-8",
+    "count": "2x"
+   },
+   {
+    "location": "25-2",
+    "count": "3x"
+   },
+   {
+    "location": "25-4",
+    "count": "1x"
+   },
+   {
+    "location": "31-4",
+    "count": "2x"
+   },
+   {
+    "location": "33-14",
+    "count": "2x"
+   },
+   {
+    "location": "37-14",
+    "count": "1x"
+   },
+   {
+    "location": "38-1",
+    "count": "1x"
+   },
+   {
+    "location": "38-2",
+    "count": "1x"
+   },
+   {
+    "location": "38-4",
+    "count": "1x"
+   },
+   {
+    "location": "38-6",
+    "count": "1x"
+   },
+   {
+    "location": "38-7",
+    "count": "1x"
+   },
+   {
+    "location": "38-9",
+    "count": "1x"
+   }
+  ],
+  "name": "Strawberry Milk Girl"
+ },
+ {
+  "data": [
+   {
+    "location": "2-12",
+    "count": "1x"
+   },
+   {
+    "location": "6-3",
+    "count": "1x"
+   },
+   {
+    "location": "6-4",
+    "count": "3x"
+   },
+   {
+    "location": "6-6",
+    "count": "2x"
+   },
+   {
+    "location": "6-8",
+    "count": "1x"
+   },
+   {
+    "location": "6-9",
+    "count": "3x"
+   },
+   {
+    "location": "6-13",
+    "count": "1x"
+   },
+   {
+    "location": "6-14",
+    "count": "3x"
+   },
+   {
+    "location": "7-12",
+    "count": "1x"
+   },
+   {
+    "location": "7-14",
+    "count": "1x"
+   },
+   {
+    "location": "8-3",
+    "count": "2x"
+   },
+   {
+    "location": "9-6",
+    "count": "2x"
+   },
+   {
+    "location": "19-1",
+    "count": "2x"
+   },
+   {
+    "location": "19-3",
+    "count": "3x"
+   },
+   {
+    "location": "19-4",
+    "count": "1x"
+   },
+   {
+    "location": "19-6",
+    "count": "2x"
+   },
+   {
+    "location": "19-8",
+    "count": "1x"
+   },
+   {
+    "location": "19-9",
+    "count": "1x"
+   },
+   {
+    "location": "19-11",
+    "count": "1x"
+   },
+   {
+    "location": "19-13",
+    "count": "3x"
+   },
+   {
+    "location": "19-14",
+    "count": "2x"
+   },
+   {
+    "location": "20-1",
+    "count": "3x"
+   },
+   {
+    "location": "20-3",
+    "count": "3x"
+   },
+   {
+    "location": "20-4",
+    "count": "1x"
+   },
+   {
+    "location": "31-1",
+    "count": "1x"
+   },
+   {
+    "location": "33-11",
+    "count": "1x"
+   },
+   {
+    "location": "39-8",
+    "count": "1x"
+   }
+  ],
+  "name": "The Female Captive"
+ },
+ {
+  "data": [
+   {
+    "location": "1-6",
+    "count": "1x"
+   },
+   {
+    "location": "2-2",
+    "count": "1x"
+   },
+   {
+    "location": "3-1",
+    "count": "1x"
+   },
+   {
+    "location": "3-2",
+    "count": "3x"
+   },
+   {
+    "location": "3-3",
+    "count": "1x"
+   },
+   {
+    "location": "3-4",
+    "count": "2x"
+   },
+   {
+    "location": "3-13",
+    "count": "2x"
+   },
+   {
+    "location": "3-14",
+    "count": "1x"
+   },
+   {
+    "location": "5-13",
+    "count": "2x"
+   },
+   {
+    "location": "5-14",
+    "count": "1x"
+   },
+   {
+    "location": "6-3",
+    "count": "2x"
+   },
+   {
+    "location": "6-4",
+    "count": "1x"
+   },
+   {
+    "location": "6-6",
+    "count": "1x"
+   },
+   {
+    "location": "6-7",
+    "count": "2x"
+   },
+   {
+    "location": "6-8",
+    "count": "2x"
+   },
+   {
+    "location": "6-9",
+    "count": "1x"
+   },
+   {
+    "location": "6-13",
+    "count": "2x"
+   },
+   {
+    "location": "6-14",
+    "count": "1x"
+   },
+   {
+    "location": "7-3",
+    "count": "3x"
+   },
+   {
+    "location": "7-7",
+    "count": "1x"
+   },
+   {
+    "location": "8-1",
+    "count": "2x"
+   },
+   {
+    "location": "8-2",
+    "count": "2x"
+   },
+   {
+    "location": "8-3",
+    "count": "2x"
+   },
+   {
+    "location": "8-4",
+    "count": "2x"
+   },
+   {
+    "location": "8-11",
+    "count": "1x"
+   },
+   {
+    "location": "8-12",
+    "count": "1x"
+   },
+   {
+    "location": "8-13",
+    "count": "1x"
+   },
+   {
+    "location": "10-1",
+    "count": "1x"
+   },
+   {
+    "location": "12-8",
+    "count": "3x"
+   },
+   {
+    "location": "12-11",
+    "count": "2x"
+   },
+   {
+    "location": "12-12",
+    "count": "1x"
+   },
+   {
+    "location": "13-6",
+    "count": "1x"
+   },
+   {
+    "location": "19-13",
+    "count": "1x"
+   },
+   {
+    "location": "26-12",
+    "count": "1x"
+   },
+   {
+    "location": "28-1",
+    "count": "1x"
+   },
+   {
+    "location": "28-11",
+    "count": "2x"
+   },
+   {
+    "location": "28-14",
+    "count": "2x"
+   },
+   {
+    "location": "29-11",
+    "count": "1x"
+   },
+   {
+    "location": "30-1",
+    "count": "1x"
+   },
+   {
+    "location": "31-1",
+    "count": "2x"
+   },
+   {
+    "location": "32-1",
+    "count": "2x"
+   },
+   {
+    "location": "32-4",
+    "count": "2x"
+   },
+   {
+    "location": "33-11",
+    "count": "2x"
+   },
+   {
+    "location": "38-4",
+    "count": "1x"
+   }
+  ],
+  "name": "The Tormentress"
+ },
+ {
+  "data": [
+   {
+    "location": "1-3",
+    "count": "1x"
+   },
+   {
+    "location": "1-4",
+    "count": "1x"
+   },
+   {
+    "location": "2-7",
+    "count": "1x"
+   },
+   {
+    "location": "2-13",
+    "count": "1x"
+   },
+   {
+    "location": "2-14",
+    "count": "1x"
+   },
+   {
+    "location": "3-1",
+    "count": "2x"
+   },
+   {
+    "location": "3-2",
+    "count": "1x"
+   },
+   {
+    "location": "3-3",
+    "count": "2x"
+   },
+   {
+    "location": "3-7",
+    "count": "2x"
+   },
+   {
+    "location": "3-9",
+    "count": "1x"
+   },
+   {
+    "location": "3-14",
+    "count": "1x"
+   },
+   {
+    "location": "4-12",
+    "count": "1x"
+   },
+   {
+    "location": "5-7",
+    "count": "2x"
+   },
+   {
+    "location": "9-1",
+    "count": "2x"
+   },
+   {
+    "location": "10-2",
+    "count": "1x"
+   },
+   {
+    "location": "11-8",
+    "count": "2x"
+   },
+   {
+    "location": "11-12",
+    "count": "1x"
+   },
+   {
+    "location": "13-1",
+    "count": "1x"
+   },
+   {
+    "location": "13-8",
+    "count": "1x"
+   },
+   {
+    "location": "16-8",
+    "count": "2x"
+   },
+   {
+    "location": "16-14",
+    "count": "1x"
+   },
+   {
+    "location": "17-7",
+    "count": "1x"
+   },
+   {
+    "location": "17-9",
+    "count": "1x"
+   },
+   {
+    "location": "17-12",
+    "count": "1x"
+   },
+   {
+    "location": "17-14",
+    "count": "1x"
+   },
+   {
+    "location": "18-2",
+    "count": "1x"
+   },
+   {
+    "location": "18-7",
+    "count": "1x"
+   },
+   {
+    "location": "21-7",
+    "count": "1x"
+   },
+   {
+    "location": "26-3",
+    "count": "1x"
+   },
+   {
+    "location": "26-11",
+    "count": "1x"
+   },
+   {
+    "location": "26-14",
+    "count": "1x"
+   },
+   {
+    "location": "28-1",
+    "count": "2x"
+   },
+   {
+    "location": "29-6",
+    "count": "2x"
+   },
+   {
+    "location": "29-11",
+    "count": "1x"
+   },
+   {
+    "location": "30-1",
+    "count": "1x"
+   },
+   {
+    "location": "30-6",
+    "count": "2x"
+   },
+   {
+    "location": "30-13",
+    "count": "1x"
+   },
+   {
+    "location": "31-1",
+    "count": "1x"
+   },
+   {
+    "location": "31-8",
+    "count": "2x"
+   },
+   {
+    "location": "31-14",
+    "count": "1x"
+   },
+   {
+    "location": "33-3",
+    "count": "1x"
+   },
+   {
+    "location": "33-9",
+    "count": "1x"
+   },
+   {
+    "location": "33-11",
+    "count": "1x"
+   },
+   {
+    "location": "34-11",
+    "count": "2x"
+   },
+   {
+    "location": "35-6",
+    "count": "1x"
+   },
+   {
+    "location": "35-11",
+    "count": "2x"
+   }
+  ],
+  "name": "Trixie Bang"
+ },
+ {
+  "data": [
+   {
+    "location": "13-2",
+    "count": "2x"
+   },
+   {
+    "location": "13-4",
+    "count": "1x"
+   },
+   {
+    "location": "13-6",
+    "count": "1x"
+   },
+   {
+    "location": "13-7",
+    "count": "2x"
+   },
+   {
+    "location": "13-8",
+    "count": "1x"
+   },
+   {
+    "location": "13-9",
+    "count": "1x"
+   },
+   {
+    "location": "13-12",
+    "count": "1x"
+   },
+   {
+    "location": "13-14",
+    "count": "1x"
+   },
+   {
+    "location": "14-4",
+    "count": "1x"
+   },
+   {
+    "location": "14-9",
+    "count": "1x"
+   },
+   {
+    "location": "14-14",
+    "count": "1x"
+   },
+   {
+    "location": "15-4",
+    "count": "1x"
+   },
+   {
+    "location": "15-6",
+    "count": "1x"
+   },
+   {
+    "location": "15-8",
+    "count": "1x"
+   },
+   {
+    "location": "15-11",
+    "count": "1x"
+   },
+   {
+    "location": "15-13",
+    "count": "1x"
+   },
+   {
+    "location": "16-1",
+    "count": "1x"
+   },
+   {
+    "location": "16-3",
+    "count": "1x"
+   },
+   {
+    "location": "26-2",
+    "count": "1x"
+   },
+   {
+    "location": "26-15",
+    "count": "1x"
+   },
+   {
+    "location": "29-9",
+    "count": "2x"
+   },
+   {
+    "location": "30-8",
+    "count": "1x"
+   },
+   {
+    "location": "30-12",
+    "count": "1x"
+   },
+   {
+    "location": "31-4",
+    "count": "1x"
+   },
+   {
+    "location": "33-14",
+    "count": "1x"
+   },
+   {
+    "location": "34-14",
+    "count": "2x"
+   }
+  ],
+  "name": "Veteran Knightess"
+ },
+ {
+  "data": [
+   {
+    "location": "6-15",
+    "count": "1x"
+   }
+  ],
+  "name": "Warden"
+ },
+ {
+  "data": [
+   {
+    "location": "7-7",
+    "count": "2x"
+   },
+   {
+    "location": "9-6",
+    "count": "1x"
+   },
+   {
+    "location": "9-7",
+    "count": "2x"
+   },
+   {
+    "location": "9-8",
+    "count": "2x"
+   },
+   {
+    "location": "10-1",
+    "count": "1x"
+   },
+   {
+    "location": "11-1",
+    "count": "2x"
+   },
+   {
+    "location": "11-2",
+    "count": "1x"
+   },
+   {
+    "location": "11-3",
+    "count": "1x"
+   },
+   {
+    "location": "11-4",
+    "count": "1x"
+   },
+   {
+    "location": "12-4",
+    "count": "3x"
+   },
+   {
+    "location": "12-12",
+    "count": "2x"
+   },
+   {
+    "location": "13-6",
+    "count": "2x"
+   },
+   {
+    "location": "13-7",
+    "count": "2x"
+   },
+   {
+    "location": "13-8",
+    "count": "2x"
+   },
+   {
+    "location": "13-9",
+    "count": "2x"
+   },
+   {
+    "location": "16-8",
+    "count": "2x"
+   },
+   {
+    "location": "20-6",
+    "count": "3x"
+   },
+   {
+    "location": "20-8",
+    "count": "1x"
+   },
+   {
+    "location": "20-9",
+    "count": "2x"
+   },
+   {
+    "location": "20-13",
+    "count": "2x"
+   },
+   {
+    "location": "21-3",
+    "count": "2x"
+   },
+   {
+    "location": "21-12",
+    "count": "2x"
+   },
+   {
+    "location": "24-2",
+    "count": "2x"
+   },
+   {
+    "location": "24-3",
+    "count": "2x"
+   },
+   {
+    "location": "24-7",
+    "count": "2x"
+   },
+   {
+    "location": "24-12",
+    "count": "1x"
+   },
+   {
+    "location": "26-3",
+    "count": "1x"
+   },
+   {
+    "location": "26-8",
+    "count": "1x"
+   },
+   {
+    "location": "26-11",
+    "count": "1x"
+   },
+   {
+    "location": "27-1",
+    "count": "2x"
+   },
+   {
+    "location": "27-6",
+    "count": "2x"
+   },
+   {
+    "location": "27-11",
+    "count": "2x"
+   },
+   {
+    "location": "27-12",
+    "count": "3x"
+   },
+   {
+    "location": "28-1",
+    "count": "1x"
+   },
+   {
+    "location": "28-2",
+    "count": "1x"
+   },
+   {
+    "location": "28-14",
+    "count": "2x"
+   },
+   {
+    "location": "29-6",
+    "count": "1x"
+   },
+   {
+    "location": "29-7",
+    "count": "1x"
+   },
+   {
+    "location": "29-11",
+    "count": "1x"
+   },
+   {
+    "location": "29-12",
+    "count": "1x"
+   },
+   {
+    "location": "29-13",
+    "count": "1x"
+   },
+   {
+    "location": "29-14",
+    "count": "1x"
+   },
+   {
+    "location": "30-1",
+    "count": "1x"
+   },
+   {
+    "location": "30-2",
+    "count": "1x"
+   },
+   {
+    "location": "30-3",
+    "count": "1x"
+   },
+   {
+    "location": "30-13",
+    "count": "1x"
+   },
+   {
+    "location": "31-2",
+    "count": "1x"
+   },
+   {
+    "location": "31-8",
+    "count": "2x"
+   },
+   {
+    "location": "32-4",
+    "count": "2x"
+   },
+   {
+    "location": "32-12",
+    "count": "2x"
+   },
+   {
+    "location": "32-13",
+    "count": "2x"
+   },
+   {
+    "location": "33-3",
+    "count": "2x"
+   },
+   {
+    "location": "33-12",
+    "count": "1x"
+   },
+   {
+    "location": "34-2",
+    "count": "2x"
+   },
+   {
+    "location": "34-3",
+    "count": "2x"
+   },
+   {
+    "location": "34-11",
+    "count": "1x"
+   },
+   {
+    "location": "34-12",
+    "count": "1x"
+   },
+   {
+    "location": "35-11",
+    "count": "1x"
+   },
+   {
+    "location": "35-12",
+    "count": "1x"
+   },
+   {
+    "location": "37-3",
+    "count": "1x"
+   },
+   {
+    "location": "39-8",
+    "count": "1x"
+   },
+   {
+    "location": "40-1",
+    "count": "1x"
+   },
+   {
+    "location": "40-2",
+    "count": "1x"
+   }
+  ],
+  "name": "Wolf Gal Wolfie"
+ }
+]

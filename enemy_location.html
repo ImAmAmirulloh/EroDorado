@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enemy Location</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="sidebar">
         <input type="checkbox" id="checkmn" checked />
@@ -13,7 +15,7 @@
 
         <a href="index.html">📊 <span>Character Status</span></a>
         <a href="create.html">➕ <span>Create New Character</span></a>
-        <a href="tier_list.html">🏆 <span>Tier List</span></a> 
+        <a href="tier_list.html">🏆 <span>Tier List</span></a>
         <a href="enemy_location.html" class="active">🗺️ <span>Enemy Location</span></a>
         <a href="update_list.html">📝 <span>Character Update</span></a>
         <a href="backup_recovery.html">💾 <span>Backup/Recovery</span></a>
@@ -22,7 +24,7 @@
     <div id="main-content">
         <h1>Enemy Locations</h1>
         <p style="color: var(--text-muted); margin-bottom: 20px;">Hover over an enemy card and click the pencil icon to edit. Locations should be comma-separated (e.g., 1-4, 2-7, 8-9).</p>
-        
+
         <div class="bulk-action-panel">
             <label for="bulk-loc-input">Mass Add Location:</label>
             <input type="text" id="bulk-loc-input" class="edit-input" placeholder="e.g., 2-3, 4-5">
@@ -56,54 +58,84 @@
         function saveEnemies() {
             localStorage.setItem(ENEMY_STORAGE_KEY, JSON.stringify(enemiesData));
         }
-
-        // Fungsi untuk mengelompokkan data "1-2, 1-8" menjadi { "1": ["2", "8"] }
-function groupLocations(locationsArray) {
-    const groups = {};
-    locationsArray.forEach(loc => {
-        const split = loc.split('-');
-        if (split.length === 2) {
-            const map = split[0].trim();
-            const zone = split[1].trim();
-            if (!groups[map]) groups[map] = [];
-            groups[map].push(zone);
+        // Fungsi untuk memproses angka dari string "1x", "2x", dst
+        function getCountNumber(countStr) {
+            return parseInt(countStr) || 1;
         }
-    });
-    return groups;
-}
-        
+        // Fungsi grouping baru untuk struktur JSON: [{location: "36-4", count: "1x"}, ...]
+        function groupLocations(dataArray) {
+            const groups = {};
+            if (!dataArray) return groups;
+
+            dataArray.forEach(item => {
+                const split = item.location.split('-');
+                if (split.length === 2) {
+                    const map = split[0].trim();
+                    const zone = split[1].trim();
+                    const count = getCountNumber(item.count);
+
+                    if (!groups[map]) groups[map] = [];
+                    groups[map].push({ zone, count });
+                }
+            });
+            return groups;
+        }
+
+        // Fungsi untuk membuat elemen titik-titik
+        function generateDots(count) {
+            let dotsHtml = '<div class="dot-container">';
+            for (let i = 0; i < count; i++) {
+                dotsHtml += '<span class="count-dot"></span>';
+            }
+            dotsHtml += '</div>';
+            return dotsHtml;
+        }
+
         function createEnemyCard(enemy, index) {
-    const groups = groupLocations(enemy.locations);
-    
-    // Generate HTML untuk box lokasi bertumpuk
-    let locationHTML = '';
-    for (const map in groups) {
-        locationHTML += `
+            // Sesuaikan pemanggilan ke enemy.data sesuai JSON baru Anda
+            const groups = groupLocations(enemy.data || []);
+
+            let locationHTML = '';
+            for (const map in groups) {
+                // Render setiap zona di dalam map yang sama
+                const zonesHTML = groups[map].map(z => `
+            <div class="zone-wrapper">
+                <div class="zone-name">${z.zone}</div>
+                ${generateDots(z.count)}
+            </div>
+        `).join('');
+
+                locationHTML += `
             <div class="loc-group-box">
                 <div class="loc-map-title">${map}</div>
-                <div class="loc-zones">${groups[map].join(', ')}</div>
+                <div class="loc-zones-container">
+                    ${zonesHTML}
+                </div>
             </div>
         `;
-    }
+            }
 
-    return `
+            return `
     <div class="enemy-card" id="enemy-card-${index}">
         <input type="checkbox" class="enemy-checkbox" value="${index}">
         <button class="enemy-edit-btn" onclick="activateEdit(${index})">✏️</button>
         
         <div class="enemy-left-panel">
             <div class="enemy-profile">
-                <img src="img/enemy/${enemy.name}.png" alt="${enemy.name}">
-                <span class="enemy-name">${enemy.name}</span>
+                <img src="img/${enemy.name}.png" alt="${enemy.name}" onerror="this.src='img/default.png'">
+                <svg class="enemy-name-svg" viewBox="0 0 120 120">
+                    <path id="curve-${index}" d="M 15 65 A 45 45 0 0 0 105 65" fill="transparent" />
+                    <text><textPath href="#curve-${index}" startOffset="50%" text-anchor="middle">${enemy.name}</textPath></text>
+                </svg>
             </div>
         </div>
 
         <div class="enemy-right-panel">
-            ${locationHTML || '<span style="color:#555;">No Data</span>'}
+            ${locationHTML || '<span style="color:#555; font-style:italic; font-size:0.8rem;">No Data</span>'}
         </div>
     </div>
     `;
-}
+        }
 
         // Render HTML Mode Edit
         function createEnemyEdit(enemy, index) {
@@ -134,7 +166,7 @@ function groupLocations(locationsArray) {
 
         function activateEdit(index) {
             // Render ulang semua untuk mereset kartu lain yang mungkin sedang diedit
-            renderEnemies(); 
+            renderEnemies();
             const cardElement = document.getElementById(`enemy-card-${index}`);
             cardElement.outerHTML = createEnemyEdit(enemiesData[index], index);
         }
@@ -143,15 +175,20 @@ function groupLocations(locationsArray) {
             renderEnemies();
         }
 
+        // Update fungsi saveEdit untuk mendukung struktur data baru
         function saveEdit(index) {
             const newName = document.getElementById(`edit-enemy-name-${index}`).value.trim();
             const rawLocations = document.getElementById(`edit-enemy-loc-${index}`).value;
-            
-            // Pecah string berdasarkan koma, hapus spasi berlebih, dan hilangkan elemen kosong
-            const newLocations = rawLocations.split(',').map(s => s.trim()).filter(s => s !== "");
+
+            // Asumsi input manual di textarea tetap "36-4, 37-1" 
+            // Kita set default count "1x" untuk input manual baru
+            const newItems = rawLocations.split(',').map(s => {
+                const loc = s.trim();
+                return loc ? { location: loc, count: "1x" } : null;
+            }).filter(item => item !== null);
 
             enemiesData[index].name = newName || "Unknown Enemy";
-            enemiesData[index].locations = newLocations;
+            enemiesData[index].data = newItems; // Simpan ke properti .data sesuai JSON baru
 
             saveEnemies();
             renderEnemies();
@@ -177,20 +214,20 @@ function groupLocations(locationsArray) {
             checkboxes.forEach(cb => {
                 const idx = parseInt(cb.value);
                 const enemy = enemiesData[idx];
-                
+
                 // Gabungkan lokasi lama dan baru
                 const combinedLocations = [...enemy.locations, ...newLocations];
-                
+
                 // Hapus duplikat menggunakan Set (jika data sudah ada, tidak akan masuk 2 kali)
                 enemy.locations = [...new Set(combinedLocations)];
-                
+
                 // Opsional: Urutkan array agar lebih rapi saat dibaca ulang
                 // enemy.locations.sort(); 
             });
 
             saveEnemies();
             renderEnemies();
-            
+
             // Bersihkan input form setelah sukses
             document.getElementById('bulk-loc-input').value = '';
             alert(`Success! Location added to ${checkboxes.length} enemies.`);
@@ -206,4 +243,5 @@ function groupLocations(locationsArray) {
         document.addEventListener('DOMContentLoaded', loadEnemies);
     </script>
 </body>
+
 </html>
