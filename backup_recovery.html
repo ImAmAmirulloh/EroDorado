@@ -21,12 +21,22 @@
             color: white;
             transition: background-color 0.3s ease;
         }
+        .json-area {
+            width: 100%; 
+            padding: 10px; 
+            background: #111; 
+            color: #ffae42; 
+            border: 1px solid #444; 
+            border-radius: 6px; 
+            resize: vertical;
+            font-family: monospace;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
     <div id="sidebar">
         <input type="checkbox" id="checkmn" checked />
-        
         <label for="checkmn" id="toggle-btn">☰</label>
 
         <a href="index.html">📊 <span>Character Status</span></a>
@@ -40,289 +50,175 @@
     <div id="main-content">
         <h1>Character Data Backup & Recovery</h1>
         <div class="card" style="margin-bottom: 30px;">
-            <h2>Backup Data (Download JSON)</h2>
-            <p>Select the data backup method from your browser's Local Storage:</p>
-            
+            <h2>Backup Characters</h2>
             <div style="display: flex; gap: 15px; margin-bottom: 15px;">
-                <button id="backup-btn" class="submit-btn" style="background-color: #5cb85c;">⬇️ Download File JSON</button>
-                
+                <button id="backup-btn" class="submit-btn" style="background-color: #5cb85c;">⬇️ Download JSON File</button>
                 <button id="generate-json-btn" class="submit-btn" style="background-color: #007bff;">📋 Generate JSON Text</button>
             </div>
             
-            <div id="json-output-container" style="display: none; margin-top: 20px;">
-                <label for="json-output" style="display: block; margin-bottom: 5px; font-weight: bold;">Copy the JSON Content Below:</label>
-                <textarea id="json-output" rows="15" readonly style="width: 100%; padding: 10px; background: #333; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; resize: vertical;"></textarea>
+            <div id="json-output-container" style="display: none;">
+                <textarea id="json-output" rows="10" readonly class="json-area"></textarea>
                 <button id="copy-json-btn" class="submit-btn" style="background-color: #333; margin-top: 10px;">Copy to Clipboard</button>
             </div>
-            
             <p id="backup-status" style="margin-top: 10px; color: #5cb85c;"></p>
         </div>
+
         <div class="card">
-            <h2>Recovery Data (Upload JSON)</h2>
-            <p>Select your backup JSON file and click "Save to Browser" to **overwrite** the data in your browser's Local Storage.</p>
+            <h2>Recovery Characters</h2>
             <input type="file" id="recovery-file-input" accept=".json" style="margin-bottom: 15px;">
             <button id="recovery-btn" class="submit-btn" style="background-color: #f0ad4e;">⬆️ Save to Browser</button>
             <p id="recovery-status" style="margin-top: 10px; color: #f0ad4e;"></p>
         </div>
+
         <hr style="border: 1px dashed var(--border); margin: 40px 0;">
+
         <h1>Enemy Data Backup & Recovery</h1>
         
         <div class="card" style="margin-bottom: 30px;">
-            <h2>Backup Enemy Data (Download JSON)</h2>
-            <button id="backup-enemy-btn" class="submit-btn" style="background-color: #5cb85c;">⬇️ Download Enemy JSON</button>
+            <h2>Backup Enemy Data</h2>
+            <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                <button id="backup-enemy-btn" class="submit-btn" style="background-color: #5cb85c;">⬇️ Download Enemy JSON</button>
+                <button id="generate-enemy-json-btn" class="submit-btn" style="background-color: #007bff;">📋 Generate Enemy Text</button>
+            </div>
+
+            <div id="enemy-json-container" style="display: none;">
+                <textarea id="enemy-json-output" rows="10" readonly class="json-area"></textarea>
+                <button id="copy-enemy-json-btn" class="submit-btn" style="background-color: #333; margin-top: 10px;">Copy to Clipboard</button>
+            </div>
             <p id="backup-enemy-status" style="margin-top: 10px; color: #5cb85c;"></p>
         </div>
 
         <div class="card">
-            <h2>Recovery Enemy Data (Upload JSON)</h2>
+            <h2>Recovery Enemy Data</h2>
             <input type="file" id="recovery-enemy-file" accept=".json" style="margin-bottom: 15px;">
             <button id="recovery-enemy-btn" class="submit-btn" style="background-color: #f0ad4e;">⬆️ Save Enemy to Browser</button>
             <p id="recovery-enemy-status" style="margin-top: 10px; color: #f0ad4e;"></p>
         </div>
     </div>
 
-    
     <script>
-    // Konstanta kunci penyimpanan (Wajib sama di semua file)
-    const STORAGE_KEY = 'CHARACTER_DATA_V1';
-
-    // --- UTILITY FUNGSI LOCAL STORAGE ---
-    function loadCharacters() {
-        const storedData = localStorage.getItem(STORAGE_KEY);
-        try {
-            return storedData ? JSON.parse(storedData) : []; 
-        } catch (e) {
-            console.error("Failed to parse data from Local Storage:", e);
-            return [];
-        }
-    }
-
-    function saveCharacters(data) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-    }
-
-    // --- LOGIKA UTAMA BACKUP & RECOVERY ---
-    document.addEventListener('DOMContentLoaded', () => {
-        const backupBtn = document.getElementById('backup-btn');
-        const generateJsonBtn = document.getElementById('generate-json-btn'); // Tombol Baru
-        const jsonOutputContainer = document.getElementById('json-output-container'); // Container Baru
-        const jsonOutput = document.getElementById('json-output'); // Textarea Baru
-        const copyJsonBtn = document.getElementById('copy-json-btn'); // Tombol Salin Baru
-        
-        const recoveryBtn = document.getElementById('recovery-btn'); 
-        const fileInput = document.getElementById('recovery-file-input'); 
-        const recoveryStatusMsg = document.getElementById('recovery-status');
-        const backupStatusMsg = document.getElementById('backup-status'); // Status untuk backup
-
-        // Fungsi utama untuk mendapatkan string JSON
-        function getJsonString() {
-            const data = loadCharacters();
-            if (data.length === 0) {
-                alert("Local Storage is empty, no data.");
-                return null;
-            }
-            return JSON.stringify(data, null, 2); 
-        }
-
-        // ==========================================================
-        // A1. LOGIKA BACKUP (DOWNLOAD FILE)
-        // ==========================================================
-        if (backupBtn) {
-            backupBtn.addEventListener('click', function() {
-                const jsonString = getJsonString();
-                if (!jsonString) return;
-
-                const blob = new Blob([jsonString], { type: 'application/json' });
-                const url = URL.createObjectURL(blob);
-                
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'characters_backup_' + new Date().toISOString().slice(0, 10) + '.json'; 
-                
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                
-                URL.revokeObjectURL(url);
-                backupStatusMsg.innerText = `✅ ${loadCharacters().length} character data downloaded successfully!`;
-            });
-        }
-
-        // ==========================================================
-        // A2. LOGIKA GENERATE JSON CONTENT (TEKS)
-        // ==========================================================
-        if (generateJsonBtn) {
-            generateJsonBtn.addEventListener('click', function() {
-                const jsonString = getJsonString();
-                if (!jsonString) {
-                    jsonOutputContainer.style.display = 'none';
-                    return;
-                }
-                
-                jsonOutput.value = jsonString;
-                jsonOutputContainer.style.display = 'block';
-                jsonOutput.select(); // Langsung select agar mudah disalin
-                backupStatusMsg.innerText = `📋 JSON content is ready to be copied.`;
-            });
-        }
-        
-        // ==========================================================
-        // A3. LOGIKA COPY KE CLIPBOARD
-        // ==========================================================
-        if (copyJsonBtn && jsonOutput) {
-            copyJsonBtn.addEventListener('click', function() {
-                jsonOutput.select();
-                jsonOutput.setSelectionRange(0, 99999); // Untuk mobile
-                
-                try {
-                    document.execCommand('copy');
-                    copyJsonBtn.innerText = '✅ Successfully Copied!';
-                } catch (err) {
-                    copyJsonBtn.innerText = '❌ Copy Failed (Use Ctrl+C / Cmd+C)';
-                }
-
-                setTimeout(() => {
-                    copyJsonBtn.innerText = 'Copy to Clipboard';
-                }, 1500);
-            });
-        }
-
-
-        // ==========================================================
-        // B. LOGIKA RECOVERY (UPLOAD DATA) - Tidak Berubah
-        // ==========================================================
-        if (recoveryBtn && fileInput) {
-            recoveryBtn.addEventListener('click', function() {
-                // ... (Logika Recovery yang sudah benar sebelumnya) ...
-                const file = fileInput.files[0];
-
-                if (!file) {
-                    recoveryStatusMsg.innerText = 'Select the JSON file first.';
-                    recoveryStatusMsg.style.color = '#ff5722';
-                    return;
-                }
-                
-                if (!file.name.toLowerCase().endsWith('.json')) {
-                     recoveryStatusMsg.innerText = 'Failed: File must have a .json extension.';
-                     recoveryStatusMsg.style.color = '#ff5722';
-                     return;
-                }
-
-                const reader = new FileReader();
-                
-                reader.onload = function(event) {
-                    try {
-                        const importedData = JSON.parse(event.target.result);
-                        
-                        if (Array.isArray(importedData)) {
-                            if (importedData.length > 0 && !importedData[0].name) {
-                                throw new Error('The data format is not recognized. Make sure this is a character backup file.');
-                            }
-
-                            const confirmation = confirm(`Are you sure you want to recover data? This will OVERWRITE the existing ${loadCharacters().length} character data with the new ${importedData.length} data.`);
-                            
-                            if (confirmation) {
-                                saveCharacters(importedData);
-                                
-                                recoveryStatusMsg.innerText = `✅ Recovery successful! ${importedData.length} characters has been saved.`;
-                                recoveryStatusMsg.style.color = '#5cb85c';
-                                fileInput.value = '';
-
-                                setTimeout(() => { window.location.href = 'index.html'; }, 1500);
-                            } else {
-                                recoveryStatusMsg.innerText = 'The recovery was canceled by the user.';
-                                recoveryStatusMsg.style.color = '#ff5722';
-                            }
-                        } else {
-                            recoveryStatusMsg.innerText = 'Failed: The JSON file contents do not have the expected array format.';
-                            recoveryStatusMsg.style.color = '#ff5722';
-                        }
-                    } catch (e) {
-                        console.error('Recovery Error:', e);
-                        recoveryStatusMsg.innerText = 'Failed: An error occurred while processing the JSON file. ' + e.message;
-                        recoveryStatusMsg.style.color = '#ff5722';
-                    }
-                };
-                
-                reader.readAsText(file);
-            });
-        }
-    });
-
-    // ==========================================================
-        // C. LOGIKA BACKUP & RECOVERY UNTUK ENEMY DATA
-        // ==========================================================
+        const CHAR_STORAGE_KEY = 'CHARACTER_DATA_V1';
         const ENEMY_STORAGE_KEY = 'ENEMY_DATA_V1';
-        const backupEnemyBtn = document.getElementById('backup-enemy-btn');
-        const recoveryEnemyBtn = document.getElementById('recovery-enemy-btn');
-        const recoveryEnemyFile = document.getElementById('recovery-enemy-file');
-        
-        function loadEnemies() {
-            try {
-                return JSON.parse(localStorage.getItem(ENEMY_STORAGE_KEY)) || [];
-            } catch { return []; }
+
+        // --- HELPER FUNCTIONS ---
+        function getStorageData(key) {
+            try { return JSON.parse(localStorage.getItem(key)) || []; } 
+            catch { return []; }
         }
 
-        // C1. BACKUP ENEMY
-        if (backupEnemyBtn) {
-            backupEnemyBtn.addEventListener('click', function() {
-                const data = loadEnemies();
-                if (data.length === 0) {
-                    alert("No Enemy Data to backup!");
-                    return;
-                }
-                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'enemy_backup_' + new Date().toISOString().slice(0, 10) + '.json'; 
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-                document.getElementById('backup-enemy-status').innerText = `✅ ${data.length} enemy data downloaded successfully!`;
+        function downloadJSON(data, filename) {
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename + '_' + new Date().toISOString().slice(0, 10) + '.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function setupCopy(btnId, areaId) {
+            const btn = document.getElementById(btnId);
+            const area = document.getElementById(areaId);
+            btn.addEventListener('click', () => {
+                area.select();
+                document.execCommand('copy');
+                const originalText = btn.innerText;
+                btn.innerText = '✅ Copied!';
+                setTimeout(() => btn.innerText = originalText, 1500);
             });
         }
 
-        // C2. RECOVERY ENEMY
-        if (recoveryEnemyBtn && recoveryEnemyFile) {
-            recoveryEnemyBtn.addEventListener('click', function() {
-                const file = recoveryEnemyFile.files[0];
-                const statusMsg = document.getElementById('recovery-enemy-status');
+        // ==========================================================
+        // 1. CHARACTER LOGIC
+        // ==========================================================
+        document.getElementById('backup-btn').addEventListener('click', () => {
+            const data = getStorageData(CHAR_STORAGE_KEY);
+            if (data.length === 0) return alert("No Character data found.");
+            downloadJSON(data, 'characters_backup');
+            document.getElementById('backup-status').innerText = `✅ ${data.length} characters downloaded.`;
+        });
 
-                if (!file) {
-                    statusMsg.innerText = 'Select the JSON file first.';
-                    statusMsg.style.color = '#ff5722';
-                    return;
-                }
+        document.getElementById('generate-json-btn').addEventListener('click', () => {
+            const data = getStorageData(CHAR_STORAGE_KEY);
+            const container = document.getElementById('json-output-container');
+            const area = document.getElementById('json-output');
+            area.value = JSON.stringify(data, null, 2);
+            container.style.display = 'block';
+        });
+        setupCopy('copy-json-btn', 'json-output');
 
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    try {
-                        const importedData = JSON.parse(event.target.result);
-                        if (Array.isArray(importedData)) {
-                            // Validasi sederhana: Pastikan objek memiliki properti 'locations'
-                            if (importedData.length > 0 && !importedData[0].locations) {
-                                throw new Error('Data format error. Make sure this is an ENEMY backup file, not Character.');
-                            }
+        document.getElementById('recovery-btn').addEventListener('click', () => {
+            const file = document.getElementById('recovery-file-input').files[0];
+            const status = document.getElementById('recovery-status');
+            if (!file) return alert("Select file first.");
 
-                            if (confirm(`Overwrite existing Enemy data with ${importedData.length} new entries?`)) {
-                                localStorage.setItem(ENEMY_STORAGE_KEY, JSON.stringify(importedData));
-                                statusMsg.innerText = `✅ Recovery successful! ${importedData.length} enemies saved.`;
-                                statusMsg.style.color = '#5cb85c';
-                                setTimeout(() => { window.location.href = 'enemy_location.html'; }, 1500);
-                            }
-                        } else {
-                            throw new Error('JSON is not an array.');
-                        }
-                    } catch (e) {
-                        statusMsg.innerText = 'Failed: ' + e.message;
-                        statusMsg.style.color = '#ff5722';
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const imported = JSON.parse(e.target.result);
+                    // Karakter biasanya punya properti 'element' atau 'power'
+                    if (!Array.isArray(imported) || (imported.length > 0 && !imported[0].element)) {
+                        throw new Error("Format salah. Ini bukan file backup Karakter.");
                     }
-                };
-                reader.readAsText(file);
-            });
-        }
-</script>
+                    if (confirm(`Overwrite characters with ${imported.length} new entries?`)) {
+                        localStorage.setItem(CHAR_STORAGE_KEY, JSON.stringify(imported));
+                        status.innerText = "✅ Character recovery success!";
+                        setTimeout(() => window.location.href = 'index.html', 1000);
+                    }
+                } catch (err) { status.innerText = "❌ Error: " + err.message; }
+            };
+            reader.readAsText(file);
+        });
+
+        // ==========================================================
+        // 2. ENEMY LOGIC (FIXED FOR NEW JSON STRUCTURE)
+        // ==========================================================
+        document.getElementById('backup-enemy-btn').addEventListener('click', () => {
+            const data = getStorageData(ENEMY_STORAGE_KEY);
+            if (data.length === 0) return alert("No Enemy data found.");
+            downloadJSON(data, 'enemy_backup');
+            document.getElementById('backup-enemy-status').innerText = `✅ ${data.length} enemies downloaded.`;
+        });
+
+        document.getElementById('generate-enemy-json-btn').addEventListener('click', () => {
+            const data = getStorageData(ENEMY_STORAGE_KEY);
+            const container = document.getElementById('enemy-json-container');
+            const area = document.getElementById('enemy-json-output');
+            area.value = JSON.stringify(data, null, 2);
+            container.style.display = 'block';
+        });
+        setupCopy('copy-enemy-json-btn', 'enemy-json-output');
+
+        document.getElementById('recovery-enemy-btn').addEventListener('click', () => {
+            const file = document.getElementById('recovery-enemy-file').files[0];
+            const status = document.getElementById('recovery-enemy-status');
+            if (!file) return alert("Select file first.");
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const imported = JSON.parse(e.target.result);
+                    
+                    // PERBAIKAN VALIDASI: Cek properti 'data' sesuai struktur baru Anda
+                    if (!Array.isArray(imported) || (imported.length > 0 && !imported[0].data)) {
+                        throw new Error("Format salah. File ini tidak memiliki properti 'data' lokasi.");
+                    }
+
+                    if (confirm(`Overwrite enemy data with ${imported.length} new entries?`)) {
+                        localStorage.setItem(ENEMY_STORAGE_KEY, JSON.stringify(imported));
+                        status.innerText = "✅ Enemy recovery success!";
+                        status.style.color = "#5cb85c";
+                        setTimeout(() => window.location.href = 'enemy_location.html', 1000);
+                    }
+                } catch (err) { 
+                    status.innerText = "❌ Error: " + err.message; 
+                    status.style.color = "#ff5722";
+                }
+            };
+            reader.readAsText(file);
+        });
+    </script>
 </body>
 </html>
